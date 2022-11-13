@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import { Logo } from "../assets";
+import { Logo, SearchButtonImage } from "../assets";
 import {
   HeaderContainer,
   HeaderLeftContainer,
   HeaderLi,
   HeaderLogin,
   HeaderUl,
+  SearchButton,
   SearchInput,
 } from "./index.style";
 import { onChangeAction } from "../../../util";
@@ -19,11 +20,17 @@ const Header: NextPage = () => {
     <HeaderContainer>
       <HeaderLeftContainer>
         <Image src={Logo} alt="" width={45} height={45} />
-        <SearchInput
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            onChangeAction(event, setKeyWord);
-          }}
-        />
+        <>
+          <SearchInput
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              onChangeAction(event, setKeyWord);
+            }}
+          />
+          <SearchButton>
+            <Image src={SearchButtonImage} alt="검색하기" width={24} height={24} />
+          </SearchButton>
+        </>
+
         <HeaderUl>
           <HeaderLi>학년별</HeaderLi>
           <HeaderLi>좋아요순</HeaderLi>

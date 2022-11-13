@@ -37,6 +37,15 @@ export const SearchInput = styled.input.attrs({
   &:focus {
     outline: none;
   }
+  position: relative;
+`;
+
+export const SearchButton = styled.button`
+  background: none;
+  border: 0;
+  position: absolute;
+  left: 350px;
+
 `;
 
 export const HeaderUl = styled.ul`

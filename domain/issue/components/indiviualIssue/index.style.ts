@@ -42,9 +42,10 @@ export const IssueTitle = styled.h2`
 
 export const IssueSubject = styled.span`
   background-color: ${theme.skyblue["900"]};
-  padding: 7px;
+  padding: 0.5rem;
   box-sizing: border-box;
   border-radius: 5px;
+  border: 1px solid white;
 `;
 
 export const IssueNumber = styled.div``;
