@@ -1,9 +1,12 @@
 import React from "react";
 import type { NextPage } from "next";
+import IndividualIssue from "../components/indiviualIssue";
 
 const IssueContainer: NextPage = () => {
   return (
-    <section>IssueContainer</section>
-  )
+    <section>
+      <IndividualIssue />
+    </section>
+  );
 };
 export default IssueContainer;
