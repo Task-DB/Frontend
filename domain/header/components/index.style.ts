@@ -1,1 +1,56 @@
 import styled from "styled-components";
+import { theme } from "../../../styles/theme";
+
+export const HeaderContainer = styled.div`
+  background-color: ${theme.background};
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const HeaderLeftContainer = styled.div`
+  background-color: ${theme.background};
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SearchInput = styled.input.attrs({
+  type: "text",
+  spellCheck: false,
+  placeholder: "Search Task...",
+})`
+  margin-left: 1.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 1rem;
+  border: 0;
+  color: white;
+  background-color: black;
+  &::placeholder {
+    color: white;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const HeaderUl = styled.ul`
+  display: flex;
+  color: ${theme.white};
+  width: 10rem;
+  justify-content: space-around;
+`;
+
+export const HeaderLi = styled.li`
+  list-style: none;
+`;
+
+export const HeaderLogin = styled.div`
+  list-style: none;
+  color: ${theme.white};
+`;

@@ -25,7 +25,7 @@ export const IssueBottomContainer = styled.div`
 `;
 
 export const IssueBottomCommentsContainer = styled.div`
-  width: 50%;
+  width: 55%;
   display: flex;
   justify-content: space-between;
   align-items: center;
