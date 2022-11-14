@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
+import { LinePropsType } from "../interface";
 
 export const BoardProvider = styled.div`
   padding: 1rem 3rem;
@@ -35,7 +36,7 @@ export const BoardStatus = styled.div`
   margin-top: 1rem;
 `;
 export const BoardDate = styled.div`
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   span {
     font-weight: bold;
     margin-left: 0.3rem;
@@ -43,7 +44,7 @@ export const BoardDate = styled.div`
 `;
 
 export const BoardViews = styled.div`
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   span {
     font-weight: bold;
     margin-left: 0.3rem;
@@ -52,9 +53,9 @@ export const BoardViews = styled.div`
 
 export const BoardContentProvider = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
+  margin-top: 2rem;
 `;
 
 export const BoardLikesProvider = styled.div`
@@ -65,7 +66,7 @@ export const BoardLikesProvider = styled.div`
 
 export const BoardLikes = styled.span`
   font-size: 32px;
-  margin: 0.2rem auto;
+  margin: 0.5rem auto;
 `;
 
 export const BoardComments = styled.div`
@@ -77,7 +78,7 @@ export const BoardComments = styled.div`
 `;
 export const BoardCommentsProvider = styled.div`
   width: 70%;
-  margin-top: 7rem;
+  margin-top: 5rem;
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -86,16 +87,20 @@ export const BoardCommentsProvider = styled.div`
 `;
 
 export const BoardContent = styled.div`
-  width: 80%;
+  width: 75%;
 `;
 
-export const BoardLine = styled.hr<{
-  width: string;
-}>`
+export const BoardLine = styled.hr<LinePropsType>`
   width: ${(props) => props.width}%;
   border: 1px solid #eee;
   background-color: #eee;
   margin: 1rem 0;
 `;
 
-export const BoardReply = styled.div``;
+export const BoardReply = styled.span`
+  font-size: 28px;
+`;
+
+export const BoardReplyProvider = styled.div`
+  margin-top: 5rem;
+`;

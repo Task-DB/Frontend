@@ -12,13 +12,20 @@ import {
   BoardLine,
   BoardNo,
   BoardProvider,
+  BoardReply,
+  BoardReplyProvider,
   BoardStatus,
   BoardStatusProvider,
   BoardTitle,
   BoardTitleProvider,
   BoardViews,
 } from "./[boardId].style";
-import { CommentDownButton, CommentUpButton, OpenBadge } from "../assets";
+import {
+  CommentCertiticate,
+  CommentDownButton,
+  CommentUpButton,
+  OpenBadge,
+} from "../assets";
 import Image from "next/image";
 
 const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
@@ -31,7 +38,7 @@ const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
 
       <BoardStatusProvider>
         <BoardStatus>
-          <Image src={OpenBadge} alt="열린이슈" />
+          <Image src={OpenBadge} alt="열린이슈" width={100} height={41} />
           <BoardDate>
             질문한 날짜<span>오늘</span>
           </BoardDate>
@@ -45,9 +52,9 @@ const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
 
       <BoardContentProvider>
         <BoardLikesProvider>
-          <Image src={CommentUpButton} alt="" />
+          <Image src={CommentUpButton} alt="올리기" />
           <BoardLikes>1</BoardLikes>
-          <Image src={CommentDownButton} alt="" />
+          <Image src={CommentDownButton} alt="내리기" />
         </BoardLikesProvider>
         <BoardContent>
           왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루
@@ -64,6 +71,21 @@ const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
           <span>5시간 전</span>
         </BoardComments>
       </BoardCommentsProvider>
+
+      <BoardReplyProvider>
+        <BoardReply>1 답글</BoardReply>
+        <BoardContentProvider>
+          <BoardLikesProvider>
+            <Image src={CommentUpButton} alt="올리기" />
+            <BoardLikes>1</BoardLikes>
+            <Image src={CommentDownButton} alt="내리기" />
+            <Image src={CommentCertiticate} alt="인증" />
+          </BoardLikesProvider>
+          <BoardContent>
+            왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루
+          </BoardContent>
+        </BoardContentProvider>
+      </BoardReplyProvider>
     </BoardProvider>
   );
 };
