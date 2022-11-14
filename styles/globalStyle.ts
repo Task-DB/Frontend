@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 export const GlobalStyle = createGlobalStyle` 
 
 @font-face {
@@ -15,6 +16,8 @@ html {
   min-width: 320px;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  background-color: ${theme.background};
+  color: ${theme.white};
 }
 
 body {

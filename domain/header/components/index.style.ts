@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 export const HeaderContainer = styled.div`
-  background-color: ${theme.background};
+  background-color: ${theme.gray["700"]};
   padding: 0.5rem 1rem;
   box-sizing: border-box;
   display: flex;
@@ -11,7 +11,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderLeftContainer = styled.div`
-  background-color: ${theme.background};
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -45,7 +44,6 @@ export const SearchButton = styled.button`
   border: 0;
   position: absolute;
   left: 350px;
-
 `;
 
 export const HeaderUl = styled.ul`
