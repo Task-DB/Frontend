@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import IssueContainer from "../domain/issue/container";
+import MainContainer from "../domain/main/container";
 const Main: NextPage = () => {
   return (
     <section id={`main`}>
-      <IssueContainer />
+      <MainContainer />
     </section>
   );
 };

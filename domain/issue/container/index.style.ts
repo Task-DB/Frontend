@@ -5,5 +5,5 @@ export const IssueProvider = styled.div`
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `;
