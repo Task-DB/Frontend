@@ -19,7 +19,7 @@ const Header: NextPage = () => {
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
-        <Image src={Logo} alt="" width={45} height={45} />
+        <Image src={Logo} alt="로고" width={40} height={40} />
         <>
           <SearchInput
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,12 @@ const Header: NextPage = () => {
             }}
           />
           <SearchButton>
-            <Image src={SearchButtonImage} alt="검색하기" width={24} height={24} />
+            <Image
+              src={SearchButtonImage}
+              alt="검색하기"
+              width={24}
+              height={24}
+            />
           </SearchButton>
         </>
 

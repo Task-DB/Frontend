@@ -8,8 +8,24 @@ fs.mkdir(`domain/${folderName}`, (error) => {
 
   fs.mkdir(`domain/${folderName}/components`, (error) => {
     if (error) throw error;
-    fs.writeFileSync(`domain/${folderName}/components/index.tsx`, ``);
-    fs.writeFileSync(`domain/${folderName}/components/index.style.ts`, ``);
+    fs.writeFileSync(
+      `domain/${folderName}/components/index.tsx`,
+      `import React from "react";
+import type { NextPage } from "next";
+
+const ${folderName}: NextPage = () => {
+  return (
+    <section>${folderName}</section>
+  )
+};
+export default ${folderName};
+`
+    );
+
+    fs.writeFileSync(
+      `domain/${folderName}/components/index.style.ts`,
+      `import styled from "styled-components";\n`
+    );
   });
 
   fs.mkdir(`domain/${folderName}/interface`, (error) => {

@@ -21,7 +21,7 @@ const IndividualIssue: NextPage = () => {
     <IssueContainer>
       <IssueTopContainer>
         <IssueStatus>
-          <Image src={OpenIssue} alt="열린 이슈" />
+          <Image src={OpenIssue} alt="열린 이슈" width={36} height={36} />
         </IssueStatus>
         <IssueTitle>몬스터즈 알려주실분</IssueTitle>
         <IssueSubject>C++</IssueSubject>
@@ -31,14 +31,13 @@ const IndividualIssue: NextPage = () => {
         <IssueBottomCommentsContainer>
           <IssueNumber>#44</IssueNumber>
           <IssueComments>
-            <Image src={Comments} alt="댓글수" />
+            <Image src={Comments} alt="댓글수" width={21} height={21} />
             <span>3</span>
           </IssueComments>
           <IssueLikes>
             ❤<span>3</span>
           </IssueLikes>
         </IssueBottomCommentsContainer>
-
         <IssueCreatedAt>어제</IssueCreatedAt>
       </IssueBottomContainer>
     </IssueContainer>

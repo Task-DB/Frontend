@@ -24,7 +24,7 @@ export const SearchInput = styled.input.attrs({
   placeholder: "Search Task...",
 })`
   margin-left: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   padding: 1rem;
   box-sizing: border-box;
   height: 1rem;
@@ -52,6 +52,7 @@ export const HeaderUl = styled.ul`
   display: flex;
   color: ${theme.white};
   width: 10rem;
+  margin: 0;
   justify-content: space-around;
 `;
 
