@@ -5,10 +5,10 @@ import SubjectSelector from "../components/subjectSelector";
 
 const MainContainer: NextPage = () => {
   return (
-    <section id={`MainPage`}>
+    <>
       <SubjectSelector />
       <IssueContainer />
-    </section>
+    </>
   );
 };
 export default MainContainer;

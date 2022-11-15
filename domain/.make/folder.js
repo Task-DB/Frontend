@@ -1,7 +1,9 @@
 const fs = require("fs");
 const prompt = require("prompt-sync")();
+const { toCamel } = require("./util");
 
 const folderName = prompt("folder no namaewa? ");
+const camelFolderName = toCamel(folderName);
 
 fs.mkdir(`domain/${folderName}`, (error) => {
   if (error) throw error;
@@ -13,12 +15,12 @@ fs.mkdir(`domain/${folderName}`, (error) => {
       `import React from "react";
 import type { NextPage } from "next";
 
-const ${folderName}: NextPage = () => {
+const ${camelFolderName}: NextPage = () => {
   return (
-    <section>${folderName}</section>
+    <>${camelFolderName}</>
   )
 };
-export default ${folderName};
+export default ${camelFolderName};
 `
     );
 
@@ -45,8 +47,24 @@ export default ${folderName};
 
   fs.mkdir(`domain/${folderName}/container`, (error) => {
     if (error) throw error;
-    fs.writeFileSync(`domain/${folderName}/container/index.tsx`, ``);
-    fs.writeFileSync(`domain/${folderName}/container/index.style.ts`, ``);
+    fs.writeFileSync(
+      `domain/${folderName}/container/index.tsx`,
+      `import React from "react";
+import type { NextPage } from "next";
+
+const ${camelFolderName}Container: NextPage = () => {
+  return (
+    <>${camelFolderName}</>
+  )
+};
+export default ${camelFolderName}Container;
+`
+    );
+
+    fs.writeFileSync(
+      `domain/${folderName}/container/index.style.ts`,
+      `import styled from "styled-components";\n`
+    );
   });
 
   console.log("칸페키-");
