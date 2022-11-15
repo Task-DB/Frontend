@@ -13,6 +13,7 @@ const MyContainer: NextPage = () => {
   const [infoY, setInfoY] = React.useState<number>(0);
   const [boardY, setBoardY] = React.useState<number>(0);
   const [active, setActive] = React.useState<boolean[]>([true, false, false]);
+  const { setActiveList } = useStore();
 
   const menus = {
     0: useMoveScroll("소개"),
@@ -49,12 +50,15 @@ const MyContainer: NextPage = () => {
   React.useEffect(() => {
     if (introduceY < scrollTop && scrollTop < infoY) {
       setActive([false, true, false]);
-    } else if (scrollTop > boardY) {
+      setActiveList([false, true, false]);
+    } else if (scrollTop > infoY) {
       setActive([false, false, true]);
+      setActiveList([false, false, true]);
     } else {
       setActive([true, false, false]);
+      setActiveList([true, false, false]);
     }
-  }, [introduceY, infoY, boardY, scrollTop]);
+  }, [introduceY, infoY, boardY, scrollTop, setActiveList]);
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -71,13 +75,9 @@ const MyContainer: NextPage = () => {
     <UserInfoContainer>
       <UserInfo menus={Array.from(menus)} />
       <UserRightProvider>
-        <Introduce
-          moveRef={menus[0].element}
-          isTop={active[0]}
-          ref={introduceRef}
-        />
-        <Info moveRef={menus[1].element} isTop={active[1]} ref={infoRef} />
-        <Board moveRef={menus[2].element} isTop={active[2]} ref={boardRef} />
+        <Introduce moveRef={menus[0].element} uRef={introduceRef} />
+        <Info moveRef={menus[1].element} uRef={infoRef} />
+        <Board moveRef={menus[2].element} uRef={boardRef} />
       </UserRightProvider>
     </UserInfoContainer>
   );

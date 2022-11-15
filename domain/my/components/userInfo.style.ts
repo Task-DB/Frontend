@@ -44,15 +44,16 @@ export const UserInfoUl = styled.ul`
   margin: 0;
 `;
 
-export const UserInfoLi = styled.li`
+export const UserInfoLi = styled.li<{ isTop: boolean }>`
   list-style: none;
   position: relative;
   margin-bottom: 1rem;
+
   &:last-child {
     margin-bottom: 0;
   }
   &::before {
-    background-color: ${theme.blue["500"]};
+    background-color: ${(props) => (props.isTop ? "black" : "white")};
     content: "";
     position: absolute;
     top: 9px;

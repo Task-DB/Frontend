@@ -11,8 +11,11 @@ import {
   UserProfileUlMenu,
 } from "./userInfo.style";
 import { UserInfoMenuType } from "../interface";
+import useStore from "../../../context/useStore";
 
 const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
+  const { activeList } = useStore();
+
   return (
     <UserInfoProvider>
       <UserProfileMenu>
@@ -29,6 +32,7 @@ const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
                 onClick={() => {
                   tab.onMoveToElement();
                 }}
+                isTop={activeList[idx]}
               >
                 {tab.namae.name}
               </UserInfoLi>

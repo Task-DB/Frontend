@@ -1,4 +1,4 @@
 export interface UseStoreType {
-  active: boolean[];
-  setActive: (input: boolean[]) => void;
+  activeList: boolean[];
+  setActiveList: (input: boolean[]) => void;
 }

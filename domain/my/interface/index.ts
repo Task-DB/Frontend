@@ -10,6 +10,5 @@ export interface UserInfoMenuType {
 
 export interface UserInfoRightPropsType {
   moveRef: React.RefObject<HTMLDivElement>;
-  ref: React.RefCallback<HTMLDivElement>;
-  isTop: boolean;
+  uRef: React.RefCallback<HTMLDivElement>;
 }

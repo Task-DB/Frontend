@@ -9,14 +9,10 @@ import {
 } from "./introduce.style";
 import { UserInfoRightPropsType } from "../interface";
 
-const Introduce: NextPage<UserInfoRightPropsType> = ({
-  moveRef,
-  ref,
-  isTop,
-}) => {
+const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
   return (
-    <IntroduceProvider ref={moveRef} isTop={isTop}>
-      <IntroduceTopProvider ref={ref}>
+    <IntroduceProvider ref={moveRef}>
+      <IntroduceTopProvider ref={uRef}>
         <IntroduceTitle>소개</IntroduceTitle>
         <IntroduceButton>수정</IntroduceButton>
       </IntroduceTopProvider>
