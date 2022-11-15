@@ -48,15 +48,20 @@ const MyContainer: NextPage = () => {
   };
 
   React.useEffect(() => {
-    if (introduceY < scrollTop && scrollTop < infoY) {
-      setActive([false, true, false]);
-      setActiveList([false, true, false]);
-    } else if (scrollTop > infoY) {
-      setActive([false, false, true]);
-      setActiveList([false, false, true]);
+    // 100 1950.1875 2137.479248046875
+    console.log(introduceY, infoY, boardY);
+    if (scrollTop < infoY - 50) {
+      const status = [true, false, false];
+      setActive(status);
+      setActiveList(status);
+    } else if (scrollTop < boardY - 50) {
+      const status = [false, true, false];
+      setActive(status);
+      setActiveList(status);
     } else {
-      setActive([true, false, false]);
-      setActiveList([true, false, false]);
+      const status = [false, false, true];
+      setActive(status);
+      setActiveList(status);
     }
   }, [introduceY, infoY, boardY, scrollTop, setActiveList]);
 

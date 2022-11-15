@@ -17,6 +17,32 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
         <IntroduceButton>수정</IntroduceButton>
       </IntroduceTopProvider>
       <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
+      <IntroduceUserContent>내용이 없습니다.</IntroduceUserContent>
     </IntroduceProvider>
   );
 };
