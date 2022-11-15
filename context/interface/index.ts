@@ -1,4 +1,10 @@
+interface menusType {
+  0: any;
+  1: any;
+  2: any;
+  length: number;
+}
+
 export interface UseStoreType {
-  content: string;
-  setContent: (input: string) => void;
+  menus: menusType;
 }

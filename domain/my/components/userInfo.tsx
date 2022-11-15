@@ -10,8 +10,14 @@ import {
   UserProfileMenu,
   UserProfileUlMenu,
 } from "./userInfo.style";
+import { UserInfoMenuType } from "../interface";
 
-const UserInfo: NextPage = () => {
+const UserInfo: NextPage<{ menuProps: UserInfoMenuType[] }> = ({
+  menuProps,
+}) => {
+  console.log(menuProps);
+  console.log(typeof menuProps);
+
   return (
     <UserInfoProvider>
       <UserProfileMenu>
