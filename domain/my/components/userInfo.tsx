@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import {
   UserInfoId,
   UserInfoLi,
-  UserInfoMenu,
   UserInfoProfilePicture,
   UserInfoProvider,
   UserInfoUl,
@@ -27,9 +26,6 @@ const UserInfo: NextPage = () => {
           <UserInfoLi>게시글</UserInfoLi>
         </UserInfoUl>
       </UserProfileUlMenu>
-
-      
-
     </UserInfoProvider>
   );
 };

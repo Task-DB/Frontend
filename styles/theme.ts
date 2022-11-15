@@ -1,4 +1,4 @@
-const main = "#57BF9C";
+const main = "#fffff4";
 const lightMain = "#57BF9C";
 const background = "#0D1117";
 const lightBackground = "#202B3D";

@@ -14,11 +14,12 @@ export const UserInfoMenu = styled.div`
   border-bottom: 1px solid ${theme.white};
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export const UserProfileMenu = styled(UserInfoMenu)`
   justify-content: space-around;
+  box-sizing: border-box;
 `;
 
 export const UserProfileUlMenu = styled(UserInfoMenu)`
@@ -26,7 +27,9 @@ export const UserProfileUlMenu = styled(UserInfoMenu)`
   padding: 1rem 2rem;
 `;
 
-export const UserInfoId = styled.h2``;
+export const UserInfoId = styled.h2`
+  margin-right: 0.5rem;
+`;
 
 export const UserInfoProfilePicture = styled(Image)`
   border-radius: 50%;

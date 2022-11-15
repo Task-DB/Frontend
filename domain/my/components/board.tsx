@@ -1,9 +1,15 @@
 import React from "react";
 import type { NextPage } from "next";
+import { BoardProvider, BoardTitle, BoardUserContent } from "./board.style";
 
 const Board: NextPage = () => {
   return (
-    <>board</>
-  )
+    <>
+      <BoardProvider>
+        <BoardTitle>게시글</BoardTitle>
+        <BoardUserContent>내용이 없습니다.</BoardUserContent>
+      </BoardProvider>
+    </>
+  );
 };
 export default Board;
