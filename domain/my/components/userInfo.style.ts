@@ -49,6 +49,7 @@ export const UserInfoLi = styled.li<{ isTop: boolean }>`
   position: relative;
   margin-bottom: 1rem;
   color: ${(props) => (props.isTop ? theme.blue["500"] : "white")};
+  transition: all 0.3s;
 
   &:last-child {
     margin-bottom: 0;

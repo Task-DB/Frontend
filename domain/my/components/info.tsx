@@ -9,6 +9,23 @@ const Info: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
       <div ref={uRef}>
         <InfoTitle>정보</InfoTitle>
         <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
+        <InfoUserContent>내용이 없습니다.</InfoUserContent>
       </div>
     </InfoProvider>
   );

@@ -12,7 +12,6 @@ const MyContainer: NextPage = () => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
   const [infoY, setInfoY] = React.useState<number>(0);
   const [boardY, setBoardY] = React.useState<number>(0);
-  const [active, setActive] = React.useState<boolean[]>([true, false, false]);
   const { setActiveList } = useStore();
 
   const menus = {
@@ -48,19 +47,14 @@ const MyContainer: NextPage = () => {
   };
 
   React.useEffect(() => {
-    // 100 1950.1875 2137.479248046875
-    console.log(introduceY, infoY, boardY);
-    if (scrollTop < infoY - 50) {
+    if (scrollTop + 60 < infoY) {
       const status = [true, false, false];
-      setActive(status);
       setActiveList(status);
-    } else if (scrollTop < boardY - 50) {
+    } else if (infoY < scrollTop + 60 && scrollTop + 60 < boardY) {
       const status = [false, true, false];
-      setActive(status);
       setActiveList(status);
     } else {
       const status = [false, false, true];
-      setActive(status);
       setActiveList(status);
     }
   }, [introduceY, infoY, boardY, scrollTop, setActiveList]);
