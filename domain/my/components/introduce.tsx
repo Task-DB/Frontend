@@ -7,13 +7,16 @@ import {
   IntroduceTopProvider,
   IntroduceUserContent,
 } from "./introduce.style";
+import { UserInfoRightPropsType } from "../interface";
 
-const Introduce: NextPage<{ moveRef: React.RefObject<HTMLDivElement> }> = ({
+const Introduce: NextPage<UserInfoRightPropsType> = ({
   moveRef,
+  ref,
+  isTop,
 }) => {
   return (
-    <IntroduceProvider ref={moveRef}>
-      <IntroduceTopProvider>
+    <IntroduceProvider ref={moveRef} isTop={isTop}>
+      <IntroduceTopProvider ref={ref}>
         <IntroduceTitle>소개</IntroduceTitle>
         <IntroduceButton>수정</IntroduceButton>
       </IntroduceTopProvider>

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const UserProvider = styled.div`
+export const UserProvider = styled.div<{ isTop: boolean }>`
   padding: 1rem;
   box-sizing: border-box;
   width: 100%;
   margin-left: 1rem;
+  color: ${(props) => (props.isTop ? "red" : "blue")};
 `;
 export const UserTitle = styled.h2``;
 

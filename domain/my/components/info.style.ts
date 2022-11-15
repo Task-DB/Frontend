@@ -8,7 +8,6 @@ import {
 } from "./index.style";
 
 export const InfoProvider = styled(UserProvider)``;
-
 export const InfoTopProvider = styled(UserTopProvider)``;
 export const InfoUserContent = styled(UserContent)``;
 export const InfoTitle = styled(UserTitle)``;

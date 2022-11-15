@@ -1,17 +1,16 @@
 import React from "react";
 import type { NextPage } from "next";
 import { InfoProvider, InfoTitle, InfoUserContent } from "./info.style";
+import { UserInfoRightPropsType } from "../interface";
 
-const Info: NextPage<{ moveRef: React.RefObject<HTMLDivElement> }> = ({
-  moveRef,
-}) => {
+const Info: NextPage<UserInfoRightPropsType> = ({ moveRef, ref, isTop }) => {
   return (
-    <>
-      <InfoProvider ref={moveRef}>
+    <InfoProvider ref={moveRef} isTop={isTop}>
+      <div ref={ref}>
         <InfoTitle>정보</InfoTitle>
         <InfoUserContent>내용이 없습니다.</InfoUserContent>
-      </InfoProvider>
-    </>
+      </div>
+    </InfoProvider>
   );
 };
 export default Info;

@@ -13,7 +13,6 @@ import {
 import { UserInfoMenuType } from "../interface";
 
 const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
-  console.log(menus);
   return (
     <UserInfoProvider>
       <UserProfileMenu>
