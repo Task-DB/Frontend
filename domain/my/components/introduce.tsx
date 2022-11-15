@@ -8,9 +8,11 @@ import {
   IntroduceUserContent,
 } from "./introduce.style";
 
-const Introduce: NextPage = () => {
+const Introduce: NextPage<{ moveRef: React.RefObject<HTMLDivElement> }> = ({
+  moveRef,
+}) => {
   return (
-    <IntroduceProvider>
+    <IntroduceProvider ref={moveRef}>
       <IntroduceTopProvider>
         <IntroduceTitle>소개</IntroduceTitle>
         <IntroduceButton>수정</IntroduceButton>

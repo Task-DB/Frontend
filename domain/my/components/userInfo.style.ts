@@ -49,7 +49,7 @@ export const UserInfoLi = styled.li`
     margin-bottom: 0;
   }
   &::before {
-    background-color: #00c471;
+    background-color: ${theme.blue["500"]};
     content: "";
     position: absolute;
     top: 9px;

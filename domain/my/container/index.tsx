@@ -16,15 +16,14 @@ const MyContainer: NextPage = () => {
     length: 3,
   };
 
-  const menuProps: UserInfoMenuType[] = Array.from(menus);
-
   return (
     <UserInfoContainer>
-      <UserInfo menuProps={menuProps} />
+      <UserInfo menus={Array.from(menus)} />
+
       <UserRightProvider>
-        <Introduce />
-        <Info />
-        <Board />
+        <Introduce moveRef={menus[0].element} />
+        <Info moveRef={menus[1].element} />
+        <Board moveRef={menus[2].element} />
       </UserRightProvider>
     </UserInfoContainer>
   );

@@ -12,12 +12,8 @@ import {
 } from "./userInfo.style";
 import { UserInfoMenuType } from "../interface";
 
-const UserInfo: NextPage<{ menuProps: UserInfoMenuType[] }> = ({
-  menuProps,
-}) => {
-  console.log(menuProps);
-  console.log(typeof menuProps);
-
+const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
+  console.log(menus);
   return (
     <UserInfoProvider>
       <UserProfileMenu>
@@ -27,9 +23,18 @@ const UserInfo: NextPage<{ menuProps: UserInfoMenuType[] }> = ({
 
       <UserProfileUlMenu>
         <UserInfoUl>
-          <UserInfoLi>소개</UserInfoLi>
-          <UserInfoLi>정보</UserInfoLi>
-          <UserInfoLi>게시글</UserInfoLi>
+          {menus.map((tab: UserInfoMenuType, idx) => {
+            return (
+              <UserInfoLi
+                key={idx}
+                onClick={() => {
+                  tab.onMoveToElement();
+                }}
+              >
+                {tab.namae.name}
+              </UserInfoLi>
+            );
+          })}
         </UserInfoUl>
       </UserProfileUlMenu>
     </UserInfoProvider>
