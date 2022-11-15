@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 export const UserInfoProvider = styled.div`
+  position: fixed;
+  top: 100px;
+  left: 10px;
   border-right: 1px solid ${theme.white};
   padding: 1rem;
   margin-top: 1rem;
