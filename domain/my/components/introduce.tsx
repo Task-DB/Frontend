@@ -47,7 +47,7 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
               setIsEdit(false);
             }}
           >
-            화긴
+            저장
           </IntroduceButton>
         </IntroduceEditProvider>
       ) : (

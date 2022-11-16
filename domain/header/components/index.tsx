@@ -10,19 +10,28 @@ import {
   HeaderUl,
   SearchButton,
   SearchInput,
+  SearchInputProvider,
 } from "./index.style";
 import { onChangeAction } from "../../../util";
+import Link from "next/link";
 
 const Header: NextPage = () => {
-  const [keyword, setKeyWord] = React.useState("");
+  const [keyword, setKeyWord] = React.useState<string>("");
 
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
-        <Image src={Logo} alt="로고" width={40} height={40} />
-        <>
+        <Link href="/">
+          <>
+            <Image src={Logo} alt="로고" width={50} height={50} />
+          </>
+        </Link>
+
+        <SearchInputProvider>
           <SearchInput
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(
+              event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+            ) => {
               onChangeAction(event, setKeyWord);
             }}
           />
@@ -34,15 +43,21 @@ const Header: NextPage = () => {
               height={24}
             />
           </SearchButton>
-        </>
+        </SearchInputProvider>
 
         <HeaderUl>
-          <HeaderLi>학년별</HeaderLi>
-          <HeaderLi>좋아요순</HeaderLi>
-          <HeaderLi>랭킹</HeaderLi>
+          {["학년별", "좋아요순", "랭킹"].map((data, idx) => {
+            return (
+              <Link key={idx} href="/">
+                <HeaderLi>{data}</HeaderLi>
+              </Link>
+            );
+          })}
         </HeaderUl>
       </HeaderLeftContainer>
-      <HeaderLogin>로그인</HeaderLogin>
+      <Link href="/my">
+        <HeaderLogin>로그인</HeaderLogin>
+      </Link>
     </HeaderContainer>
   );
 };

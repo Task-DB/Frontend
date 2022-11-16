@@ -61,10 +61,10 @@ const Login: NextPage = () => {
           <LoginBottom>회원가입</LoginBottom>
         </Link>
         <Link href="/signup" passHref>
-          <LoginBottom>회원가입</LoginBottom>
+          <LoginBottom>비밀번호 찾기</LoginBottom>
         </Link>
         <Link href="/signup" passHref>
-          <LoginBottom>회원가입</LoginBottom>
+          <LoginBottom>아이디 찾기</LoginBottom>
         </Link>
       </LoginBottomProvider>
     </LoginForm>

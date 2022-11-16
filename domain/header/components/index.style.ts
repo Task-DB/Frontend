@@ -17,6 +17,10 @@ export const HeaderLeftContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const SearchInputProvider = styled.div`
+  position: relative;
+`;
+
 export const SearchInput = styled.input.attrs({
   type: "text",
   spellCheck: false,
@@ -36,14 +40,15 @@ export const SearchInput = styled.input.attrs({
   &:focus {
     outline: none;
   }
-  position: relative;
 `;
 
 export const SearchButton = styled.button`
   background: none;
   border: 0;
   position: absolute;
-  left: 350px;
+  right: 7px;
+  top: 6px;
+  z-index: 999;
 `;
 
 export const HeaderUl = styled.ul`
