@@ -27,7 +27,9 @@ const Login: NextPage = () => {
         handleLogin(data);
       })}
     >
-      <LoginMainText href="/">로그인</LoginMainText>
+      <Link href="/">
+        <LoginMainText>로그인</LoginMainText>
+      </Link>
       <LoginTopBar />
 
       <FormElement>

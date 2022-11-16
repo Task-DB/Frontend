@@ -63,7 +63,8 @@ export const LoginBottom = styled.span`
   display: block;
   color: ${theme.main};
   font-size: 0.7rem;
-  padding: 0 1rem !important;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
   &:hover {
     text-decoration: underline;
   }
@@ -84,12 +85,13 @@ export const TopBar = styled.hr`
 `;
 export const LoginTopBar = styled(TopBar)``;
 
-export const MainText = styled(Link)`
+export const MainText = styled.span`
   text-align: center;
   display: block;
+  margin-top: 3rem;
   color: ${theme.main};
   transition: 0.3s;
-  font-size: 24px;
+  font-size: 2rem;
   &:hover {
     transition: 0.3s;
     text-decoration: underline;

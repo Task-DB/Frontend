@@ -17,6 +17,7 @@ import { NextRouter, useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { SignupRequestType } from "../interface";
 import { handleSignup, handleCertificate } from "../api";
+import Link from "next/link";
 
 const Signup: NextPage = () => {
   const [status, setStatus] = React.useState("인증");
@@ -31,7 +32,9 @@ const Signup: NextPage = () => {
         handleSignup(email, data);
       })}
     >
-      <SignupMainText href="/">회원가입</SignupMainText>
+      <Link href="/">
+        <SignupMainText>회원가입</SignupMainText>
+      </Link>
       <SignupTopBar />
 
       <SignupFormElement>
