@@ -55,7 +55,7 @@ const Signup: NextPage = () => {
           <CertificateButton
             onClick={() => {
               setStatus("전송중..");
-              handleCertificate(email);
+              handleCertificate(email, setStatus);
             }}
           >
             {status}
@@ -63,19 +63,23 @@ const Signup: NextPage = () => {
         </CertificateButtonProvider>
       </SignupFormElement>
 
-      <SignupFormElement>
-        <SignupLabel htmlFor="certificate">
-          인증코드
-          <RedStar>*</RedStar>
-        </SignupLabel>
-        <SignupInput
-          type="text"
-          placeholder="인증코드"
-          id="checkCode"
-          autoComplete="on"
-          {...register("checkCode")}
-        />
-      </SignupFormElement>
+      {status === "전송 완료!" ? (
+        <SignupFormElement>
+          <SignupLabel htmlFor="certificate">
+            인증코드
+            <RedStar>*</RedStar>
+          </SignupLabel>
+          <SignupInput
+            type="text"
+            placeholder="인증코드"
+            id="checkCode"
+            autoComplete="on"
+            {...register("checkCode")}
+          />
+        </SignupFormElement>
+      ) : (
+        <></>
+      )}
 
       <SignupFormElement>
         <SignupLabel htmlFor="password">

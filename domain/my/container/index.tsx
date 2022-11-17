@@ -3,8 +3,8 @@ import type { NextPage } from "next";
 import UserInfo from "../components/userInfo";
 import { UserInfoContainer, UserRightProvider } from "./index.style";
 import Introduce from "../components/introduce";
-import Info from "../components/info";
-import Board from "../components/board";
+import Info from "../components/myBoard";
+import Board from "../components/saveBoard";
 import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
 
@@ -16,8 +16,8 @@ const MyContainer: NextPage = () => {
 
   const menus = {
     0: useMoveScroll("소개"),
-    1: useMoveScroll("정보"),
-    2: useMoveScroll("게시글"),
+    1: useMoveScroll("내가 쓴 글"),
+    2: useMoveScroll("내가 저장한 글"),
     length: 3,
   };
 

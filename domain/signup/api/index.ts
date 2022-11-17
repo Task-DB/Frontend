@@ -1,3 +1,4 @@
+import React from "react";
 import instance from "../../../lib/instance";
 import { SignupRequestType } from "../interface";
 
@@ -31,8 +32,13 @@ export const handleSignup = (email: string, data: SignupRequestType) => {
   });
 };
 
-export const handleCertificate = (email: string) => {
+export const handleCertificate = (
+  email: string,
+  setStatus: React.Dispatch<React.SetStateAction<string>>
+) => {
   postCertificate(email).then((response) => {
     console.log(response);
+    alert("전송이 완료되었습니다. 이메일을 확인해주세요.");
+    setStatus("전송 완료!");
   });
 };
