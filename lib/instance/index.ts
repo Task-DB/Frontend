@@ -6,13 +6,4 @@ const instance: AxiosInstance = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-instance.interceptors.request.use(
-  function (config) {
-    return config;
-  },
-  function (error: AxiosError) {
-    return Promise.reject(error);
-  }
-);
-
 export default instance;

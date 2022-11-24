@@ -12,6 +12,7 @@ const MyContainer: NextPage = () => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
   const [infoY, setInfoY] = React.useState<number>(0);
   const [boardY, setBoardY] = React.useState<number>(0);
+  const [scrollTop, setScrollTop] = React.useState<number>(0);
   const { setActiveList } = useStore();
 
   const menus = {
@@ -40,8 +41,6 @@ const MyContainer: NextPage = () => {
     setRef(ref, setBoardY);
   }, []);
 
-  const [scrollTop, setScrollTop] = React.useState<number>(0);
-
   const handleScroll = () => {
     setScrollTop(document.documentElement.scrollTop);
   };
@@ -63,11 +62,6 @@ const MyContainer: NextPage = () => {
     window.addEventListener("scroll", () => {
       handleScroll();
     });
-    return () => {
-      window.removeEventListener("scroll", () => {
-        handleScroll();
-      });
-    };
   }, []);
 
   return (

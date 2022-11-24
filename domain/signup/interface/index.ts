@@ -4,3 +4,7 @@ export interface SignupRequestType {
   nickname: string;
   password: string;
 }
+
+export interface CertificateRequestType {
+  email: string;
+}

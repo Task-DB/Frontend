@@ -9,6 +9,8 @@ import {
 
 export const InfoProvider = styled(UserProvider)``;
 export const InfoTopProvider = styled(UserTopProvider)``;
-export const InfoUserContent = styled(UserContent)``;
+export const InfoUserContent = styled(UserContent)`div {
+  margin-bottom: 5px;
+}`;
 export const InfoTitle = styled(UserTitle)``;
 export const InfoButton = styled(UserButton)``;

@@ -1,6 +1,6 @@
 import React from "react";
 import instance from "../../../lib/instance";
-import { SignupRequestType } from "../interface";
+import { CertificateRequestType, SignupRequestType } from "../interface";
 
 export const postSignup = async (signupData: SignupRequestType) => {
   try {
@@ -11,9 +11,11 @@ export const postSignup = async (signupData: SignupRequestType) => {
   }
 };
 
-export const postCertificate = async (email: string) => {
+export const postCertificate = async (
+  certificateData: CertificateRequestType
+) => {
   try {
-    const { data } = await instance.post(`/join`, email);
+    const { data } = await instance.post(`/email/join`, certificateData);
     return data;
   } catch (error) {
     throw error;
@@ -36,9 +38,16 @@ export const handleCertificate = (
   email: string,
   setStatus: React.Dispatch<React.SetStateAction<string>>
 ) => {
-  postCertificate(email).then((response) => {
-    console.log(response);
-    alert("전송이 완료되었습니다. 이메일을 확인해주세요.");
-    setStatus("전송 완료!");
-  });
+  const certificateData = { email: email };
+  postCertificate(certificateData)
+    .then((response) => {
+      console.log(response);
+      console.log("엄");
+      alert("전송이 완료되었습니다. 이메일을 확인해주세요.");
+      setStatus("전송 완료!");
+    })
+    .catch((error) => {
+      console.error(error);
+      setStatus("전송 실패");
+    });
 };

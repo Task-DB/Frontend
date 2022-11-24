@@ -53,6 +53,7 @@ const Signup: NextPage = () => {
           />
 
           <CertificateButton
+            type="button"
             onClick={() => {
               setStatus("전송중..");
               handleCertificate(email, setStatus);
