@@ -7,3 +7,5 @@ export const IssueWrapper = styled.div`
   justify-content: center;
   margin-top: 2rem;
 `;
+
+
