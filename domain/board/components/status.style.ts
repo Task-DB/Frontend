@@ -6,6 +6,10 @@ export const BoardStatusWrapper = styled.div`
   margin-top: 1rem;
 `;
 
+export const StatusWrapper = styled.div`
+  margin-right: 1rem;
+`;
+
 export const BoardDate = styled.div`
   margin-left: 1rem;
   span {

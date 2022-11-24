@@ -13,7 +13,7 @@ export const IssueTitleText = styled.h3`
   font-size: 22px;
 `;
 
-export const IssueSubject = styled.span`
+export const IssueSubjectText = styled.span`
   background-color: ${theme.skyblue["900"]};
   padding: 0.3rem;
   font-size: 0.6rem;

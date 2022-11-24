@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { BoardComments, BoardCommentsWrapper, BoardLine } from "./reply.style";
+import { BoardComments, BoardCommentsWrapper } from "./comments.style";
 
 const Comments: NextPage = () => {
   return (

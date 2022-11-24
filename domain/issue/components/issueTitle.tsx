@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import {
   IssueStatus,
-  IssueSubject,
+  IssueSubjectText,
   IssueTitleText,
   IssueTitleWrapper,
 } from "./issueTitle.style";
@@ -17,7 +17,7 @@ const IssueTitle: NextPage = () => {
           <Image src={OpenIssue} alt="열린 이슈" width={36} height={36} />
         </IssueStatus>
         <IssueTitleText>몬스터즈 알려주실분</IssueTitleText>
-        <IssueSubject>C++</IssueSubject>
+        <IssueSubjectText>C++</IssueSubjectText>
       </IssueTitleWrapper>
     </section>
   );
