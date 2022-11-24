@@ -10,7 +10,7 @@ import {
   HeaderUl,
   SearchButton,
   SearchInput,
-  SearchInputProvider,
+  SearchInputWrapper,
 } from "./index.style";
 import { onChangeAction } from "../../../util";
 import Link from "next/link";
@@ -22,12 +22,12 @@ const Header: NextPage = () => {
     <HeaderContainer>
       <HeaderLeftContainer>
         <Link href="/">
-          <>
+          <a>
             <Image src={Logo} alt="로고" width={50} height={50} />
-          </>
+          </a>
         </Link>
 
-        <SearchInputProvider>
+        <SearchInputWrapper>
           <SearchInput
             onChange={(
               event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,20 +43,24 @@ const Header: NextPage = () => {
               height={24}
             />
           </SearchButton>
-        </SearchInputProvider>
+        </SearchInputWrapper>
 
         <HeaderUl>
           {["학년별", "좋아요순", "랭킹"].map((data, idx) => {
             return (
               <Link key={idx} href="/">
-                <HeaderLi>{data}</HeaderLi>
+                <a>
+                  <HeaderLi>{data}</HeaderLi>
+                </a>
               </Link>
             );
           })}
         </HeaderUl>
       </HeaderLeftContainer>
       <Link href="/my">
-        <HeaderLogin>로그인</HeaderLogin>
+        <a>
+          <HeaderLogin>로그인</HeaderLogin>
+        </a>
       </Link>
     </HeaderContainer>
   );

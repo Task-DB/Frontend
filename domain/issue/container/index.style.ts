@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const IssueProvider = styled.div`
+export const IssueWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;

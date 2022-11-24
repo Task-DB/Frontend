@@ -3,9 +3,9 @@ import type { NextPage } from "next";
 import {
   FormElement,
   LoginBottom,
-  LoginBottomProvider,
+  LoginBottomWrapper,
   LoginButton,
-  LoginButtonProvider,
+  LoginButtonWrapper,
   LoginForm,
   LoginInput,
   LoginLabel,
@@ -52,11 +52,11 @@ const Login: NextPage = () => {
         />
       </FormElement>
 
-      <LoginButtonProvider>
+      <LoginButtonWrapper>
         <LoginButton>로그인</LoginButton>
-      </LoginButtonProvider>
+      </LoginButtonWrapper>
 
-      <LoginBottomProvider>
+      <LoginBottomWrapper>
         <Link href="/signup" passHref>
           <LoginBottom>회원가입</LoginBottom>
         </Link>
@@ -66,7 +66,7 @@ const Login: NextPage = () => {
         <Link href="/signup" passHref>
           <LoginBottom>아이디 찾기</LoginBottom>
         </Link>
-      </LoginBottomProvider>
+      </LoginBottomWrapper>
     </LoginForm>
   );
 };

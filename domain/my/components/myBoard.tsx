@@ -1,11 +1,11 @@
 import React from "react";
 import type { NextPage } from "next";
-import { InfoProvider, InfoTitle, InfoUserContent } from "./myBoard.style";
+import { InfoWrapper, InfoTitle, InfoUserContent } from "./myBoard.style";
 import { UserInfoRightPropsType } from "../interface";
 
 const Info: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
   return (
-    <InfoProvider ref={moveRef}>
+    <InfoWrapper ref={moveRef}>
       <div ref={uRef}>
         <InfoTitle>내가 쓴 글</InfoTitle>
         <InfoUserContent>
@@ -53,7 +53,7 @@ const Info: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
           <div>내용이 없습니다.</div>
         </InfoUserContent>
       </div>
-    </InfoProvider>
+    </InfoWrapper>
   );
 };
 export default Info;

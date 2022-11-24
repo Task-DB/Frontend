@@ -1,11 +1,11 @@
 import React from "react";
 import type { NextPage } from "next";
 import IndividualIssue from "../components/indiviualIssue";
-import { IssueProvider } from "./index.style";
+import { IssueWrapper } from "./index.style";
 
 const IssueContainer: NextPage = () => {
   return (
-    <IssueProvider>
+    <IssueWrapper>
       <IndividualIssue />
       <IndividualIssue />
       <IndividualIssue />
@@ -14,7 +14,7 @@ const IssueContainer: NextPage = () => {
       <IndividualIssue />
       <IndividualIssue />
       <IndividualIssue />
-    </IssueProvider>
+    </IssueWrapper>
   );
 };
 export default IssueContainer;

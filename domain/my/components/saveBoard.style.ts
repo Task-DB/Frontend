@@ -2,13 +2,13 @@ import styled from "styled-components";
 import {
   UserButton,
   UserContent,
-  UserProvider,
+  UserWrapper,
   UserTitle,
-  UserTopProvider,
+  UserTopWrapper,
 } from "./index.style";
 
-export const BoardProvider = styled(UserProvider)``;
-export const BoardTopProvider = styled(UserTopProvider)``;
+export const BoardWrapper = styled(UserWrapper)``;
+export const BoardTopWrapper = styled(UserTopWrapper)``;
 export const BoardUserContent = styled(UserContent)``;
 export const BoardTitle = styled(UserTitle)``;
 export const BoardButton = styled(UserButton)``;

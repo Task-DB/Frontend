@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
@@ -15,9 +16,12 @@ export const HeaderLeftContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  a {
+    color: white;
+  }
 `;
 
-export const SearchInputProvider = styled.div`
+export const SearchInputWrapper = styled.div`
   position: relative;
 `;
 

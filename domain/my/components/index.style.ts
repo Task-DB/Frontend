@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const UserProvider = styled.div`
+export const UserWrapper = styled.div`
   padding: 1rem;
   box-sizing: border-box;
   width: 100%;
@@ -9,7 +9,7 @@ export const UserProvider = styled.div`
 `;
 export const UserTitle = styled.h2``;
 
-export const UserTopProvider = styled.div`
+export const UserTopWrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;

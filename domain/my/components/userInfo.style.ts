@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const UserInfoProvider = styled.div`
+export const UserInfoWrapper = styled.div`
   position: fixed;
   top: 100px;
   left: 10px;

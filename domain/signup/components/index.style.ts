@@ -4,7 +4,7 @@ import {
   Form,
   FormElement,
   LoginButton,
-  LoginButtonProvider,
+  LoginButtonWrapper,
   LoginInput,
   LoginLabel,
   MainText,
@@ -24,7 +24,7 @@ export const CertificateButton = styled.button`
   transition: 0.3s;
 `;
 
-export const CertificateButtonProvider = styled.div`
+export const CertificateButtonWrapper = styled.div`
   position: relative;
 `;
 
@@ -35,7 +35,7 @@ export const SignupInput = styled(LoginInput)``;
 export const SignupLabel = styled(LoginLabel)``;
 export const SignupMainText = styled(MainText)``;
 export const SignupTopBar = styled(TopBar)``;
-export const SignupButtonProvider = styled(LoginButtonProvider)``;
+export const SignupButtonWrapper = styled(LoginButtonWrapper)``;
 
 export const RedStar = styled.span`
   color: red;

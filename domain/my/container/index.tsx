@@ -1,7 +1,7 @@
 import React, { SetStateAction } from "react";
 import type { NextPage } from "next";
 import UserInfo from "../components/userInfo";
-import { UserInfoContainer, UserRightProvider } from "./index.style";
+import { UserInfoContainer, UserRightWrapper } from "./index.style";
 import Introduce from "../components/introduce";
 import Info from "../components/myBoard";
 import Board from "../components/saveBoard";
@@ -67,11 +67,11 @@ const MyContainer: NextPage = () => {
   return (
     <UserInfoContainer>
       <UserInfo menus={Array.from(menus)} />
-      <UserRightProvider>
+      <UserRightWrapper>
         <Introduce moveRef={menus[0].element} uRef={introduceRef} />
         <Info moveRef={menus[1].element} uRef={infoRef} />
         <Board moveRef={menus[2].element} uRef={boardRef} />
-      </UserRightProvider>
+      </UserRightWrapper>
     </UserInfoContainer>
   );
 };

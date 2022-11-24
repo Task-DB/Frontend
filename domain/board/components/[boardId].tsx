@@ -3,22 +3,23 @@ import type { NextPage } from "next";
 import { IndividualBoardPropsType } from "../interface";
 import {
   BoardComments,
-  BoardCommentsProvider,
+  BoardCommentsWrapper,
   BoardContent,
-  BoardContentProvider,
+  BoardContentWrapper,
   BoardDate,
   BoardLikes,
-  BoardLikesProvider,
+  BoardLikesWrapper,
   BoardLine,
   BoardNo,
-  BoardProvider,
+  BoardWrapper,
   BoardReply,
-  BoardReplyProvider,
+  BoardReplyWrapper,
   BoardStatus,
-  BoardStatusProvider,
+  BoardStatusWrapper,
   BoardTitle,
-  BoardTitleProvider,
+  BoardTitleWrapper,
   BoardViews,
+  CertificateWrapper,
 } from "./[boardId].style";
 import {
   CommentCertiticate,
@@ -30,13 +31,13 @@ import Image from "next/image";
 
 const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
   return (
-    <BoardProvider>
-      <BoardTitleProvider>
+    <BoardWrapper>
+      <BoardTitleWrapper>
         <BoardTitle>몬스터즈 알려주실분</BoardTitle>
         <BoardNo>#{boardId}</BoardNo>
-      </BoardTitleProvider>
+      </BoardTitleWrapper>
 
-      <BoardStatusProvider>
+      <BoardStatusWrapper>
         <BoardStatus>
           <Image src={OpenBadge} alt="열린이슈" width={100} height={41} />
           <BoardDate>
@@ -46,22 +47,22 @@ const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
             조회수<span>20</span>
           </BoardViews>
         </BoardStatus>
-      </BoardStatusProvider>
+      </BoardStatusWrapper>
 
       <BoardLine width={"100"} />
 
-      <BoardContentProvider>
-        <BoardLikesProvider>
+      <BoardContentWrapper>
+        <BoardLikesWrapper>
           <Image src={CommentUpButton} alt="올리기" />
           <BoardLikes>1</BoardLikes>
           <Image src={CommentDownButton} alt="내리기" />
-        </BoardLikesProvider>
+        </BoardLikesWrapper>
         <BoardContent>
           왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루
         </BoardContent>
-      </BoardContentProvider>
+      </BoardContentWrapper>
 
-      <BoardCommentsProvider>
+      <BoardCommentsWrapper>
         <BoardComments>
           싫은데요
           <span>5시간 전</span>
@@ -70,23 +71,25 @@ const BoardId: NextPage<IndividualBoardPropsType> = ({ boardId }) => {
           싫은데요
           <span>5시간 전</span>
         </BoardComments>
-      </BoardCommentsProvider>
+      </BoardCommentsWrapper>
 
-      <BoardReplyProvider>
+      <BoardReplyWrapper>
         <BoardReply>1 답글</BoardReply>
-        <BoardContentProvider>
-          <BoardLikesProvider>
+        <BoardContentWrapper>
+          <BoardLikesWrapper>
             <Image src={CommentUpButton} alt="올리기" />
             <BoardLikes>1</BoardLikes>
             <Image src={CommentDownButton} alt="내리기" />
-            <Image src={CommentCertiticate} alt="인증" />
-          </BoardLikesProvider>
+            <CertificateWrapper>
+              <Image src={CommentCertiticate} alt="인증" />
+            </CertificateWrapper>
+          </BoardLikesWrapper>
           <BoardContent>
             왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루
           </BoardContent>
-        </BoardContentProvider>
-      </BoardReplyProvider>
-    </BoardProvider>
+        </BoardContentWrapper>
+      </BoardReplyWrapper>
+    </BoardWrapper>
   );
 };
 export default BoardId;

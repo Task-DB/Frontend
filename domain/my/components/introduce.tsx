@@ -2,11 +2,11 @@ import React from "react";
 import type { NextPage } from "next";
 import {
   IntroduceButton,
-  IntroduceEditProvider,
+  IntroduceEditWrapper,
   IntroduceInput,
-  IntroduceProvider,
+  IntroduceWrapper,
   IntroduceTitle,
-  IntroduceTopProvider,
+  IntroduceTopWrapper,
   IntroduceUserContent,
 } from "./introduce.style";
 import { UserInfoRightPropsType } from "../interface";
@@ -17,8 +17,8 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
   const [isEdit, setIsEdit] = React.useState<boolean>(false);
 
   return (
-    <IntroduceProvider ref={moveRef}>
-      <IntroduceTopProvider ref={uRef}>
+    <IntroduceWrapper ref={moveRef}>
+      <IntroduceTopWrapper ref={uRef}>
         <IntroduceTitle>소개</IntroduceTitle>
 
         {isEdit ? (
@@ -32,10 +32,10 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
             수정
           </IntroduceButton>
         )}
-      </IntroduceTopProvider>
+      </IntroduceTopWrapper>
 
       {isEdit ? (
-        <IntroduceEditProvider>
+        <IntroduceEditWrapper>
           <IntroduceInput
             value={content}
             onChange={(event) => {
@@ -49,11 +49,11 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
           >
             저장
           </IntroduceButton>
-        </IntroduceEditProvider>
+        </IntroduceEditWrapper>
       ) : (
         <IntroduceUserContent>{content}</IntroduceUserContent>
       )}
-    </IntroduceProvider>
+    </IntroduceWrapper>
   );
 };
 export default Introduce;

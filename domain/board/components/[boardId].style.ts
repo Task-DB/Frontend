@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 import { LinePropsType } from "../interface";
 
-export const BoardProvider = styled.div`
+export const BoardWrapper = styled.div`
   padding: 1rem 3rem;
   background-color: ${theme.background};
   color: ${theme.white};
@@ -11,12 +11,12 @@ export const BoardProvider = styled.div`
   }
 `;
 
-export const BoardTitleProvider = styled.div`
+export const BoardTitleWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const BoardStatusProvider = styled.div`
+export const BoardStatusWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -51,14 +51,14 @@ export const BoardViews = styled.div`
   }
 `;
 
-export const BoardContentProvider = styled.div`
+export const BoardContentWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
   align-items: center;
   margin-top: 2rem;
+  justify-content: space-evenly;
 `;
 
-export const BoardLikesProvider = styled.div`
+export const BoardLikesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,6 +69,10 @@ export const BoardLikes = styled.span`
   margin: 0.5rem auto;
 `;
 
+export const CertificateWrapper = styled.span`
+  margin-top: 1rem;
+`;
+
 export const BoardComments = styled.div`
   margin: 1rem;
   span {
@@ -76,7 +80,7 @@ export const BoardComments = styled.div`
     color: ${theme.gray["300"]};
   }
 `;
-export const BoardCommentsProvider = styled.div`
+export const BoardCommentsWrapper = styled.div`
   width: 70%;
   margin-top: 5rem;
   margin-bottom: 1rem;
@@ -101,6 +105,6 @@ export const BoardReply = styled.span`
   font-size: 28px;
 `;
 
-export const BoardReplyProvider = styled.div`
+export const BoardReplyWrapper = styled.div`
   margin-top: 5rem;
 `;

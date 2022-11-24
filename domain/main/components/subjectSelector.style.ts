@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const SelectorProvider = styled.div`
+export const SelectorWrapper = styled.div`
   display: inline;
   border: 1px solid ${theme.white};
   border-radius: 10px;

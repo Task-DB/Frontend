@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import {
   CertificateButton,
-  CertificateButtonProvider,
+  CertificateButtonWrapper,
   SignupForm,
   SignupButton,
   SignupInput,
@@ -11,7 +11,7 @@ import {
   SignupMainText,
   SignupTopBar,
   SignupFormElement,
-  SignupButtonProvider,
+  SignupButtonWrapper,
 } from "../../signup/components/index.style";
 import { NextRouter, useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -38,7 +38,7 @@ const Signup: NextPage = () => {
       <SignupTopBar />
 
       <SignupFormElement>
-        <CertificateButtonProvider>
+        <CertificateButtonWrapper>
           <SignupLabel htmlFor="username">
             Email
             <RedStar>*</RedStar>
@@ -61,7 +61,7 @@ const Signup: NextPage = () => {
           >
             {status}
           </CertificateButton>
-        </CertificateButtonProvider>
+        </CertificateButtonWrapper>
       </SignupFormElement>
 
       {status === "전송 완료!" ? (
@@ -108,9 +108,9 @@ const Signup: NextPage = () => {
           {...register("nickname")}
         />
       </SignupFormElement>
-      <SignupButtonProvider>
+      <SignupButtonWrapper>
         <SignupButton>회원가입</SignupButton>
-      </SignupButtonProvider>
+      </SignupButtonWrapper>
     </SignupForm>
   );
 };

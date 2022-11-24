@@ -2,15 +2,17 @@ import styled from "styled-components";
 import {
   UserButton,
   UserContent,
-  UserProvider,
+  UserWrapper,
   UserTitle,
-  UserTopProvider,
+  UserTopWrapper,
 } from "./index.style";
 
-export const InfoProvider = styled(UserProvider)``;
-export const InfoTopProvider = styled(UserTopProvider)``;
-export const InfoUserContent = styled(UserContent)`div {
-  margin-bottom: 5px;
-}`;
+export const InfoWrapper = styled(UserWrapper)``;
+export const InfoTopWrapper = styled(UserTopWrapper)``;
+export const InfoUserContent = styled(UserContent)`
+  div {
+    margin-bottom: 5px;
+  }
+`;
 export const InfoTitle = styled(UserTitle)``;
 export const InfoButton = styled(UserButton)``;

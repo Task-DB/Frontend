@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 html {
   font-family: 'Pretendard-Regular';
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 125%;
   min-width: 320px;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;

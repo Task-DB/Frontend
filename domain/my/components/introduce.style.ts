@@ -3,13 +3,13 @@ import { theme } from "../../../styles/theme";
 import {
   UserButton,
   UserContent,
-  UserProvider,
+  UserWrapper,
   UserTitle,
-  UserTopProvider,
+  UserTopWrapper,
 } from "./index.style";
 
-export const IntroduceProvider = styled(UserProvider)``;
-export const IntroduceTopProvider = styled(UserTopProvider)``;
+export const IntroduceWrapper = styled(UserWrapper)``;
+export const IntroduceTopWrapper = styled(UserTopWrapper)``;
 export const IntroduceUserContent = styled(UserContent)``;
 export const IntroduceTitle = styled(UserTitle)``;
 export const IntroduceButton = styled(UserButton)`
@@ -27,7 +27,7 @@ export const IntroduceInput = styled.textarea`
   height: 5rem;
 `;
 
-export const IntroduceEditProvider = styled.div`
+export const IntroduceEditWrapper = styled.div`
   display: flex;
   align-items: flex-end;
 `;

@@ -5,7 +5,7 @@ import {
   UserInfoId,
   UserInfoLi,
   UserInfoProfilePicture,
-  UserInfoProvider,
+  UserInfoWrapper,
   UserInfoUl,
   UserProfileMenu,
   UserProfileUlMenu,
@@ -17,7 +17,7 @@ const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
   const { activeList } = useStore();
 
   return (
-    <UserInfoProvider>
+    <UserInfoWrapper>
       <UserProfileMenu>
         <UserInfoId>J1min</UserInfoId>
         <UserInfoProfilePicture src={ProfilePicture} width={65} height={65} />
@@ -40,7 +40,7 @@ const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
           })}
         </UserInfoUl>
       </UserProfileUlMenu>
-    </UserInfoProvider>
+    </UserInfoWrapper>
   );
 };
 

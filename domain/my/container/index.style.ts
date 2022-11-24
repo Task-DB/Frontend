@@ -6,7 +6,7 @@ export const UserInfoContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const UserRightProvider = styled.div`
+export const UserRightWrapper = styled.div`
   width: calc(100% - 13rem);
   display: flex;
   flex-direction: column;

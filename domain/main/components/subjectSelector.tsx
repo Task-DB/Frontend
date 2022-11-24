@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { SelectorElement, SelectorProvider } from "./subjectSelector.style";
+import { SelectorElement, SelectorWrapper } from "./subjectSelector.style";
 
 const SubjectSelector: NextPage = () => {
   return (
@@ -8,12 +8,12 @@ const SubjectSelector: NextPage = () => {
       id={"SubjectSelector"}
       style={{ marginTop: "2rem", marginLeft: "1rem" }}
     >
-      <SelectorProvider>
+      <SelectorWrapper>
         <SelectorElement>자바</SelectorElement>
         <SelectorElement>자바</SelectorElement>
         <SelectorElement>자​바</SelectorElement>
         <SelectorElement>자바</SelectorElement>
-      </SelectorProvider>
+      </SelectorWrapper>
     </section>
   );
 };

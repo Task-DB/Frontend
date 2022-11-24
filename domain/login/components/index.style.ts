@@ -39,7 +39,7 @@ export const LoginLabel = styled.label`
   background-color: blue;
 `;
 
-export const LoginButtonProvider = styled.div`
+export const LoginButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -70,7 +70,7 @@ export const LoginBottom = styled.span`
   }
 `;
 
-export const LoginBottomProvider = styled.div`
+export const LoginBottomWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
