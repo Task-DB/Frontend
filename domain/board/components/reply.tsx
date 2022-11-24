@@ -16,7 +16,7 @@ const Reply: NextPage = () => {
   return (
     <section id={"reply"}>
       <ReplyWrapper>
-        <ReplyCount>5 답글</ReplyCount>
+        <ReplyCount>5 답변</ReplyCount>
 
         {new Array(5).fill(null).map((data, idx) => {
           return (
