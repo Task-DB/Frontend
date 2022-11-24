@@ -13,7 +13,7 @@ import type { NextPage } from "next";
 
 const ${camelFilename}: NextPage = () => {
   return (
-    <>${filename}</>
+    <section id={'${filename}'}>${filename}</section>
   )
 };
 export default ${camelFilename};

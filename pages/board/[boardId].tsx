@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { NextRouter, useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { dynamicRouteType } from "../../domain/board/interface";
-import IndividualBoard from "../../domain/board/components/[boardId]"
+import IndividualBoard from "../../domain/board/container/";
 
 const BoardId: NextPage = () => {
   const router: NextRouter = useRouter();
