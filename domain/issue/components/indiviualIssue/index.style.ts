@@ -11,7 +11,7 @@ export const IssueContainer = styled.div`
   box-sizing: border-box;
 `;
 
-export const IssueTopContainer = styled.div`
+export const IssueTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,7 @@ export const IssueBottomCommentsContainer = styled.div`
 
 export const IssueStatus = styled.div``;
 
-export const IssueTitle = styled.h3`
+export const IssueTitleText = styled.h3`
   margin: 0;
   font-size: 22px;
 `;

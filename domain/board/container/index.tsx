@@ -1,11 +1,26 @@
 import React from "react";
 import type { NextPage } from "next";
+import Reply from "../components/reply";
+import Comments from "../components/comments";
+import Status from "../components/status";
+import Title from "../components/title";
+import { dynamicRouteType } from "../interface";
+import Content from "../components/content";
+import { BoardWrapper } from "./index.style";
 
-const BoardContainer: NextPage = () => {
+const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
+  boardId,
+}) => {
   return (
-    <section>
-      
+    <section id={`board`}>
+      <BoardWrapper>
+        <Title boardId={boardId} />
+        <Status />
+        <Content />
+        <Comments />
+        <Reply />
+      </BoardWrapper>
     </section>
-  )
+  );
 };
 export default BoardContainer;
