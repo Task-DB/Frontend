@@ -9,7 +9,7 @@ const MyPage: NextPage = () => {
       <Head>
         <title>MyPage</title>
       </Head>
-      <section id={`MyPage`}><MyContainer /></section>
+      <section id={`my-page`}><MyContainer /></section>
     </>
   )
 };

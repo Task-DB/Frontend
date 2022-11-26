@@ -9,7 +9,7 @@ const Login: NextPage = () => {
       <Head>
         <title>Login</title>
       </Head>
-      <section id={`Login`}>
+      <section id={`login`}>
         <LoginContainer />
       </section>
     </>
