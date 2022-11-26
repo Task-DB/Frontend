@@ -12,6 +12,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -20,6 +21,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -28,6 +30,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -36,6 +39,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -44,6 +48,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -52,6 +57,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -60,6 +66,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -68,6 +75,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -76,6 +84,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
     {
       grade: 1,
@@ -84,6 +93,7 @@ const RankContainer: NextPage = () => {
         "https://avatars.githubusercontent.com/u/80014454?s=400&u=697229e95f7d992ec544f660b009decf907ac4d6&v=4",
       bio: "어어어어어어어어어어어어어어어어어어어어어어어어어",
       score: 100,
+      replyCount: 10,
     },
   ]);
 
