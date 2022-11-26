@@ -17,7 +17,20 @@ import Link from "next/link";
 
 const Header: NextPage = () => {
   const [keyword, setKeyWord] = React.useState<string>("");
-
+  const [content, setContent] = React.useState([
+    {
+      text: "학년별",
+      link: "/grade",
+    },
+    {
+      text: "좋아요순",
+      link: "/like",
+    },
+    {
+      text: "랭킹",
+      link: "/rank",
+    },
+  ]);
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
@@ -29,9 +42,7 @@ const Header: NextPage = () => {
 
         <SearchInputWrapper>
           <SearchInput
-            onChange={(
-              event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-            ) => {
+            onChange={(event) => {
               onChangeAction(event, setKeyWord);
             }}
           />
@@ -46,11 +57,11 @@ const Header: NextPage = () => {
         </SearchInputWrapper>
 
         <HeaderUl>
-          {["학년별", "좋아요순", "랭킹"].map((data, idx) => {
+          {content.map((data, idx) => {
             return (
-              <Link key={idx} href="/">
+              <Link key={idx} href={data.link}>
                 <a>
-                  <HeaderLi>{data}</HeaderLi>
+                  <HeaderLi>{data.text}</HeaderLi>
                 </a>
               </Link>
             );

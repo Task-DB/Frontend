@@ -5,7 +5,6 @@ import { SubjectListType } from "../interface";
 import { handleSubjectClick } from "../util";
 
 const SubjectSelector: NextPage = () => {
-  
   const [subjectList, setSubjectList] = React.useState<SubjectListType[]>([
     {
       subjectName: "Java",
@@ -26,7 +25,7 @@ const SubjectSelector: NextPage = () => {
   ]);
 
   return (
-    <section id={"SubjectSelector"} style={{ marginTop: "2rem" }}>
+    <section id={"subject-selector"} style={{ marginTop: "2rem" }}>
       <SelectorWrapper>
         {subjectList.map((data, idx) => {
           return (
