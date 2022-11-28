@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { RankWrapper } from "./index.style";
+import { RankHeadElement, RankWrapper } from "./index.style";
 import RankElement from "../components/rankElement";
 
 const RankContainer: NextPage = () => {
@@ -97,8 +97,19 @@ const RankContainer: NextPage = () => {
     },
   ]);
 
+  const [headData, setHeadData] = React.useState([
+    "순위",
+    "프로필",
+    "답변",
+    "점수",
+  ]);
+
   return (
     <RankWrapper>
+      {headData.map((data, idx) => {
+        return <RankHeadElement key={idx}>{data}</RankHeadElement>;
+      })}
+
       {rankData.map((data, idx) => {
         return <RankElement key={idx} userData={data} />;
       })}
