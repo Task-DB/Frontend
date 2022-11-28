@@ -8,6 +8,7 @@ export const BoardComments = styled.div`
     color: ${theme.gray["300"]};
   }
 `;
+
 export const BoardCommentsWrapper = styled.div`
   width: 70%;
   margin: 5rem auto;
