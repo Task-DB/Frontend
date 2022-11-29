@@ -7,7 +7,7 @@ import { Pencil } from "../assets";
 const WriteButton: NextPage = () => {
   return (
     <WriteButtonWrapper>
-      <Image src={Pencil} alt="글쓰기" />
+      <Image src={Pencil} alt="글쓰기" width={24} height={20} />
     </WriteButtonWrapper>
   );
 };

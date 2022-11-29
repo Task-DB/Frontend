@@ -3,24 +3,25 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 export const Form = styled.form`
-  width: 520px;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 export const LoginForm = styled(Form)`
-  width: 520px;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
 `;
 
-export const FormElement = styled.div`
+export const FormElement = styled.span`
   position: relative;
 `;
 
 export const LoginInput = styled.input.attrs({
   autoComplete: "on",
 })`
+  width: 250px;
   display: block;
   padding: 0.8rem;
   border-radius: 0.5rem;
@@ -34,7 +35,7 @@ export const LoginLabel = styled.label`
   color: ${theme.black};
   position: absolute;
   top: -15px;
-  left: 120px;
+  left: 70px;
   display: block;
   background-color: blue;
 `;

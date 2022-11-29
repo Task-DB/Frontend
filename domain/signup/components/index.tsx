@@ -38,30 +38,29 @@ const Signup: NextPage = () => {
       <SignupTopBar />
 
       <SignupFormElement>
-        <CertificateButtonWrapper>
-          <SignupLabel htmlFor="username">
-            Email
-            <RedStar>*</RedStar>
-          </SignupLabel>
-          <SignupInput
-            type="email"
-            placeholder="@bssm.hs.kr"
-            id="username"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
+        <SignupLabel htmlFor="username">
+          Email
+          <RedStar>*</RedStar>
+        </SignupLabel>
 
-          <CertificateButton
-            type="button"
-            onClick={() => {
-              setStatus("전송중..");
-              handleCertificate(email, setStatus);
-            }}
-          >
-            {status}
-          </CertificateButton>
-        </CertificateButtonWrapper>
+        <SignupInput
+          type="email"
+          placeholder="@bssm.hs.kr"
+          id="username"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+
+        <CertificateButton
+          type="button"
+          onClick={() => {
+            setStatus("전송중..");
+            handleCertificate(email, setStatus);
+          }}
+        >
+          {status}
+        </CertificateButton>
       </SignupFormElement>
 
       {status === "전송 완료!" ? (
