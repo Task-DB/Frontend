@@ -5,9 +5,9 @@ import { Logo, SearchButtonImage } from "../assets";
 import {
   HeaderContainer,
   HeaderLeftContainer,
+  HeaderUl,
   HeaderLi,
   HeaderLogin,
-  HeaderUl,
   SearchButton,
   SearchInput,
   SearchInputWrapper,
@@ -18,16 +18,6 @@ import Link from "next/link";
 const Header: NextPage = () => {
   const [keyword, setKeyWord] = React.useState<string>("");
   const [content, setContent] = React.useState([
-    {
-      text: "학년별",
-      link: "/grade",
-      isActive: false,
-    },
-    {
-      text: "좋아요순",
-      link: "/like",
-      isActive: false,
-    },
     {
       text: "랭킹",
       link: "/rank",
