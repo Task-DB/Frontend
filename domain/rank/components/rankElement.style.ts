@@ -40,5 +40,5 @@ export const UserScore = styled.h2``;
 export const UserElement = styled.td`
   text-align: center;
   display: table-cell;
-  border-bottom: 1px solid rgb(221, 223, 224);
+  border-bottom: 1px solid ${theme.white};
 `;

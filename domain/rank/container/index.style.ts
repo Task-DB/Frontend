@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../styles/theme";
 
 export const RankWrapper = styled.table`
   width: 100%;
@@ -8,5 +9,5 @@ export const RankWrapper = styled.table`
 export const RankHeadElement = styled.th`
   font-size: 1.5rem;
   padding: 1rem;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid ${theme.white};
 `;
