@@ -58,13 +58,13 @@ export const SearchButton = styled.button`
 export const HeaderUl = styled.ul`
   display: flex;
   color: ${theme.white};
-  width: 10rem;
   margin: 0;
   justify-content: space-around;
 `;
 
 export const HeaderLi = styled.li`
   list-style: none;
+  margin-right: 1rem;
 `;
 
 export const HeaderLogin = styled.div`

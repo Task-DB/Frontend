@@ -21,14 +21,17 @@ const Header: NextPage = () => {
     {
       text: "학년별",
       link: "/grade",
+      isActive: false,
     },
     {
       text: "좋아요순",
       link: "/like",
+      isActive: false,
     },
     {
       text: "랭킹",
       link: "/rank",
+      isActive: false,
     },
   ]);
   return (
