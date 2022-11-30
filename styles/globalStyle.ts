@@ -48,6 +48,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   background-color: transparent;
+  color: white;
 }
 
 abbr[title] {

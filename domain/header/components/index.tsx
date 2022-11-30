@@ -70,18 +70,18 @@ const Header: NextPage = () => {
         </HeaderUl>
       </HeaderLeftContainer>
       {isLogin ? (
-        <>
+        <HeaderLogin>
           <Link href="/my">
             <a>
-              <HeaderLogin>내정보</HeaderLogin>
+              <HeaderLi>내정보</HeaderLi>
             </a>
           </Link>
           <Link href="/logout">
             <a>
-              <HeaderLogin>로그아웃</HeaderLogin>
+              <HeaderLi>로그아웃</HeaderLi>
             </a>
           </Link>
-        </>
+        </HeaderLogin>
       ) : (
         <Link href="/login">
           <a>
