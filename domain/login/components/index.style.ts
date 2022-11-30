@@ -21,7 +21,7 @@ export const FormElement = styled.span`
 export const LoginInput = styled.input.attrs({
   autoComplete: "on",
 })`
-  width: 250px;
+  width: 350px;
   display: block;
   padding: 0.8rem;
   border-radius: 0.5rem;
@@ -35,7 +35,7 @@ export const LoginLabel = styled.label`
   color: ${theme.black};
   position: absolute;
   top: -15px;
-  left: 70px;
+  left: 20px;
   display: block;
   background-color: blue;
 `;

@@ -1,10 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import instance from "../../../lib/instance";
 import { CertificateRequestType, SignupRequestType } from "../interface";
 
 export const postSignup = async (signupData: SignupRequestType) => {
   try {
-    const { data } = await instance.post(`/signup`, signupData);
+    const { data } = await instance.post(`/user/join`, signupData);
     return data;
   } catch (error) {
     throw error;
@@ -29,9 +30,15 @@ export const handleSignup = (email: string, data: SignupRequestType) => {
     nickname: data.nickname,
     password: data.password,
   };
-  postSignup(signupData).then((response) => {
-    console.log(response);
-  });
+  postSignup(signupData)
+    .then((response) => {
+      console.log(response);
+      alert("가입이 완료되었습니다");
+      location.href = "/";
+    })
+    .catch((error) => {
+      alert(error.response.data.errorMessage);
+    });
 };
 
 export const handleCertificate = (

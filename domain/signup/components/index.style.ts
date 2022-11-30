@@ -15,7 +15,7 @@ export const CertificateButton = styled.button`
   background-color: ${theme.black};
   color: ${theme.white};
   position: absolute;
-  right: 70px;
+  right: 20px;
   top: 10px;
   padding: 0.3rem;
   border: 0;
@@ -24,18 +24,13 @@ export const CertificateButton = styled.button`
   transition: 0.3s;
 `;
 
-export const CertificateButtonWrapper = styled.div`
-  position: relative;
-`;
-
 export const SignupForm = styled(Form)``;
-export const SignupFormElement = styled(FormElement)`
-  width: 450px;
-`;
+export const SignupFormElement = styled(FormElement)``;
 export const SignupButton = styled(LoginButton)``;
-export const SignupInput = styled(LoginInput)`
+export const SignupInput = styled(LoginInput)``;
+export const SignupLabel = styled(LoginLabel)`
+  left: 30px;
 `;
-export const SignupLabel = styled(LoginLabel)``;
 export const SignupMainText = styled(MainText)``;
 export const SignupTopBar = styled(TopBar)``;
 export const SignupButtonWrapper = styled(LoginButtonWrapper)``;

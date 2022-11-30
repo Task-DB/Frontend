@@ -2,7 +2,6 @@ import React from "react";
 import type { NextPage } from "next";
 import {
   CertificateButton,
-  CertificateButtonWrapper,
   SignupForm,
   SignupButton,
   SignupInput,
@@ -29,7 +28,7 @@ const Signup: NextPage = () => {
   return (
     <SignupForm
       onSubmit={handleSubmit((data) => {
-        handleSignup(email, data);
+        handleSignup(email, data)
       })}
     >
       <Link href="/">
