@@ -5,6 +5,7 @@ import {
   ContentText,
   ContentWrapper,
   Line,
+  ReplyContentWrapper,
   ReplyCount,
   ReplyWrapper,
 } from "./reply.style";
@@ -20,8 +21,8 @@ const Reply: NextPage = () => {
 
         {new Array(5).fill(null).map((data, idx) => {
           return (
-            <>
-              <ContentWrapper key={idx}>
+            <ReplyContentWrapper key={idx}>
+              <ContentWrapper>
                 <BoardLikes isReply={true} likes={idx} />
                 <Content>
                   <Author nickname="남세원" profilePicture={ProfilePicture} />
@@ -31,7 +32,7 @@ const Reply: NextPage = () => {
                 </Content>
               </ContentWrapper>
               <Line width={`100`} />
-            </>
+            </ReplyContentWrapper>
           );
         })}
       </ReplyWrapper>

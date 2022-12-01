@@ -3,8 +3,6 @@ import type { NextPage } from "next";
 import Login from "../components";
 
 const LoginContainer: NextPage = () => {
-  return (
-    <Login/>
-  )
+  return <Login />;
 };
 export default LoginContainer;

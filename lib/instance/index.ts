@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance } from "axios";
 
 const instance: AxiosInstance = axios.create({
   baseURL: "http://192.168.10.103:8092",
-  timeout: 10000,
+  timeout: 3000,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -11,7 +11,7 @@ instance.interceptors.request.use(
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
       response.headers = {
-        "ACCESS-TOKEN": accessToken,
+        "ACCESS_TOKEN": accessToken,
       };
     }
     return response;

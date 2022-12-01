@@ -7,10 +7,19 @@ import Title from "../components/title";
 import { dynamicRouteType } from "../interface";
 import Content from "../components/content";
 import { BoardWrapper } from "./index.style";
+import { getBoardData } from "../api";
 
 const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   boardId,
 }) => {
+  React.useEffect(() => {
+    if (boardId) {
+      getBoardData(boardId).then((response) => {
+        console.log(response);
+      });
+    }
+  }, [boardId]);
+
   return (
     <section id={`board`}>
       <BoardWrapper>
