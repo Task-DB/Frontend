@@ -19,9 +19,17 @@ export interface DynamicEditorType {
 export interface EditorFormValue {
   title: string;
   content: string;
+  category: string;
 }
 
 export interface EditorContentType {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
 }
+
+export type CategoryType =
+  | "JAVA"
+  | "DB"
+  | "C_DOUBLE_PLUS"
+  | "CERTIFICATE"
+  | "OTHERS";

@@ -1,5 +1,5 @@
 import instance from "../../../lib/instance";
-import { ImagePostResponseType } from "../interface";
+import { EditorFormValue, ImagePostResponseType } from "../interface";
 
 export const postEditorImage = async (
   file: File
@@ -11,5 +11,14 @@ export const postEditorImage = async (
     return data;
   } catch (err) {
     throw err;
+  }
+};
+
+export const postBoard = async (boardData: EditorFormValue) => {
+  try {
+    const { data } = await instance.post("/question/new", boardData);
+    return data;
+  } catch (error) {
+    throw error;
   }
 };

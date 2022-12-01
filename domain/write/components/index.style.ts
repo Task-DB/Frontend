@@ -2,22 +2,6 @@ import styled from "styled-components";
 import Image from "next/image";
 import { theme } from "../../../styles/theme";
 
-export const ThumbnailLabel = styled.label`
-  text-align: center;
-  padding: 0.3rem;
-  box-sizing: border-box;
-  margin: 1rem auto;
-  background-color: ${theme.main};
-  color: ${theme.black};
-  font-size: 0.8rem;
-  border-radius: 0.5rem;
-`;
-
-export const ThumbnailLabelWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 export const TitleInput = styled.input`
   display: block;
   width: 70%;
@@ -51,26 +35,4 @@ export const CompleteButton = styled.button`
   &:hover {
     background-color: ${theme.lightMain};
   }
-`;
-
-export const PostImageWrapper = styled.div`
-  width: 70%;
-  padding: 1rem;
-  margin: 1rem auto;
-  border: 1px solid ${theme.main};
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-`;
-
-export const PostImage = styled.div`
-  span {
-    position: unset !important;
-  }
-`;
-
-export const PostImageElement = styled(Image)`
-  object-fit: scale-down;
-  width: unset !important;
-  position: relative !important;
-  height: 30% !important;
 `;
