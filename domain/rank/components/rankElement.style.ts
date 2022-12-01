@@ -16,6 +16,7 @@ export const UserReplyCount = styled.h2`
 
 export const UserGrade = styled.h1`
   margin: 0;
+  text-align: center;
 `;
 
 export const UserBio = styled.p`
@@ -29,7 +30,7 @@ export const UserBio = styled.p`
 export const UserProfile = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   span {
     border-radius: 50%;
   }

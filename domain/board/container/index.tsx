@@ -12,11 +12,15 @@ import { getBoardData } from "../api";
 const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   boardId,
 }) => {
+  const [boardStatus, setBoardStatus] = React.useState<"OPEN" | "CLOSE">(
+    "OPEN"
+  );
+
   React.useEffect(() => {
     if (boardId) {
       getBoardData(boardId)
         .then((response) => {
-          console.log(response);
+          setBoardStatus(response.title);
         })
         .catch((error) => {
           console.log(error);
