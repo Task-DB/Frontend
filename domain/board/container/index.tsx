@@ -14,11 +14,13 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
 }) => {
   React.useEffect(() => {
     if (boardId) {
-      getBoardData(boardId).then((response) => {
-        console.log(response);
-      }).catch((error)=> {
-        console.log(error)
-      })
+      getBoardData(boardId)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }, [boardId]);
 
@@ -29,7 +31,7 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
         <Status />
         <Content />
         <Comments />
-        <Reply />
+        <Reply boardId={boardId} />
       </BoardWrapper>
     </section>
   );

@@ -1,11 +1,13 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { DynamicEditorType, EditorContentType } from "../../write/interface";
+import { DynamicEditorType } from "../../write/interface";
 import { postEditorImage } from "../../write/api";
-import { ReplyFormWrapper } from "./replyForm.style";
+import { ReplyFormButton, ReplyFormWrapper } from "./replyForm.style";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 import "react-quill/dist/quill.snow.css";
+import { handleReply, postReply } from "../api";
+import { ReplyEditorContentType } from "../interface";
 
 const { NEXT_PUBLIC_AWS_BUCKET_NAME } = process.env;
 
@@ -40,7 +42,11 @@ const formats = [
   "image",
 ];
 
-const ReplyForm = ({ content, setContent }: EditorContentType) => {
+const ReplyForm = ({
+  content,
+  setContent,
+  boardId,
+}: ReplyEditorContentType) => {
   const quillRef = React.useRef();
   const insertImage = (photo_id: string) => {
     const IMG_URL = photo_id;
@@ -125,6 +131,13 @@ const ReplyForm = ({ content, setContent }: EditorContentType) => {
           marginTop: "2rem",
         }}
       />
+      <ReplyFormButton
+        onClick={() => {
+          handleReply(boardId, { content: content });
+        }}
+      >
+        작성하기
+      </ReplyFormButton>
     </ReplyFormWrapper>
   );
 };
