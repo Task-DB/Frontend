@@ -1,9 +1,10 @@
 import instance from "../../../lib/instance";
+import { RankDataType } from "../interface";
 
-export const getRankData = async (): Promise<unknown[]> => {
+export const getRankData = async (): Promise<RankDataType[]> => {
   try {
     const { data } = await instance.get(`/user/rank`);
-    const rankData: unknown[] = [...Object.values(data.data)];
+    const rankData: RankDataType[] = data.data;
     return rankData;
   } catch (error) {
     throw error;

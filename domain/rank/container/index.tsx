@@ -3,9 +3,10 @@ import type { NextPage } from "next";
 import { RankHeadElement, RankWrapper } from "./index.style";
 import RankElement from "../components/rankElement";
 import { getRankData } from "../api";
+import { RankDataType } from "../interface";
 
 const RankContainer: NextPage = () => {
-  const [rankData, setRankData] = React.useState<unknown[]>([]);
+  const [rankData, setRankData] = React.useState<RankDataType[]>([]);
   const [headData, setHeadData] = React.useState<string[]>([
     "순위",
     "프로필",

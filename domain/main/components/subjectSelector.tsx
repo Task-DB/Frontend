@@ -9,18 +9,22 @@ const SubjectSelector: NextPage = () => {
     {
       subjectName: "Java",
       isSelect: false,
+      param: "/categories?c=JAVA",
     },
     {
       subjectName: "C++",
       isSelect: false,
+      param: "/categories?c=JAVA",
     },
     {
       subjectName: "DB",
       isSelect: false,
+      param: "/categories?c=JAVA",
     },
     {
       subjectName: "정처기",
       isSelect: false,
+      param: "/categories?c=JAVA",
     },
   ]);
 
