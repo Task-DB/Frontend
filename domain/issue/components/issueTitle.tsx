@@ -3,21 +3,37 @@ import type { NextPage } from "next";
 import {
   IssueStatus,
   IssueSubjectText,
+  IssueTitleLeftWrapper,
   IssueTitleText,
   IssueTitleWrapper,
 } from "./issueTitle.style";
 import Image from "next/image";
-import { OpenIssue } from "../assets";
+import { ClosedIssue, OpenIssue } from "../assets";
+import { IndividualIssueType } from "../interface";
+import Link from "next/link";
 
-const IssueTitle: NextPage = () => {
+const IssueTitle: NextPage<{ issueData: IndividualIssueType }> = ({
+  issueData,
+}) => {
   return (
     <section id={"issueTitle"}>
       <IssueTitleWrapper>
-        <IssueStatus>
-          <Image src={OpenIssue} alt="열린 이슈" width={36} height={36} />
-        </IssueStatus>
-        <IssueTitleText>몬스터즈 알려주실분</IssueTitleText>
-        <IssueSubjectText>C++</IssueSubjectText>
+        <IssueTitleLeftWrapper>
+          <IssueStatus>
+            <Image
+              src={issueData.status === "OPEN" ? OpenIssue : ClosedIssue}
+              alt="열린 이슈"
+              width={36}
+              height={36}
+            />
+          </IssueStatus>
+          <IssueTitleText>
+            <Link href={`/board/${issueData.id}`}>
+              <a>{issueData.title}</a>
+            </Link>
+          </IssueTitleText>
+        </IssueTitleLeftWrapper>
+        <IssueSubjectText>{issueData.category}</IssueSubjectText>
       </IssueTitleWrapper>
     </section>
   );

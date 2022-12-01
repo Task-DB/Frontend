@@ -9,8 +9,16 @@ export const IssueTitleWrapper = styled.div`
 export const IssueStatus = styled.div``;
 
 export const IssueTitleText = styled.h3`
-  margin: 0;
-  font-size: 22px;
+  margin: 0 0 0 0.5rem;
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const IssueTitleLeftWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const IssueSubjectText = styled.span`

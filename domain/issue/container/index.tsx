@@ -3,22 +3,22 @@ import type { NextPage } from "next";
 import { IssueWrapper } from "./index.style";
 import IndividualIssue from "../components/indiviualIssue";
 import { getAllIssueData } from "../api";
+import { IndividualIssueType } from "../interface";
 const IssueContainer: NextPage = () => {
+  const [allIssueData, setAllIssueData] =
+    React.useState<IndividualIssueType[]>();
+
   React.useEffect(() => {
     getAllIssueData().then((response) => {
-      console.log(response);
+      setAllIssueData(response);
     });
   }, []);
+
   return (
     <IssueWrapper>
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
-      <IndividualIssue />
+      {allIssueData?.map((data, idx) => {
+        return <IndividualIssue key={idx} issueData={data} />;
+      })}
     </IssueWrapper>
   );
 };

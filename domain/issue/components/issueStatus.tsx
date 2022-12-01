@@ -10,22 +10,26 @@ import {
   IssueStatusBottomWrapper,
   IssueStatusWrapper,
 } from "./issueStatus.style";
+import { IndividualIssueType } from "../interface";
+import { getRelativeDate } from "../../../util";
 
-const IssueStatus: NextPage = () => {
+const IssueStatus: NextPage<{ issueData: IndividualIssueType }> = ({
+  issueData,
+}) => {
   return (
     <section id={"issueStatus"}>
       <IssueStatusWrapper>
         <IssueStatusBottomWrapper>
-          <IssueNumber>#44</IssueNumber>
+          <IssueNumber>#{issueData.id}</IssueNumber>
           <IssueComments>
             <Image src={Comments} alt="댓글수" width={21} height={21} />
-            <span>3</span>
+            <span>{issueData.commentCount}</span>
           </IssueComments>
           <IssueLikes>
-            ❤<span>3</span>
+            ❤<span>{issueData.likeCount}</span>
           </IssueLikes>
         </IssueStatusBottomWrapper>
-        <IssueCreatedAt>어제</IssueCreatedAt>
+        <IssueCreatedAt>{getRelativeDate(issueData.createdDate)}</IssueCreatedAt>
       </IssueStatusWrapper>
     </section>
   );

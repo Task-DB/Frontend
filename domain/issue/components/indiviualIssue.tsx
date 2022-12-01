@@ -3,12 +3,15 @@ import type { NextPage } from "next";
 import { IssueContainer } from "./indiviualIssue.style";
 import IssueTitle from "./issueTitle";
 import IssueStatus from "./issueStatus";
+import { IndividualIssueType } from "../interface";
 
-const IndividualIssue: NextPage = () => {
+const IndividualIssue: NextPage<{ issueData: IndividualIssueType }> = ({
+  issueData,
+}) => {
   return (
     <IssueContainer>
-      <IssueTitle />
-      <IssueStatus />
+      <IssueTitle issueData={issueData} />
+      <IssueStatus issueData={issueData} />
     </IssueContainer>
   );
 };
