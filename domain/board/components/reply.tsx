@@ -12,13 +12,15 @@ import {
 import BoardLikes from "./boardLikes";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
+import ReplyForm from "./replyForm";
 
 const Reply: NextPage = () => {
+  const [content, setContent] = React.useState("");
   return (
     <section id={"reply"}>
       <ReplyWrapper>
         <ReplyCount>5 답변</ReplyCount>
-
+        <ReplyForm content={content} setContent={setContent} />
         {new Array(5).fill(null).map((data, idx) => {
           return (
             <ReplyContentWrapper key={idx}>
