@@ -17,6 +17,7 @@ import Link from "next/link";
 
 const Header: NextPage = () => {
   const [keyword, setKeyWord] = React.useState<string>("");
+  const [isLogin, setIsLogin] = React.useState<boolean>(false);
   const [content, setContent] = React.useState([
     {
       text: "랭킹",
@@ -24,6 +25,13 @@ const Header: NextPage = () => {
       isActive: false,
     },
   ]);
+
+  React.useEffect(() => {
+    if (localStorage.getItem("accessToken") != null) {
+      setIsLogin(true);
+    }
+  }, []);
+
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
@@ -61,11 +69,26 @@ const Header: NextPage = () => {
           })}
         </HeaderUl>
       </HeaderLeftContainer>
-      <Link href="/my">
-        <a>
-          <HeaderLogin>로그인</HeaderLogin>
-        </a>
-      </Link>
+      {isLogin ? (
+        <HeaderLogin>
+          <Link href="/my">
+            <a>
+              <HeaderLi>내정보</HeaderLi>
+            </a>
+          </Link>
+          <Link href="/logout">
+            <a>
+              <HeaderLi>로그아웃</HeaderLi>
+            </a>
+          </Link>
+        </HeaderLogin>
+      ) : (
+        <Link href="/login">
+          <a>
+            <HeaderLogin>로그인</HeaderLogin>
+          </a>
+        </Link>
+      )}
     </HeaderContainer>
   );
 };

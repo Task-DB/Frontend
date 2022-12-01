@@ -6,6 +6,8 @@ export const Content = styled.div`
   width: 75%;
 `;
 
+export const ReplyContentWrapper = styled.div``
+
 export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;

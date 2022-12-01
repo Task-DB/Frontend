@@ -47,14 +47,11 @@ export const handleCertificate = (
 ) => {
   const certificateData = { email: email };
   postCertificate(certificateData)
-    .then((response) => {
-      console.log(response);
-      console.log("엄");
+    .then((_) => {
       alert("전송이 완료되었습니다. 이메일을 확인해주세요.");
       setStatus("전송 완료!");
     })
-    .catch((error) => {
-      console.error(error);
+    .catch((_) => {
       setStatus("전송 실패");
     });
 };

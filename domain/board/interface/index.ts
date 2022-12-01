@@ -13,4 +13,14 @@ export interface LinePropsType {
 export interface AuthorPropsType {
   profilePicture: string | StaticImageData;
   nickname: string;
-} 
+}
+
+export interface CommentsDataType {
+  content: string;
+}
+
+export interface ReplyEditorContentType {
+  content: string;
+  setContent: React.Dispatch<React.SetStateAction<string>>;
+  boardId: dynamicRouteType;
+}

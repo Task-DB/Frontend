@@ -7,6 +7,7 @@ import Info from "../components/myBoard";
 import Board from "../components/saveBoard";
 import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
+import { getMyQuestionData, getMySavedQuestionData } from "../api";
 
 const MyContainer: NextPage = () => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
@@ -44,12 +45,16 @@ const MyContainer: NextPage = () => {
   const handleScroll = () => {
     setScrollTop(document.documentElement.scrollTop);
   };
+  const headerHeight = 60;
 
   React.useEffect(() => {
-    if (scrollTop + 60 < infoY) {
+    if (scrollTop + headerHeight < infoY) {
       const status = [true, false, false];
       setActiveList(status);
-    } else if (infoY < scrollTop + 60 && scrollTop + 60 < boardY) {
+    } else if (
+      infoY < scrollTop + headerHeight &&
+      scrollTop + headerHeight < boardY
+    ) {
       const status = [false, true, false];
       setActiveList(status);
     } else {
@@ -62,7 +67,13 @@ const MyContainer: NextPage = () => {
     window.addEventListener("scroll", () => {
       handleScroll();
     });
+
+    getMyQuestionData().then((response) => {
+      console.log(response);
+    });
   }, []);
+
+  const [myQuestionData, setMyQuestionData] = React.useState([]);
 
   return (
     <UserInfoContainer>

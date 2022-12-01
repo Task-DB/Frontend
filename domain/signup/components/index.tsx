@@ -28,7 +28,7 @@ const Signup: NextPage = () => {
   return (
     <SignupForm
       onSubmit={handleSubmit((data) => {
-        handleSignup(email, data)
+        handleSignup(email, data);
       })}
     >
       <Link href="/">

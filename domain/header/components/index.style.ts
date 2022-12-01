@@ -68,6 +68,6 @@ export const HeaderLi = styled.li`
 `;
 
 export const HeaderLogin = styled.div`
-  list-style: none;
   color: ${theme.white};
+  display: flex;
 `;

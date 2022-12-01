@@ -5,23 +5,31 @@ import {
   ContentText,
   ContentWrapper,
   Line,
+  ReplyContentWrapper,
   ReplyCount,
   ReplyWrapper,
 } from "./reply.style";
 import BoardLikes from "./boardLikes";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
+import ReplyForm from "./replyForm";
+import { dynamicRouteType } from "../interface";
 
-const Reply: NextPage = () => {
+const Reply: NextPage<{ boardId: dynamicRouteType }> = ({ boardId }) => {
+  const [content, setContent] = React.useState("");
   return (
     <section id={"reply"}>
       <ReplyWrapper>
         <ReplyCount>5 답변</ReplyCount>
-
-        {new Array(5).fill(null).map((data, idx) => {
+        <ReplyForm
+          boardId={boardId}
+          content={content}
+          setContent={setContent}
+        />
+        {new Array(1).fill(null).map((data, idx) => {
           return (
-            <>
-              <ContentWrapper key={idx}>
+            <ReplyContentWrapper key={idx}>
+              <ContentWrapper>
                 <BoardLikes isReply={true} likes={idx} />
                 <Content>
                   <Author nickname="남세원" profilePicture={ProfilePicture} />
@@ -31,7 +39,7 @@ const Reply: NextPage = () => {
                 </Content>
               </ContentWrapper>
               <Line width={`100`} />
-            </>
+            </ReplyContentWrapper>
           );
         })}
       </ReplyWrapper>
