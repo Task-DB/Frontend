@@ -4,15 +4,15 @@ import { IssueWrapper } from "./index.style";
 import IndividualIssue from "../components/indiviualIssue";
 import { getAllIssueData } from "../api";
 import { IndividualIssueType } from "../interface";
-const IssueContainer: NextPage = () => {
+const IssueContainer: NextPage<{ param?: string }> = ({ param }) => {
   const [allIssueData, setAllIssueData] =
     React.useState<IndividualIssueType[]>();
 
   React.useEffect(() => {
-    getAllIssueData().then((response) => {
+    getAllIssueData(param).then((response) => {
       setAllIssueData(response);
     });
-  }, []);
+  }, [param]);
 
   return (
     <IssueWrapper>

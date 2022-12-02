@@ -9,7 +9,7 @@ const MainContainer: NextPage = () => {
   return (
     <MainWrapper>
       <SubjectSelector />
-      <IssueContainer />
+      <IssueContainer  />
       <WriteButton />
     </MainWrapper>
   );
