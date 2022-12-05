@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { EditorFormValue } from "../interface";
 import { CompleteButton, TitleInput } from "../components/index.style";
 import type { NextPage } from "next";
-import { postBoard } from "../api";
+import { handleWrite, postBoard } from "../api";
 
 const WritePage: NextPage = () => {
   const router = useRouter();
@@ -23,15 +23,7 @@ const WritePage: NextPage = () => {
         onSubmit={handleSubmit((data) => {
           data["content"] = content;
           data["category"] = category;
-          console.log(data);
-          postBoard(data)
-            .then((_) => {
-              alert("작성에 성공했습니다.");
-            })
-            .catch((error) => {
-              console.log(error);
-              alert("작성에 실패하였습니다. \n 나중에 다시 시도해주세요.");
-            });
+          handleWrite(data);
         })}
       >
         <TitleInput

@@ -33,3 +33,9 @@ export type CategoryType =
   | "C_DOUBLE_PLUS"
   | "CERTIFICATE"
   | "OTHERS";
+
+export interface BoardPostType {
+  category: string;
+  content: string;
+  title: string;
+}

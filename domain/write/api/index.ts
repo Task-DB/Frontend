@@ -1,5 +1,5 @@
 import instance from "../../../lib/instance";
-import { EditorFormValue, ImagePostResponseType } from "../interface";
+import { BoardPostType, EditorFormValue, ImagePostResponseType } from "../interface";
 
 export const postEditorImage = async (
   file: File
@@ -21,4 +21,15 @@ export const postBoard = async (boardData: EditorFormValue) => {
   } catch (error) {
     throw error;
   }
+};
+
+export const handleWrite = async (data: BoardPostType) => {
+  postBoard(data)
+    .then((_) => {
+      alert("작성에 성공했습니다.");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("작성에 실패하였습니다. \n 나중에 다시 시도해주세요.");
+    });
 };

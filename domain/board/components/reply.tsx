@@ -13,9 +13,12 @@ import BoardLikes from "./boardLikes";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
 import ReplyForm from "./replyForm";
-import { dynamicRouteType } from "../interface";
+import { dynamicRouteType, IndividualBoardType } from "../interface";
 
-const Reply: NextPage<{ boardId: dynamicRouteType }> = ({ boardId }) => {
+const Reply: NextPage<{
+  boardId: dynamicRouteType;
+  boardData: IndividualBoardType;
+}> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");
   return (
     <section id={"reply"}>

@@ -1,9 +1,13 @@
 import instance from "../../../lib/instance";
-import { CommentsDataType, dynamicRouteType } from "../interface";
+import {
+  CommentsDataType,
+  dynamicRouteType,
+  IndividualBoardType,
+} from "../interface";
 
 export const getBoardData = async (
   boardId: dynamicRouteType
-): Promise<{ title: "OPEN" }> => {
+): Promise<IndividualBoardType> => {
   try {
     const { data } = await instance.get(`/question/${boardId}`);
     return data;

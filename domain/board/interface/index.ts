@@ -34,3 +34,16 @@ export interface BoardContentType {
   status: string;
   title: string;
 }
+
+export interface IndividualBoardType {
+  answers: [];
+  comments: [];
+  content: string;
+  createdDate: string;
+  likeCount: number;
+  modifiedDate: string;
+  nickname: string;
+  status: string;
+  title: string;
+  viewCount: number;
+}

@@ -4,7 +4,7 @@ import Reply from "../components/reply";
 import Comments from "../components/comments";
 import Status from "../components/status";
 import Title from "../components/title";
-import { dynamicRouteType } from "../interface";
+import { dynamicRouteType, IndividualBoardType } from "../interface";
 import Content from "../components/content";
 import { BoardWrapper } from "./index.style";
 import { getBoardData } from "../api";
@@ -12,15 +12,14 @@ import { getBoardData } from "../api";
 const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   boardId,
 }) => {
-  const [boardStatus, setBoardStatus] = React.useState<"OPEN" | "CLOSE">(
-    "OPEN"
-  );
+  const [boardData, setBoardData] = React.useState<IndividualBoardType>();
 
   React.useEffect(() => {
     if (boardId) {
       getBoardData(boardId)
         .then((response) => {
-          setBoardStatus(response.title);
+          setBoardData(response);
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -31,11 +30,11 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   return (
     <section id={`board`}>
       <BoardWrapper>
-        <Title boardId={boardId} />
-        <Status />
-        <Content />
-        <Comments />
-        <Reply boardId={boardId} />
+        <Title boardId={boardId} boardData={boardData!} />
+        <Status boardData={boardData!} />
+        <Content boardData={boardData!} />
+        <Comments boardData={boardData!} />
+        <Reply boardId={boardId} boardData={boardData!} />
       </BoardWrapper>
     </section>
   );

@@ -1,12 +1,20 @@
 import React from "react";
 import type { NextPage } from "next";
-import { BoardDate, BoardStatusWrapper, BoardViews, StatusWrapper } from "./status.style";
+import {
+  BoardDate,
+  BoardStatusWrapper,
+  BoardViews,
+  StatusWrapper,
+} from "./status.style";
 import Image from "next/image";
 import { OpenBadge } from "../assets";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
+import { IndividualBoardType } from "../interface";
 
-const Status: NextPage = () => {
+const Status: NextPage<{ boardData: IndividualBoardType }> = ({
+  boardData,
+}) => {
   return (
     <section id={"status"}>
       <BoardStatusWrapper>
