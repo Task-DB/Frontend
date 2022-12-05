@@ -13,13 +13,17 @@ import {
 import { UserInfoMenuType } from "../interface";
 import useStore from "../../../context/useStore";
 
-const UserInfo: NextPage<{ menus: UserInfoMenuType[] }> = ({ menus }) => {
+const UserInfo: NextPage<{
+  menus: UserInfoMenuType[];
+  userName?: string;
+  userProfile?: string;
+}> = ({ menus, userName, userProfile }) => {
   const { activeList } = useStore();
 
   return (
     <UserInfoWrapper>
       <UserProfileMenu>
-        <UserInfoId>J1min</UserInfoId>
+        <UserInfoId>{userName}</UserInfoId>
         <UserInfoProfilePicture src={ProfilePicture} width={65} height={65} />
       </UserProfileMenu>
 

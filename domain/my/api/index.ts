@@ -1,14 +1,14 @@
 import instance from "../../../lib/instance";
+import { MyType } from "../interface";
 
-export const getMyQuestionData = async () => {
+export const getMyQuestionData = async (): Promise<MyType> => {
   try {
-    const { data } = await instance.get("/user/questions");
+    const { data } = await instance.get("/user");
     return data;
   } catch (error) {
     throw error;
   }
 };
-
 
 export const getMySavedQuestionData = async () => {
   try {
@@ -19,7 +19,6 @@ export const getMySavedQuestionData = async () => {
   }
 };
 
-
 export const getMyIntroduceData = async () => {
   try {
     const { data } = await instance.get("/user/questions");
@@ -28,5 +27,3 @@ export const getMyIntroduceData = async () => {
     throw error;
   }
 };
-
-

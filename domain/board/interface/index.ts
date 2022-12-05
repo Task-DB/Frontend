@@ -24,3 +24,13 @@ export interface ReplyEditorContentType {
   setContent: React.Dispatch<React.SetStateAction<string>>;
   boardId: dynamicRouteType;
 }
+
+export interface BoardContentType {
+  category: string;
+  commentCount: number;
+  createdDate: string;
+  id: number;
+  likeCount: number;
+  status: string;
+  title: string;
+}

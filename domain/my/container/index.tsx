@@ -8,6 +8,8 @@ import Board from "../components/saveBoard";
 import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
 import { getMyQuestionData, getMySavedQuestionData } from "../api";
+import { BoardContentType } from "../../board/interface";
+import { MyType } from "../interface";
 
 const MyContainer: NextPage = () => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
@@ -70,18 +72,35 @@ const MyContainer: NextPage = () => {
 
     getMyQuestionData().then((response) => {
       console.log(response);
+      setMyData(response);
     });
   }, []);
 
-  const [myQuestionData, setMyQuestionData] = React.useState([]);
+  const [myData, setMyData] = React.useState<MyType>();
 
   return (
     <UserInfoContainer>
-      <UserInfo menus={Array.from(menus)} />
+      <UserInfo
+        userName={myData?.nickname}
+        userProfile={myData?.image}
+        menus={Array.from(menus)}
+      />
       <UserRightWrapper>
-        <Introduce moveRef={menus[0].element} uRef={introduceRef} />
-        <Info moveRef={menus[1].element} uRef={infoRef} />
-        <Board moveRef={menus[2].element} uRef={boardRef} />
+        <Introduce
+          moveRef={menus[0].element}
+          uRef={introduceRef}
+          myIntroduceData={myData!?.introduce}
+        />
+        <Info
+          moveRef={menus[1].element}
+          uRef={infoRef}
+          myQuestionData={myData?.getMyQuestions}
+        />
+        <Board
+          moveRef={menus[2].element}
+          uRef={boardRef}
+          mySavedQuestionData={myData?.getMyQuestions}
+        />
       </UserRightWrapper>
     </UserInfoContainer>
   );

@@ -3,7 +3,11 @@ import type { NextPage } from "next";
 import { BoardWrapper, BoardTitle, BoardUserContent } from "./saveBoard.style";
 import { UserInfoRightPropsType } from "../interface";
 
-const Board: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
+const Board: NextPage<UserInfoRightPropsType> = ({
+  moveRef,
+  uRef,
+  mySavedQuestionData,
+}) => {
   return (
     <BoardWrapper ref={moveRef}>
       <div ref={uRef}>

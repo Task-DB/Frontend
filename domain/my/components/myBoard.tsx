@@ -3,7 +3,11 @@ import type { NextPage } from "next";
 import { InfoWrapper, InfoTitle, InfoUserContent } from "./myBoard.style";
 import { UserInfoRightPropsType } from "../interface";
 
-const Info: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
+const Info: NextPage<UserInfoRightPropsType> = ({
+  moveRef,
+  uRef,
+  myQuestionData,
+}) => {
   return (
     <InfoWrapper ref={moveRef}>
       <div ref={uRef}>

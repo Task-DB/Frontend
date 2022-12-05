@@ -12,8 +12,12 @@ import {
 import { UserInfoRightPropsType } from "../interface";
 import { onChangeAction } from "../../../util";
 
-const Introduce: NextPage<UserInfoRightPropsType> = ({ moveRef, uRef }) => {
-  const [content, setContent] = React.useState<string>("내용이 없습니다.");
+const Introduce: NextPage<UserInfoRightPropsType> = ({
+  moveRef,
+  uRef,
+  myIntroduceData,
+}) => {
+  const [content, setContent] = React.useState<string>(myIntroduceData!);
   const [isEdit, setIsEdit] = React.useState<boolean>(false);
 
   return (
