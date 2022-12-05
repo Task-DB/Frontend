@@ -33,11 +33,12 @@ export const handleSignup = (email: string, data: SignupRequestType) => {
   postSignup(signupData)
     .then((response) => {
       console.log(response);
-      alert("가입이 완료되었습니다");
-      location.href = "/";
+      alert("가입에 성공하였습니다.");
+      location.href = "/login";
     })
     .catch((error) => {
-      alert(error.response.data.errorMessage);
+      console.log(error);
+      alert("가입에 실패하였습니다.");
     });
 };
 

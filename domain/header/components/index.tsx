@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import type { NextPage } from "next";
-import { Logo, SearchButtonImage } from "../assets";
+import { FullLogo, SearchButtonImage } from "../assets";
 import {
   HeaderContainer,
   HeaderLeftContainer,
@@ -37,7 +37,7 @@ const Header: NextPage = () => {
       <HeaderLeftContainer>
         <Link href="/">
           <a>
-            <Image src={Logo} alt="로고" width={50} height={50} />
+            <Image src={FullLogo} alt="로고" width={160} height={60} />
           </a>
         </Link>
 

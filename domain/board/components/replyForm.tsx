@@ -9,8 +9,6 @@ import "react-quill/dist/quill.snow.css";
 import { handleReply, postReply } from "../api";
 import { ReplyEditorContentType } from "../interface";
 
-const { NEXT_PUBLIC_AWS_BUCKET_NAME } = process.env;
-
 const ReactQuill = dynamic(
   async () => {
     const { default: RQ } = await import("react-quill");
@@ -57,7 +55,7 @@ const ReplyForm = ({
     editor.insertEmbed(
       range.index,
       "image",
-      `${NEXT_PUBLIC_AWS_BUCKET_NAME}/${IMG_URL}`
+      `NEXT_PUBLIC_AWS_BUCKET_NAME/${IMG_URL}`
     );
   };
 

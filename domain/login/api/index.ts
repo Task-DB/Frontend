@@ -13,10 +13,12 @@ export const postLogin = async (loginData: LoginRequestType) => {
 export const handleLogin = (data: LoginRequestType) => {
   postLogin(data)
     .then((response) => {
-      localStorage.setItem("accessToken", response.accessToken);
-      location.href = "/";
+      console.log(response)
+      // localStorage.setItem("accessToken", response.accessToken);
+      // location.href = "/";
     })
     .catch((error) => {
       console.log(error);
+
     });
 };

@@ -24,7 +24,7 @@ const Login: NextPage = () => {
   return (
     <LoginForm
       onSubmit={handleSubmit((data) => {
-        handleLogin(data);
+        handleLogin(data)
       })}
     >
       <Link href="/">
