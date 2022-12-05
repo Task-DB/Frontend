@@ -5,8 +5,9 @@ import IndividualIssue from "../components/indiviualIssue";
 import { getAllIssueData } from "../api";
 import { IndividualIssueType } from "../interface";
 const IssueContainer: NextPage<{ param?: string }> = ({ param }) => {
-  const [allIssueData, setAllIssueData] =
-    React.useState<IndividualIssueType[]>();
+  const [allIssueData, setAllIssueData] = React.useState<IndividualIssueType[]>(
+    []
+  );
 
   React.useEffect(() => {
     getAllIssueData(param).then((response) => {
@@ -16,9 +17,13 @@ const IssueContainer: NextPage<{ param?: string }> = ({ param }) => {
 
   return (
     <IssueWrapper>
-      {allIssueData?.map((data, idx) => {
-        return <IndividualIssue key={idx} issueData={data} />;
-      })}
+      {allIssueData ? (
+        allIssueData.map((data, idx) => {
+          return <IndividualIssue key={idx} issueData={data} />;
+        })
+      ) : (
+        <span>권한없엇ㅇ</span>
+      )}
     </IssueWrapper>
   );
 };

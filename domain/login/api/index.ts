@@ -14,8 +14,8 @@ export const handleLogin = (data: LoginRequestType) => {
   postLogin(data)
     .then((response) => {
       console.log(response)
-      // localStorage.setItem("accessToken", response.accessToken);
-      // location.href = "/";
+      localStorage.setItem("accessToken", response.accessToken);
+      location.href = "/";
     })
     .catch((error) => {
       console.log(error);

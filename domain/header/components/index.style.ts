@@ -65,6 +65,7 @@ export const HeaderUl = styled.ul`
 export const HeaderLi = styled.li`
   list-style: none;
   margin-right: 1rem;
+  cursor: pointer;
 `;
 
 export const HeaderLogin = styled.div`

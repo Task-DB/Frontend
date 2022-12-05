@@ -14,6 +14,7 @@ import {
 } from "./index.style";
 import { onChangeAction } from "../../../util";
 import Link from "next/link";
+import { handleLogout } from "../util";
 
 const Header: NextPage = () => {
   const [keyword, setKeyWord] = React.useState<string>("");
@@ -76,11 +77,9 @@ const Header: NextPage = () => {
               <HeaderLi>내정보</HeaderLi>
             </a>
           </Link>
-          <Link href="/logout">
-            <a>
-              <HeaderLi>로그아웃</HeaderLi>
-            </a>
-          </Link>
+          <span onClick={handleLogout}>
+            <HeaderLi>로그아웃</HeaderLi>
+          </span>
         </HeaderLogin>
       ) : (
         <Link href="/login">

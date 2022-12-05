@@ -19,7 +19,6 @@ import { LoginRequestType } from "../interface";
 import Link from "next/link";
 
 const Login: NextPage = () => {
-  const router = useRouter();
   const { register, handleSubmit } = useForm<LoginRequestType>();
   return (
     <LoginForm
