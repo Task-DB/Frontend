@@ -7,10 +7,11 @@ import {
   StatusWrapper,
 } from "./status.style";
 import Image from "next/image";
-import { OpenBadge } from "../assets";
+import { CloseBadge, OpenBadge } from "../assets";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
 import { IndividualBoardType } from "../interface";
+import { getRelativeDate } from "../../../util";
 
 const Status: NextPage<{ boardData: IndividualBoardType }> = ({
   boardData,
@@ -19,15 +20,23 @@ const Status: NextPage<{ boardData: IndividualBoardType }> = ({
     <section id={"status"}>
       <BoardStatusWrapper>
         <StatusWrapper>
-          <Image src={OpenBadge} alt="열린이슈" width={100} height={41} />
+          <Image
+            src={boardData?.status !== "OPEN" ? CloseBadge : OpenBadge}
+            alt="열린이슈"
+            width={100}
+            height={41}
+          />    
         </StatusWrapper>
 
-        <Author nickname="남세원" profilePicture={ProfilePicture} />
+        <Author
+          nickname={boardData?.nickname}
+          profilePicture={ProfilePicture}
+        />
         <BoardDate>
-          질문한 날짜<span>오늘</span>
+          <span>{getRelativeDate(boardData?.createdDate)}</span>
         </BoardDate>
         <BoardViews>
-          조회수<span>20</span>
+          조회수<span>{boardData?.viewCount}</span>
         </BoardViews>
       </BoardStatusWrapper>
     </section>

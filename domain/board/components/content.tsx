@@ -10,8 +10,8 @@ const Content: NextPage<{ boardData: IndividualBoardType }> = ({
   return (
     <section id={"content"}>
       <BoardContentWrapper>
-        <BoardLikes isReply={false} likes={3} />
-        <BoardContent dangerouslySetInnerHTML={{ __html: boardData.content }} />
+        <BoardLikes isReply={false} likes={boardData?.likeCount} />
+        <BoardContent dangerouslySetInnerHTML={{ __html: boardData?.content }} />
       </BoardContentWrapper>
     </section>
   );

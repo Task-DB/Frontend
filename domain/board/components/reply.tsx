@@ -23,11 +23,13 @@ const Reply: NextPage<{
   return (
     <section id={"reply"}>
       <ReplyWrapper>
-        <ReplyCount>5 답변</ReplyCount>
+        <ReplyCount>{boardData?.answers.length} 답변</ReplyCount>
         <ReplyForm
           boardId={boardId}
           content={content}
           setContent={setContent}
+          width={"100"}
+          height={"450"}
         />
         {new Array(1).fill(null).map((data, idx) => {
           return (

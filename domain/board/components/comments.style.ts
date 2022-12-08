@@ -11,7 +11,7 @@ export const BoardComments = styled.div`
 
 export const BoardCommentsWrapper = styled.div`
   width: 70%;
-  margin: 5rem auto;
+  margin: 5rem auto 1rem auto;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 `;

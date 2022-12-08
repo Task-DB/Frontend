@@ -67,7 +67,6 @@ img {
 .ql-editor {
   font-size: 16px;
   font-family: 'IBMPlexSansKR-Regular';
-  height: 450px;
 }
 
 .ql-editor::-webkit-scrollbar {

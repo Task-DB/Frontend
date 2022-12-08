@@ -33,7 +33,7 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
         <Title boardId={boardId} boardData={boardData!} />
         <Status boardData={boardData!} />
         <Content boardData={boardData!} />
-        <Comments boardData={boardData!} />
+        <Comments boardId={boardId} boardData={boardData!} />
         <Reply boardId={boardId} boardData={boardData!} />
       </BoardWrapper>
     </section>

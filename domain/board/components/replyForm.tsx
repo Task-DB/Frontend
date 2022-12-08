@@ -44,6 +44,8 @@ const ReplyForm = ({
   content,
   setContent,
   boardId,
+  width,
+  height,
 }: ReplyEditorContentType) => {
   const quillRef = React.useRef();
   const insertImage = (photo_id: string) => {
@@ -112,7 +114,7 @@ const ReplyForm = ({
   }, []);
 
   return (
-    <ReplyFormWrapper>
+    <ReplyFormWrapper width={width}>
       <ReactQuill
         forwardedRef={quillRef}
         theme={"snow"}
@@ -123,10 +125,9 @@ const ReplyForm = ({
           setContent(event);
         }}
         style={{
-          width: "100%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: "2rem",
+          margin: "1rem auto",
+          paddingBottom: "2rem",
+          height: `${height}px`,
         }}
       />
       <ReplyFormButton

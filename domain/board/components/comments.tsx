@@ -1,11 +1,14 @@
 import React from "react";
 import type { NextPage } from "next";
 import { BoardComments, BoardCommentsWrapper } from "./comments.style";
-import { IndividualBoardType } from "../interface";
+import { dynamicRouteType, IndividualBoardType } from "../interface";
+import ReplyForm from "./replyForm";
 
-const Comments: NextPage<{ boardData: IndividualBoardType }> = ({
-  boardData,
-}) => {
+const Comments: NextPage<{
+  boardData: IndividualBoardType;
+  boardId: dynamicRouteType;
+}> = ({ boardData, boardId }) => {
+  const [content, setContent] = React.useState<string>("");
   return (
     <section id={"comments"}>
       <BoardCommentsWrapper>
@@ -18,6 +21,13 @@ const Comments: NextPage<{ boardData: IndividualBoardType }> = ({
           <span>5시간 전</span>
         </BoardComments>
       </BoardCommentsWrapper>
+      <ReplyForm
+        boardId={boardId}
+        content={content}
+        setContent={setContent}
+        width={"70"}
+        height={"100"}
+      />
     </section>
   );
 };

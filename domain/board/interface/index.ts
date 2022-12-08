@@ -23,6 +23,8 @@ export interface ReplyEditorContentType {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
   boardId: dynamicRouteType;
+  width: string;
+  height: string;
 }
 
 export interface BoardContentType {

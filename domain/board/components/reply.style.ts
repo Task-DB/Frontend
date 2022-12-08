@@ -6,7 +6,7 @@ export const Content = styled.div`
   width: 75%;
 `;
 
-export const ReplyContentWrapper = styled.div``
+export const ReplyContentWrapper = styled.div``;
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -30,4 +30,6 @@ export const ReplyCount = styled.span`
   font-size: 1.5rem;
 `;
 
-export const ReplyWrapper = styled.div``;
+export const ReplyWrapper = styled.div`
+  margin-top: 3rem;
+`;

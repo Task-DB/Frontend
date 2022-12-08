@@ -10,7 +10,7 @@ const Title: NextPage<{
   return (
     <section id={"title"}>
       <BoardTitleWrapper>
-        <BoardTitle>{boardData.title}</BoardTitle>
+        <BoardTitle>{boardData?.title}</BoardTitle>
         <BoardNo>#{boardId}</BoardNo>
       </BoardTitleWrapper>
     </section>
