@@ -13,7 +13,7 @@ const Comments: NextPage<{
     <section id={"comments"}>
       <BoardCommentsWrapper>
         {boardData?.comments.map((data, idx) => {
-          return <BoardComments key={idx}>{data}</BoardComments>;
+          return <BoardComments key={idx}>{data.content}</BoardComments>;
         })}
         {boardData.comments ? "" : "댓글이 없습니다!"}
       </BoardCommentsWrapper>

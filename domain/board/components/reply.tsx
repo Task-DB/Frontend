@@ -30,6 +30,7 @@ const Reply: NextPage<{
           setContent={setContent}
           width={"100"}
           height={"450"}
+          type="reply"
         />
         {new Array(1).fill(null).map((data, idx) => {
           return (

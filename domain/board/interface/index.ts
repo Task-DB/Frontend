@@ -17,6 +17,9 @@ export interface AuthorPropsType {
 
 export interface CommentsDataType {
   content: string;
+  createdDate: string;
+  nickname: string;
+  userImage: string;
 }
 
 export interface ReplyEditorContentType {
@@ -41,7 +44,7 @@ export interface BoardContentType {
 
 export interface IndividualBoardType {
   answers: [];
-  comments: [];
+  comments: CommentsDataType[];
   content: string;
   createdDate: string;
   likeCount: number;
