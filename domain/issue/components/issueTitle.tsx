@@ -25,6 +25,7 @@ const IssueTitle: NextPage<{ issueData: IndividualIssueType }> = ({
               alt="열린 이슈"
               width={36}
               height={36}
+              layout="fixed"
             />
           </IssueStatus>
           <IssueTitleText>

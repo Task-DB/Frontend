@@ -12,7 +12,12 @@ const Board: NextPage<UserInfoRightPropsType> = ({
     <BoardWrapper ref={moveRef}>
       <div ref={uRef}>
         <BoardTitle>내가 저장한 글</BoardTitle>
-        <BoardUserContent>내용이 없습니다.</BoardUserContent>
+        <BoardUserContent>
+          {mySavedQuestionData?.map((data, idx) => {
+            return <div key={idx}>{data}</div>;
+          })}
+          {mySavedQuestionData ? "내가 자주 찾는 게시글을 저장해보세요!" : ""}
+        </BoardUserContent>
       </div>
     </BoardWrapper>
   );

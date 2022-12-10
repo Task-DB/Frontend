@@ -15,7 +15,7 @@ export interface UserInfoRightPropsType {
   uRef: React.RefCallback<HTMLDivElement>;
   myIntroduceData?: string;
   myQuestionData?: BoardContentType[];
-  mySavedQuestionData?: BoardContentType[];
+  mySavedQuestionData?: string[];
 }
 
 export interface MyType {
@@ -24,5 +24,5 @@ export interface MyType {
   getSavedQuestions: string[];
   image: string;
   nickname: string;
-  introduce: string;
+  bio: string;
 }

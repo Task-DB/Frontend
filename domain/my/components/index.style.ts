@@ -21,6 +21,7 @@ export const UserButton = styled.button`
   box-sizing: border-box;
   background-color: ${theme.main};
   border-radius: 8px;
+  border: 0;
 `;
 
 export const UserContent = styled.div`

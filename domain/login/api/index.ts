@@ -19,5 +19,6 @@ export const handleLogin = (data: LoginRequestType) => {
     })
     .catch((error) => {
       console.log(error, "error");
+      alert("잘못된 이메일입니다.");
     });
 };

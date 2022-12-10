@@ -23,6 +23,9 @@ export const UserInfoMenu = styled.div`
 export const UserProfileMenu = styled(UserInfoMenu)`
   justify-content: space-around;
   box-sizing: border-box;
+  span {
+    border-radius: 50%;
+  }
 `;
 
 export const UserProfileUlMenu = styled(UserInfoMenu)`

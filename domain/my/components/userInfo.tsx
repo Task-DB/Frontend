@@ -12,11 +12,12 @@ import {
 } from "./userInfo.style";
 import { UserInfoMenuType } from "../interface";
 import useStore from "../../../context/useStore";
+import Image from "next/image";
 
 const UserInfo: NextPage<{
   menus: UserInfoMenuType[];
-  userName?: string;
-  userProfile?: string;
+  userName: string;
+  userProfile: string;
 }> = ({ menus, userName, userProfile }) => {
   const { activeList } = useStore();
 
@@ -24,7 +25,7 @@ const UserInfo: NextPage<{
     <UserInfoWrapper>
       <UserProfileMenu>
         <UserInfoId>{userName}</UserInfoId>
-        <UserInfoProfilePicture src={ProfilePicture} width={65} height={65} />
+        <Image src={userProfile} width={65} height={65} alt="ddd" />
       </UserProfileMenu>
 
       <UserProfileUlMenu>

@@ -37,7 +37,7 @@ const SubjectSelector: NextPage = () => {
               key={idx}
               isSelect={data.isSelect}
               onClick={() => {
-                handleSubjectClick(idx, setSubjectList);
+                handleSubjectClick(idx, setSubjectList, data);
               }}
             >
               {data.subjectName}

@@ -12,7 +12,6 @@ import {
   LoginMainText,
   LoginTopBar,
 } from "./index.style";
-import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { handleLogin } from "../api";
 import { LoginRequestType } from "../interface";
@@ -23,7 +22,7 @@ const Login: NextPage = () => {
   return (
     <LoginForm
       onSubmit={handleSubmit((data) => {
-        handleLogin(data)
+        handleLogin(data);
       })}
     >
       <Link href="/">
