@@ -5,7 +5,8 @@ import { SubjectListType } from "../interface";
 export const handleSubjectClick = (
   idx: number,
   setSubjectList: React.Dispatch<React.SetStateAction<SubjectListType[]>>,
-  data: SubjectListType
+  data: SubjectListType,
+  setAllIssueData: any
 ) => {
   setSubjectList((prev) => {
     for (let i = 0; i < prev.length; i++) prev[i].isSelect = false;
@@ -16,6 +17,7 @@ export const handleSubjectClick = (
   getCategoryProblemData(data.param)
     .then((response) => {
       console.log(response);
+      setAllIssueData(response?.questions);
     })
     .catch((error) => {
       console.log(error);

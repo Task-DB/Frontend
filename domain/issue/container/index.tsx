@@ -3,24 +3,26 @@ import type { NextPage } from "next";
 import { IssueWrapper } from "./index.style";
 import IndividualIssue from "../components/indiviualIssue";
 import { getAllIssueData } from "../api";
-import { IndividualIssueType } from "../interface";
+import useStore from "../../../context/useStore";
 const IssueContainer: NextPage = () => {
-  const [allIssueData, setAllIssueData] = React.useState<IndividualIssueType[]>(
-    []
-  );
+  const { allIssueData, setAllIssueData } = useStore();
 
   React.useEffect(() => {
     getAllIssueData().then((response) => {
       setAllIssueData(response);
     });
-  }, []);
+  }, [setAllIssueData]);
+
+  React.useEffect(() => {
+    console.log(allIssueData);
+  }, [allIssueData]);
 
   return (
     <IssueWrapper>
       {allIssueData?.map((data, idx) => {
         return <IndividualIssue key={idx} issueData={data} />;
       })}
-      {!allIssueData ? "게시글을 볼 권한이 없습니다!" : ""}
+      {allIssueData?.length === 0 ? "게시글이 없습니다!" : ""}
     </IssueWrapper>
   );
 };

@@ -25,12 +25,12 @@ const Status: NextPage<{ boardData: IndividualBoardType }> = ({
             alt="열린이슈"
             width={100}
             height={41}
-          />    
+          />
         </StatusWrapper>
 
         <Author
           nickname={boardData?.nickname}
-          profilePicture={ProfilePicture}
+          profilePicture={boardData?.userImage}
         />
         <BoardDate>
           <span>{getRelativeDate(boardData?.createdDate)}</span>

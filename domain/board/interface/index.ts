@@ -25,6 +25,7 @@ export interface ReplyEditorContentType {
   boardId: dynamicRouteType;
   width: string;
   height: string;
+  type: string;
 }
 
 export interface BoardContentType {
@@ -35,6 +36,7 @@ export interface BoardContentType {
   likeCount: number;
   status: string;
   title: string;
+  userImage: string;
 }
 
 export interface IndividualBoardType {
@@ -47,5 +49,6 @@ export interface IndividualBoardType {
   nickname: string;
   status: string;
   title: string;
+  userImage: string;
   viewCount: number;
 }

@@ -16,7 +16,7 @@ export const getBoardData = async (
   }
 };
 
-export const postReply = async (
+export const postComment = async (
   boardId: dynamicRouteType,
   commentsData: CommentsDataType
 ) => {
@@ -29,6 +29,31 @@ export const postReply = async (
   } catch (error) {
     throw error;
   }
+};
+
+export const postReply = async (
+  boardId: dynamicRouteType,
+  answerData: CommentsDataType
+) => {
+  try {
+    const { data } = await instance.post(`/answer/${boardId}/new`, answerData);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const handleComment = (
+  boardId: dynamicRouteType,
+  commentsData: CommentsDataType
+) => {
+  postComment(boardId, commentsData)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 export const handleReply = (

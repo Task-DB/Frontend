@@ -6,7 +6,7 @@ import { ReplyFormButton, ReplyFormWrapper } from "./replyForm.style";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 import "react-quill/dist/quill.snow.css";
-import { handleReply, postReply } from "../api";
+import { handleComment, handleReply, postReply } from "../api";
 import { ReplyEditorContentType } from "../interface";
 
 const ReactQuill = dynamic(
@@ -46,6 +46,7 @@ const ReplyForm = ({
   boardId,
   width,
   height,
+  type,
 }: ReplyEditorContentType) => {
   const quillRef = React.useRef();
   const insertImage = (photo_id: string) => {
@@ -132,7 +133,11 @@ const ReplyForm = ({
       />
       <ReplyFormButton
         onClick={() => {
-          handleReply(boardId, { content: content });
+          if (type === "comments") {
+            handleComment(boardId, { content: content });
+          } else {
+            handleReply(boardId, { content: content });
+          }
         }}
       >
         작성하기
