@@ -16,7 +16,6 @@ const RankContainer: NextPage = () => {
 
   React.useEffect(() => {
     getRankData().then((response) => {
-      console.log(response);
       setRankData(response);
     });
   }, []);

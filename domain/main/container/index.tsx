@@ -27,7 +27,6 @@ const MainContainer: NextPage = () => {
       }
       const firebaseMessageToken = async () => {
         let token = await getToken();
-        console.log("token === ", token);
         localStorage.setItem("fcmToken", token!);
         postToken(token!);
       };

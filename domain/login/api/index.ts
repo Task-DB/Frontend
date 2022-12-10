@@ -13,12 +13,10 @@ export const postLogin = async (loginData: LoginRequestType) => {
 export const handleLogin = (data: LoginRequestType) => {
   postLogin(data)
     .then((response) => {
-      console.log("response", response);
       localStorage.setItem("accessToken", response?.accessToken);
       location.href = "/";
     })
     .catch((error) => {
-      console.log(error, "error");
       alert("잘못된 이메일입니다.");
     });
 };

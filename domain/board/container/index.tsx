@@ -21,9 +21,6 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
         .then((response) => {
           setBoardData(response);
         })
-        .catch((error) => {
-          console.log(error);
-        });
     }
   }, [boardId]);
 

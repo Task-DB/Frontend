@@ -2,7 +2,6 @@ import firebase from "firebase";
 
 export async function getToken() {
   if (firebase.messaging.isSupported() === false) {
-    console.log("isSupported: ", firebase.messaging.isSupported());
     return null;
   }
 

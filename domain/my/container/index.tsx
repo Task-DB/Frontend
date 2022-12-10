@@ -71,7 +71,6 @@ const MyContainer: NextPage = () => {
     });
 
     getMyQuestionData().then((response) => {
-      console.log("response", response);
       setMyData(response);
     });
   }, []);

@@ -31,13 +31,11 @@ export const handleSignup = (email: string, data: SignupRequestType) => {
     password: data.password,
   };
   postSignup(signupData)
-    .then((response) => {
-      console.log(response);
+    .then((_) => {
       alert("가입에 성공하였습니다.");
       location.href = "/login";
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((_) => {
       alert("가입에 실패하였습니다.");
     });
 };

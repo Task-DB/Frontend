@@ -16,10 +16,7 @@ export const handleSubjectClick = (
 
   getCategoryProblemData(data.param)
     .then((response) => {
-      console.log(response);
       setAllIssueData(response?.questions);
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    
 };

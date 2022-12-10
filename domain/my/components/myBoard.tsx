@@ -9,15 +9,6 @@ const Info: NextPage<UserInfoRightPropsType> = ({
   uRef,
   myQuestionData,
 }) => {
-  React.useEffect(() => {
-    console.log(myQuestionData != null);
-    if (myQuestionData) {
-      console.log("dd");
-    }
-    console.log(myQuestionData?.length);
-
-    console.log(myQuestionData);
-  }, [myQuestionData]);
   return (
     <InfoWrapper ref={moveRef}>
       <div ref={uRef}>

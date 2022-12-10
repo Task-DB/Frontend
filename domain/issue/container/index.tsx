@@ -13,9 +13,7 @@ const IssueContainer: NextPage = () => {
     });
   }, [setAllIssueData]);
 
-  React.useEffect(() => {
-    console.log(allIssueData);
-  }, [allIssueData]);
+
 
   return (
     <IssueWrapper>

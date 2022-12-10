@@ -51,8 +51,8 @@ export const handleComment = (
     .then((_) => {
       alert("댓글 작성이 완료되었습니다.");
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((_) => {
+      alert("댓글 작성에 실패하였습니다.");
     });
 };
 
@@ -64,7 +64,7 @@ export const handleReply = (
     .then((_) => {
       alert("답변 작성이 완료되었습니다.");
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((_) => {
+      alert("답변 작성에 실패하였습니다.");
     });
 };

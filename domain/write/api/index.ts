@@ -28,8 +28,7 @@ export const handleWrite = async (data: BoardPostType) => {
     .then((_) => {
       alert("작성에 성공했습니다.");
     })
-    .catch((error) => {
-      console.log(error);
-      alert("작성에 실패하였습니다. \n 나중에 다시 시도해주세요.");
+    .catch((_) => {
+      alert("작성에 실패하였습니다. \n 잠시 후에 다시 시도해주세요.");
     });
 };

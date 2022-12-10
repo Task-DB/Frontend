@@ -1,9 +1,7 @@
-
 import firebase from "firebase";
 
 export async function getToken() {
   if (firebase.messaging.isSupported() === false) {
-    console.log("isSupported: ", firebase.messaging.isSupported());
     return null;
   }
 
@@ -16,8 +14,8 @@ export async function getToken() {
     })
     .then(function (token) {
       messaging.onMessage((payload) => {
-        alert(payload.notification.body)
-      })
+        alert(payload.notification.body);
+      });
       return token;
     })
     .catch(function (err) {

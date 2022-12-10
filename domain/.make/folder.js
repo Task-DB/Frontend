@@ -67,6 +67,4 @@ export default ${camelFolderName}Container;
     );
   });
 
-  console.log("칸페키-");
-  console.log(`domain/${folderName}/components`);
 });

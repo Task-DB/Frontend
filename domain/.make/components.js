@@ -25,4 +25,3 @@ fs.writeFileSync(
   `import styled from "styled-components";\n`
 );
 
-console.log("칸페키-");
