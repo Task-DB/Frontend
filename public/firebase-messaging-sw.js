@@ -14,12 +14,12 @@ firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 
-messaging.onBackgroundMessage(function (payload) {
-  console.log("[firebase-messaging-sw.js] onBackgroundMessage ", payload);
-  const title = payload.notification.title;
-  const options = {
-    body: payload.notification.body,
-    icon: payload.notification.image,
-  };
-  return self.registration.showNotification(title, options);
-});
+// messaging.onBackgroundMessage(function (payload) {
+//   console.log("[firebase-messaging-sw.js] onBackgroundMessage ", payload);
+//   const title = payload.notification.title;
+//   const options = {
+//     body: payload.notification.body,
+//     icon: payload.notification.image,
+//   };
+//   return self.registration.showNotification(title, options);
+// });

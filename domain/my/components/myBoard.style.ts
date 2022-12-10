@@ -16,3 +16,8 @@ export const InfoUserContent = styled(UserContent)`
 `;
 export const InfoTitle = styled(UserTitle)``;
 export const InfoButton = styled(UserButton)``;
+export const MyQuestionWrapper = styled.div`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
