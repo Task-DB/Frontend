@@ -10,7 +10,6 @@ import {
   UserElement,
 } from "./rankElement.style";
 import Image from "next/image";
-import { ProfilePicture } from "../../my/assets";
 import { RankDataType } from "../interface";
 
 const RankElement: NextPage<{ userData: RankDataType; rank: number }> = ({
@@ -26,7 +25,7 @@ const RankElement: NextPage<{ userData: RankDataType; rank: number }> = ({
       <UserElement>
         <UserProfile>
           <Image
-            src={ProfilePicture}
+            src={userData.imgUrl}
             width={64}
             height={64}
             alt={`${userData.nickname}씨의 프로필`}
