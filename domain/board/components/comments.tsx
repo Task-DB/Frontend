@@ -15,6 +15,7 @@ const Comments: NextPage<{
         {boardData?.comments.map((data, idx) => {
           return <BoardComments key={idx}>{data}</BoardComments>;
         })}
+        {boardData.comments ? "" : "댓글이 없습니다!"}
       </BoardCommentsWrapper>
       <ReplyForm
         type="comments"

@@ -9,10 +9,16 @@ const IndividualIssue: NextPage<{ issueData: IndividualIssueType }> = ({
   issueData,
 }) => {
   return (
-    <IssueContainer>
-      <IssueTitle issueData={issueData} />
-      <IssueStatus issueData={issueData} />
-    </IssueContainer>
+    <>
+      {issueData != null ? (
+        <IssueContainer>
+          <IssueTitle issueData={issueData} />
+          <IssueStatus issueData={issueData} />
+        </IssueContainer>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 export default IndividualIssue;

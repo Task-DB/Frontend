@@ -19,7 +19,6 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
       getBoardData(boardId)
         .then((response) => {
           setBoardData(response);
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -30,11 +29,17 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   return (
     <section id={`board`}>
       <BoardWrapper>
-        <Title boardId={boardId} boardData={boardData!} />
-        <Status boardData={boardData!} />
-        <Content boardData={boardData!} />
-        <Comments boardId={boardId} boardData={boardData!} />
-        <Reply boardId={boardId} boardData={boardData!} />
+        {boardData ? (
+          <>
+            <Title boardId={boardId} boardData={boardData!} />
+            <Status boardData={boardData!} />
+            <Content boardData={boardData!} />
+            <Comments boardId={boardId} boardData={boardData!} />
+            <Reply boardId={boardId} boardData={boardData!} />
+          </>
+        ) : (
+          <>게시글을 볼 권한이 없습니다. 로그인하여 게시글을 확인하세요!</>
+        )}
       </BoardWrapper>
     </section>
   );
