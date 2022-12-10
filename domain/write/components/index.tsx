@@ -37,7 +37,7 @@ const formats = [
   "image",
 ];
 
-const Editor = ({content, setContent}:EditorContentType) => {
+const Editor = ({ content, setContent }: EditorContentType) => {
   const quillRef = React.useRef();
   const insertImage = (photo_id: string) => {
     const IMG_URL = photo_id;
@@ -116,6 +116,7 @@ const Editor = ({content, setContent}:EditorContentType) => {
       }}
       style={{
         width: "70%",
+        height: "450px",
         marginLeft: "auto",
         marginRight: "auto",
       }}

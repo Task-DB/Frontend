@@ -3,5 +3,5 @@ export interface RankDataType {
   contributionLevel: number;
   nickname: string;
   questionCount: number;
+  imgUrl: string;
 }
-

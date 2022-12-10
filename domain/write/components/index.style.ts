@@ -22,7 +22,7 @@ export const TitleInput = styled.input`
 `;
 
 export const CompleteButton = styled.button`
-  margin: 1rem auto;
+  margin: 4rem auto;
   background-color: ${theme.main};
   transition: 0.3s;
   width: 14rem;
@@ -31,6 +31,7 @@ export const CompleteButton = styled.button`
   color: ${theme.background};
   border: 0;
   border-radius: 0.3rem;
+  font-size: 1.5rem;
   box-sizing: border-box;
   &:hover {
     background-color: ${theme.lightMain};

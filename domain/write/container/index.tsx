@@ -26,14 +26,32 @@ const WritePage: NextPage = () => {
           handleWrite(data);
         })}
       >
+        <select
+          style={{
+            border: "0",
+            borderRadius: "3px",
+            marginLeft: "15%",
+            marginTop:"10px"
+          }}
+          onChange={(event) => {
+            setCategory(event.target.value);
+          }}
+        >
+          <option value="JAVA">Java</option>
+          <option value="C_DOUBLE_PLUS">C++</option>
+          <option value="DB">DB</option>
+          <option value="CERTIFICATE">자격증</option>
+        </select>
         <TitleInput
           type={`text`}
           {...register("title")}
           placeholder="제목을 입력해주세요."
         />
+
         <Editor content={content} setContent={setContent} />
+
         <CompleteButton type="submit" disabled={isSubmitting}>
-          작성 완료
+          쓰기
         </CompleteButton>
       </form>
     </section>

@@ -20,9 +20,10 @@ const BoardLikes: NextPage<{ isReply: boolean; likes: number }> = ({
   return (
     <section id={"likes"}>
       <BoardLikesWrapper>
-        <Image src={CommentUpButton} alt="올리기" />
+        <Image src={CommentUpButton} alt="올리기" onClick={() => {}} />
+
         <BoardLikesCount>{likes}</BoardLikesCount>
-        <Image src={CommentDownButton} alt="내리기" />
+        <Image src={CommentDownButton} alt="내리기" onClick={() => {}} />
         {isReply ? (
           <CertificateWrapper>
             <Image src={CommentCertiticate} alt="인증" />

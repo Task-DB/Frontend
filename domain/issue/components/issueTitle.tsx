@@ -34,7 +34,11 @@ const IssueTitle: NextPage<{ issueData: IndividualIssueType }> = ({
             </Link>
           </IssueTitleText>
         </IssueTitleLeftWrapper>
-        <IssueSubjectText>{issueData.category}</IssueSubjectText>
+        <IssueSubjectText>
+          {issueData.category === "CERTIFICATE"
+            ? "자격증"
+            : issueData.category}
+        </IssueSubjectText>
       </IssueTitleWrapper>
     </section>
   );

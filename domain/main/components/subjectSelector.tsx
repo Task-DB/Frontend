@@ -23,7 +23,7 @@ const SubjectSelector: NextPage = () => {
       param: "/categories?c=DB",
     },
     {
-      subjectName: "정처기",
+      subjectName: "자격증",
       isSelect: false,
       param: "/categories?c=CERTIFICATE",
     },

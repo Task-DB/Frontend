@@ -8,6 +8,7 @@ import { dynamicRouteType, IndividualBoardType } from "../interface";
 import Content from "../components/content";
 import { BoardWrapper } from "./index.style";
 import { getBoardData } from "../api";
+import Head from "next/head";
 
 const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   boardId,
@@ -19,7 +20,6 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
       getBoardData(boardId)
         .then((response) => {
           setBoardData(response);
-          console.log(response)
         })
         .catch((error) => {
           console.log(error);
@@ -28,21 +28,26 @@ const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
   }, [boardId]);
 
   return (
-    <section id={`board`}>
-      <BoardWrapper>
-        {boardData ? (
-          <>
-            <Title boardId={boardId} boardData={boardData!} />
-            <Status boardData={boardData!} />
-            <Content boardData={boardData!} />
-            <Comments boardId={boardId} boardData={boardData!} />
-            <Reply boardId={boardId} boardData={boardData!} />
-          </>
-        ) : (
-          <>게시글을 볼 권한이 없습니다. 로그인하여 게시글을 확인하세요!</>
-        )}
-      </BoardWrapper>
-    </section>
+    <>
+      <Head>
+        <title>{boardData?.title}</title>
+      </Head>
+      <section id={`board`}>
+        <BoardWrapper>
+          {boardData ? (
+            <>
+              <Title boardId={boardId} boardData={boardData!} />
+              <Status boardData={boardData!} />
+              <Content boardData={boardData!} />
+              <Comments boardId={boardId} boardData={boardData!} />
+              <Reply boardId={boardId} boardData={boardData!} />
+            </>
+          ) : (
+            <>게시글을 볼 권한이 없습니다. 로그인하여 게시글을 확인하세요!</>
+          )}
+        </BoardWrapper>
+      </section>
+    </>
   );
 };
 export default BoardContainer;
