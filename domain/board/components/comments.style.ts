@@ -2,17 +2,19 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 export const BoardCommentsContent = styled.div`
-  margin: .5rem;
+  margin: 0.5rem;
   span {
     margin-left: 0.3rem;
     color: ${theme.gray["300"]};
+  }
+  p {
+    margin: 0;
   }
 `;
 
 export const BoardCommentsDetail = styled.div`
   display: flex;
   align-items: center;
-  
 `;
 
 export const BoardCommentsWrapper = styled.div`
