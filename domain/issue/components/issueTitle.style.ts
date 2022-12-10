@@ -11,6 +11,10 @@ export const IssueStatus = styled.div``;
 export const IssueTitleText = styled.h3`
   margin: 0 0 0 0.5rem;
   font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 185px;
   &:hover {
     text-decoration: underline;
   }
