@@ -13,6 +13,7 @@ export interface LinePropsType {
 export interface AuthorPropsType {
   profilePicture: string | StaticImageData;
   nickname: string;
+  time: string;
 }
 
 export interface CommentsDataType {
@@ -42,8 +43,17 @@ export interface BoardContentType {
   userImage: string;
 }
 
+export interface AnswerDataType {
+  content: string;
+  createdDate: string;
+  likeCount: number;
+  nickname: string;
+  userImage: string;
+  status: string;
+}
+
 export interface IndividualBoardType {
-  answers: [];
+  answers: AnswerDataType[];
   comments: CommentsDataType[];
   content: string;
   createdDate: string;

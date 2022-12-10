@@ -1,8 +1,13 @@
 import React from "react";
 import type { NextPage } from "next";
-import { BoardComments, BoardCommentsWrapper } from "./comments.style";
+import {
+  BoardCommentsContent,
+  BoardCommentsDetail,
+  BoardCommentsWrapper,
+} from "./comments.style";
 import { dynamicRouteType, IndividualBoardType } from "../interface";
 import ReplyForm from "./replyForm";
+import { getRelativeDate } from "../../../util";
 
 const Comments: NextPage<{
   boardData: IndividualBoardType;
@@ -13,7 +18,17 @@ const Comments: NextPage<{
     <section id={"comments"}>
       <BoardCommentsWrapper>
         {boardData?.comments.map((data, idx) => {
-          return <BoardComments key={idx}>{data.content}</BoardComments>;
+          return (
+            <BoardCommentsDetail key={idx}>
+              <span>{data.nickname}</span>
+              <BoardCommentsContent
+                dangerouslySetInnerHTML={{ __html: data.content }}
+              />
+              <span style={{ color: "gray" }}>
+                {getRelativeDate(data.createdDate)}
+              </span>
+            </BoardCommentsDetail>
+          );
         })}
         {boardData.comments ? "" : "댓글이 없습니다!"}
       </BoardCommentsWrapper>

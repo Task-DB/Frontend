@@ -18,7 +18,7 @@ export const getBoardData = async (
 
 export const postComment = async (
   boardId: dynamicRouteType,
-  commentsData: CommentsDataType
+  commentsData: { content: string }
 ) => {
   try {
     const { data } = await instance.post(
@@ -33,7 +33,7 @@ export const postComment = async (
 
 export const postReply = async (
   boardId: dynamicRouteType,
-  answerData: CommentsDataType
+  answerData: { content: string }
 ) => {
   try {
     const { data } = await instance.post(`/answer/${boardId}/new`, answerData);
@@ -45,11 +45,11 @@ export const postReply = async (
 
 export const handleComment = (
   boardId: dynamicRouteType,
-  commentsData: CommentsDataType
+  commentsData: { content: string }
 ) => {
   postComment(boardId, commentsData)
-    .then((response) => {
-      console.log(response);
+    .then((_) => {
+      alert("댓글 작성이 완료되었습니다.");
     })
     .catch((error) => {
       console.log(error);
@@ -58,11 +58,11 @@ export const handleComment = (
 
 export const handleReply = (
   boardId: dynamicRouteType,
-  commentsData: CommentsDataType
+  commentsData: { content: string }
 ) => {
   postReply(boardId, commentsData)
-    .then((response) => {
-      console.log(response);
+    .then((_) => {
+      alert("답변 작성이 완료되었습니다.");
     })
     .catch((error) => {
       console.log(error);

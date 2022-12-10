@@ -14,6 +14,7 @@ import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
 import ReplyForm from "./replyForm";
 import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { getRelativeDate } from "../../../util";
 
 const Reply: NextPage<{
   boardId: dynamicRouteType;
@@ -32,16 +33,23 @@ const Reply: NextPage<{
           height={"450"}
           type="reply"
         />
-        {new Array(1).fill(null).map((data, idx) => {
+        {boardData?.answers.map((data, idx) => {
           return (
             <ReplyContentWrapper key={idx}>
               <ContentWrapper>
-                <BoardLikes isReply={true} likes={idx} />
+                <BoardLikes
+                  isReply={data.status === "채택"}
+                  likes={data.likeCount}
+                />
                 <Content>
-                  <Author nickname="남세원" profilePicture={ProfilePicture} />
-                  <ContentText>
-                    왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루왈랄랄루
-                  </ContentText>
+                  <Author
+                    time={getRelativeDate(data.createdDate)}
+                    nickname={data.nickname}
+                    profilePicture={data.userImage}
+                  />
+                  <ContentText
+                    dangerouslySetInnerHTML={{ __html: data.content }}
+                  />
                 </Content>
               </ContentWrapper>
               <Line width={`100`} />

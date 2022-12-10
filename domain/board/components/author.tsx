@@ -4,7 +4,11 @@ import { AuthorNickname, AuthorWrapper } from "./author.style";
 import Image from "next/image";
 import { AuthorPropsType } from "../interface";
 
-const Author: NextPage<AuthorPropsType> = ({ profilePicture, nickname }) => {
+const Author: NextPage<AuthorPropsType> = ({
+  profilePicture,
+  nickname,
+  time,
+}) => {
   return (
     <section id={"author"}>
       <AuthorWrapper>
@@ -17,6 +21,7 @@ const Author: NextPage<AuthorPropsType> = ({ profilePicture, nickname }) => {
           layout="fixed"
         />
         <AuthorNickname>{nickname}</AuthorNickname>
+        <AuthorNickname style={{ color: "gray" }}>{time}</AuthorNickname>
       </AuthorWrapper>
     </section>
   );

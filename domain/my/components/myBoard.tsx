@@ -25,7 +25,7 @@ const Info: NextPage<UserInfoRightPropsType> = ({
           {myQuestionData?.map((data, idx) => {
             return <div key={idx}>{data.title}</div>;
           })}
-          {myQuestionData ? "내가 쓴 글이 없습니다." : ""}
+          {!myQuestionData ? "내가 쓴 글이 없습니다." : ""}
         </InfoUserContent>
       </div>
     </InfoWrapper>

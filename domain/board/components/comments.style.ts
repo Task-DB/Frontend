@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const BoardComments = styled.div`
-  margin: 1rem;
+export const BoardCommentsContent = styled.div`
+  margin: .5rem;
   span {
     margin-left: 0.3rem;
     color: ${theme.gray["300"]};
   }
+`;
+
+export const BoardCommentsDetail = styled.div`
+  display: flex;
+  align-items: center;
+  
 `;
 
 export const BoardCommentsWrapper = styled.div`
