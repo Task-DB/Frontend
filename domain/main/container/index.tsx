@@ -19,17 +19,20 @@ const MainContainer: NextPage = () => {
       appId: "1:154549871574:web:3b74493fba2d6811b4fa77",
       measurementId: "G-YQCYT69DYM",
     };
+
     if (!localStorage.getItem("fcmToken")) {
       if (!firebase.apps.length) {
         firebase.initializeApp(config);
       } else {
         firebase.app();
       }
+
       const firebaseMessageToken = async () => {
         let token = await getToken();
         localStorage.setItem("fcmToken", token!);
         postToken(token!);
       };
+
       firebaseMessageToken();
     }
   }, []);

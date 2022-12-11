@@ -9,9 +9,7 @@ const Board: NextPage = () => {
       <Head>
         <title>게시글</title>
       </Head>
-      <section id={`board`}>
-        <BoardContainer />
-      </section>
+      <section id={`board`}>아니 이거 필요하나?</section>
     </>
   );
 };

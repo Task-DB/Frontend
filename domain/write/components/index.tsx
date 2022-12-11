@@ -21,88 +21,53 @@ hljs.configure({
 });
 
 const formats = [
-  "header",
   "font",
-  "size",
+  "header",
   "bold",
   "italic",
   "underline",
   "strike",
   "blockquote",
+  "code-block",
+  "formula",
   "list",
   "bullet",
   "indent",
   "link",
-  "code-block",
   "image",
+  "video",
+  "color",
+  "background",
 ];
-
 const Editor = ({ content, setContent }: EditorContentType) => {
   const quillRef = React.useRef();
-  const insertImage = (photo_id: string) => {
-    const IMG_URL = photo_id;
-    // @ts-ignore
-    const editor = quillRef.current?.getEditor();
-    const range = editor.getSelection();
-    editor.insertText(range, "\n");
-    editor.insertEmbed(
-      range.index,
-      "image",
-      `NEXT_PUBLIC_AWS_BUCKET_NAME/${IMG_URL}`
-    );
-  };
 
-  const imageHandler = () => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
-
-    input.addEventListener("change", async () => {
-      const file: File = (input.files as FileList)[0];
-      postEditorImage(file)
-        .then((response) => {
-          insertImage(response.href);
-        })
-        .catch((_) => {
-          alert("Image upload failed.");
-        });
-    });
-  };
-
-  const modules = React.useMemo(() => {
-    return {
+  const modules = React.useMemo(
+    () => ({
       syntax: {
         highlight: (text: string) => hljs.highlightAuto(text).value,
       },
       toolbar: {
-        Wrapper: [
-          [{ header: "1" }, { header: "2" }],
-          [{ size: [] }],
+        container: [
+          [{ font: [] }], // font 설정
+          [{ header: [1, 2, 3, 4, 5, 6, false] }], // header 설정
           [
-            "image",
             "bold",
             "italic",
             "underline",
             "strike",
             "blockquote",
             "code-block",
-            "link",
-          ],
-          [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" },
-          ],
+          ], // 굵기, 기울기, 밑줄 등 부가 tool 설정
+         
+          ["link", "image", "video"], // 링크, 이미지, 비디오 업로드 설정
+          [{ align: [] }, { color: [] }, { background: [] }], // 정렬, 글씨 색깔, 글씨 배경색 설정
+          ["clean"], // toolbar 설정 초기화 설정
         ],
-        handlers: {
-          image: imageHandler,
-        },
       },
-    };
-    //eslint-disable-next-line
-  }, []);
+    }),
+    []
+  );
 
   return (
     <ReactQuill
