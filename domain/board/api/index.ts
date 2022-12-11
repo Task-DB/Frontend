@@ -79,8 +79,9 @@ export const handleReply = (
 
 export const handleAdopt = async (boardId: number) => {
   putAdopt(boardId)
-    .then((response) => {
-      console.log(response);
+    .then((_) => {
+      alert("채택되었습니다.");
+      location.reload();
     })
     .catch((error) => {
       console.log(error);

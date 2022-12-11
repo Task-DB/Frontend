@@ -23,6 +23,7 @@ const Reply: NextPage<{
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");
+  console.log();
   return (
     <section id={"reply"}>
       <ReplyWrapper>
@@ -59,11 +60,12 @@ const Reply: NextPage<{
                   <></>
                 )}
                 {localStorage?.getItem("userId") ==
-                boardData?.userId.toString() ? (
+                  boardData?.userId.toString() &&
+                boardData.status === "OPEN" ? (
                   <div
                     onClick={() => {
                       console.log("채택");
-                      handleAdopt(data.id)
+                      handleAdopt(data.id);
                     }}
                   >
                     채택
