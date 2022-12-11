@@ -55,6 +55,7 @@ export const handleComment = (
   postComment(boardId, commentsData)
     .then((_) => {
       alert("댓글 작성이 완료되었습니다.");
+      location.reload();
     })
     .catch((_) => {
       alert("댓글 작성에 실패하였습니다.");
@@ -68,6 +69,7 @@ export const handleReply = (
   postReply(boardId, commentsData)
     .then((_) => {
       alert("답변 작성이 완료되었습니다.");
+      location.reload();
     })
     .catch((_) => {
       alert("답변 작성에 실패하였습니다.");

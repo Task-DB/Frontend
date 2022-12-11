@@ -16,7 +16,7 @@ export const handleLogin = (data: LoginRequestType) => {
       localStorage.setItem("accessToken", response?.accessToken);
       location.href = "/";
     })
-    .catch((error) => {
+    .catch((_) => {
       alert("잘못된 이메일입니다.");
     });
 };
