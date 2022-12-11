@@ -1,5 +1,7 @@
+import React from "react";
 import instance from "../../../lib/instance";
 import { dynamicRouteType } from "../../board/interface";
+import { MyType } from "../../my/interface";
 
 export const getAnotherUserData = async (userId: dynamicRouteType) => {
   try {
@@ -10,12 +12,16 @@ export const getAnotherUserData = async (userId: dynamicRouteType) => {
   }
 };
 
-export const handleAnotherUserData = (userId: dynamicRouteType) => {
+export const handleAnotherUserData = (
+  userId: dynamicRouteType,
+  setMyData: React.Dispatch<React.SetStateAction<MyType | undefined>>
+) => {
   getAnotherUserData(userId)
     .then((response) => {
-      console.log(response);
+      setMyData(response);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((_) => {
+      alert("유저가 없어요..");
+      location.href = "/";
     });
 };

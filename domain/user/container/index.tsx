@@ -6,9 +6,12 @@ import useStore from "../../../context/useStore";
 import Introduce from "../../my/components/introduce";
 import Info from "../../my/components/myBoard";
 import Board from "../../my/components/saveBoard";
-import { UserInfoContainer, UserRightWrapper } from "../../my/container/index.style";
+import {
+  UserInfoContainer,
+  UserRightWrapper,
+} from "../../my/container/index.style";
 import { MyType } from "../../my/interface";
-import { getMyQuestionData } from "../../my/api";
+import { getAnotherUserData, handleAnotherUserData } from "../api";
 import UserInfo from "../../my/components/userInfo";
 
 const UserContainer: NextPage<{ userId: dynamicRouteType }> = ({ userId }) => {
@@ -70,10 +73,8 @@ const UserContainer: NextPage<{ userId: dynamicRouteType }> = ({ userId }) => {
       handleScroll();
     });
 
-    getMyQuestionData().then((response) => {
-      setMyData(response);
-    });
-  }, []);
+    handleAnotherUserData(userId, setMyData)
+  }, [userId]);
 
   const [myData, setMyData] = React.useState<MyType>();
 
