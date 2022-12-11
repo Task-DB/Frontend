@@ -55,9 +55,10 @@ export const handleComment = (
   postComment(boardId, commentsData)
     .then((_) => {
       alert("댓글 작성이 완료되었습니다.");
-      location.reload();
+      // location.reload();
     })
-    .catch((_) => {
+    .catch((error) => {
+      console.log(error);
       alert("댓글 작성에 실패하였습니다.");
     });
 };

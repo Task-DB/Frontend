@@ -24,22 +24,24 @@ hljs.configure({
 });
 
 const formats = [
-  "header",
   "font",
-  "size",
+  "header",
   "bold",
   "italic",
   "underline",
   "strike",
   "blockquote",
+  "code-block",
+  "formula",
   "list",
   "bullet",
   "indent",
   "link",
-  "code-block",
   "image",
+  "video",
+  "color",
+  "background",
 ];
-
 const ReplyForm = ({
   content,
   setContent,
@@ -86,29 +88,12 @@ const ReplyForm = ({
         highlight: (text: string) => hljs.highlightAuto(text).value,
       },
       toolbar: {
-        Wrapper: [
-          [{ header: "1" }, { header: "2" }],
-          [{ size: [] }],
-          [
-            "image",
-            "bold",
-            "italic",
-            "underline",
-            "strike",
-            "blockquote",
-            "code-block",
-            "link",
-          ],
-          [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" },
-          ],
+        container: [
+          [{ font: [] }], // font 설정
+          [{ header: [1, 2, false] }], // header 설정
+          ["bold", "underline", "strike", "blockquote", "code-block"], // 굵기, 기울기, 밑줄 등 부가 tool 설정
+          ["link", "image"], // 링크, 이미지, 비디오 업로드 설정
         ],
-        handlers: {
-          image: imageHandler,
-        },
       },
     };
     //eslint-disable-next-line

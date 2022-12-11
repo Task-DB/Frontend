@@ -1,4 +1,5 @@
 import instance from "../../../lib/instance";
+import { getMyQuestionData } from "../../my/api";
 import { LoginRequestType } from "../interface";
 
 export const postLogin = async (loginData: LoginRequestType) => {

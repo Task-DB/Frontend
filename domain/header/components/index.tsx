@@ -15,6 +15,7 @@ import {
 import { onChangeAction } from "../../../util";
 import Link from "next/link";
 import { handleLogout } from "../util";
+import { getSearch, handleSearch } from "../api";
 
 const Header: NextPage = () => {
   const [keyword, setKeyWord] = React.useState<string>("");
@@ -48,7 +49,11 @@ const Header: NextPage = () => {
               onChangeAction(event, setKeyWord);
             }}
           />
-          <SearchButton>
+          <SearchButton
+            onClick={() => {
+              handleSearch(keyword);
+            }}
+          >
             <Image
               src={SearchButtonImage}
               alt="검색하기"

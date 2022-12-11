@@ -7,6 +7,7 @@ import { MainWrapper } from "./index.style";
 import firebase from "firebase";
 import { getToken } from "../util/firebase";
 import { postToken } from "../api";
+import { getMyQuestionData } from "../../my/api";
 
 const MainContainer: NextPage = () => {
   React.useEffect(() => {
@@ -22,6 +23,7 @@ const MainContainer: NextPage = () => {
     const firebaseMessageToken = async () => {
       let token = await getToken();
       localStorage.setItem("fcmToken", token!);
+      
       postToken(token!);
     };
 

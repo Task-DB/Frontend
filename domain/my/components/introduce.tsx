@@ -20,6 +20,10 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({
   const [isEdit, setIsEdit] = React.useState<boolean>(false);
   const [bio, setBio] = React.useState<string>("");
 
+  React.useEffect(() => {
+    setBio(myIntroduceData!);
+  }, [myIntroduceData]);
+
   return (
     <IntroduceWrapper ref={moveRef}>
       <IntroduceTopWrapper ref={uRef}>
@@ -41,7 +45,7 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({
       {isEdit ? (
         <IntroduceEditWrapper>
           <IntroduceInput
-            value={myIntroduceData}
+            value={bio}
             onChange={(event) => {
               onChangeAction(event, setBio);
             }}

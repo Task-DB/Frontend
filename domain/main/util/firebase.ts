@@ -1,9 +1,15 @@
 import firebase from "firebase";
+import { getMyQuestionData } from "../../my/api";
 
 export async function getToken() {
   if (firebase.messaging.isSupported() === false) {
     return null;
   }
+
+  getMyQuestionData().then((response) => {
+    console.log(response);
+    localStorage.setItem("userId", "1");
+  });
 
   const messaging = firebase.messaging();
 

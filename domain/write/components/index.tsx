@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 import "react-quill/dist/quill.snow.css";
-import { postEditorImage } from "../api";
 import { DynamicEditorType, EditorContentType } from "../interface";
 
 const ReactQuill = dynamic(

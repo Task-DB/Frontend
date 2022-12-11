@@ -1,4 +1,5 @@
 import create from "zustand";
+import { SearchDataType } from "../domain/header/interface";
 import { IndividualIssueType } from "../domain/issue/interface";
 import { UseStoreType } from "./interface";
 
@@ -8,6 +9,8 @@ const useStore = create<UseStoreType>((set) => ({
   allIssueData: [],
   setAllIssueData: (input: IndividualIssueType[]) =>
     set({ allIssueData: input }),
+  result: [],
+  setResult: (input: SearchDataType[]) => set({ result: input }),
 }));
 
 export default useStore;
