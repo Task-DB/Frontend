@@ -20,20 +20,20 @@ const MainContainer: NextPage = () => {
       measurementId: "G-YQCYT69DYM",
     };
     const firebaseMessageToken = async () => {
+      let token = await getToken();
+      localStorage.setItem("fcmToken", token!);
+      postToken(token!);
+    };
+
+    if (!localStorage.getItem("fcmToken")) {
       if (!firebase.apps.length) {
         firebase.initializeApp(config);
       } else {
         firebase.app();
       }
 
-      const token: string | null = await getToken();
-      if (token != localStorage.getItem("fcmToken")) {
-        postToken(token!);
-        localStorage.setItem("fcmToken", token!);
-      }
-    };
-
-    firebaseMessageToken();
+      firebaseMessageToken();
+    }
   }, []);
 
   return (
