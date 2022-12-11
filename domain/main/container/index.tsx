@@ -7,7 +7,6 @@ import { MainWrapper } from "./index.style";
 import firebase from "firebase";
 import { getToken } from "../util/firebase";
 import { postToken } from "../api";
-import LongMenu from "../../board/components/adminMenu";
 
 const MainContainer: NextPage = () => {
   React.useEffect(() => {
@@ -20,27 +19,25 @@ const MainContainer: NextPage = () => {
       appId: "1:154549871574:web:3b74493fba2d6811b4fa77",
       measurementId: "G-YQCYT69DYM",
     };
-
-    if (!localStorage.getItem("fcmToken")) {
+    const firebaseMessageToken = async () => {
       if (!firebase.apps.length) {
         firebase.initializeApp(config);
       } else {
         firebase.app();
       }
 
-      const firebaseMessageToken = async () => {
-        let token = await getToken();
-        localStorage.setItem("fcmToken", token!);
+      const token: string | null = await getToken();
+      if (token != localStorage.getItem("fcmToken")) {
         postToken(token!);
-      };
+        localStorage.setItem("fcmToken", token!);
+      }
+    };
 
-      firebaseMessageToken();
-    }
+    firebaseMessageToken();
   }, []);
 
   return (
     <MainWrapper>
-      <LongMenu />
       <SubjectSelector />
       <IssueContainer />
       <WriteButton />

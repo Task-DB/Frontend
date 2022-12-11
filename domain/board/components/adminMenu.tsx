@@ -8,7 +8,7 @@ const options = ["수정하기", "삭제하기"];
 
 const ITEM_HEIGHT = 22;
 
-export default function LongMenu() {
+export default function AdminMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
