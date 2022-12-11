@@ -8,6 +8,7 @@ import {
 import { dynamicRouteType, IndividualBoardType } from "../interface";
 import ReplyForm from "./replyForm";
 import { getRelativeDate } from "../../../util";
+import AdminMenu from "./adminMenu";
 
 const Comments: NextPage<{
   boardData: IndividualBoardType;
@@ -27,6 +28,11 @@ const Comments: NextPage<{
               <span style={{ color: "gray" }}>
                 {getRelativeDate(data.createdDate)}
               </span>
+              {localStorage?.getItem("userId") === data.userId.toString() ? (
+                <AdminMenu />
+              ) : (
+                <></>
+              )}
             </BoardCommentsDetail>
           );
         })}

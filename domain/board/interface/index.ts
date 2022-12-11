@@ -21,6 +21,7 @@ export interface CommentsDataType {
   createdDate: string;
   nickname: string;
   userImage: string;
+  userId: number;
 }
 
 export interface ReplyEditorContentType {
@@ -50,12 +51,15 @@ export interface AnswerDataType {
   nickname: string;
   userImage: string;
   status: string;
+  userId: number;
 }
 
 export interface IndividualBoardType {
   answers: AnswerDataType[];
   comments: CommentsDataType[];
   content: string;
+  id: number;
+  userId: number;
   createdDate: string;
   likeCount: number;
   modifiedDate: string;

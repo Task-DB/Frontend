@@ -15,6 +15,7 @@ import { ProfilePicture } from "../../my/assets";
 import ReplyForm from "./replyForm";
 import { dynamicRouteType, IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
+import AdminMenu from "./adminMenu";
 
 const Reply: NextPage<{
   boardId: dynamicRouteType;
@@ -51,6 +52,12 @@ const Reply: NextPage<{
                     dangerouslySetInnerHTML={{ __html: data.content }}
                   />
                 </Content>
+                {localStorage?.getItem("userId") ==
+                boardData?.userId.toString() ? (
+                  <AdminMenu />
+                ) : (
+                  <></>
+                )}
               </ContentWrapper>
               <Line width={`100`} />
             </ReplyContentWrapper>
