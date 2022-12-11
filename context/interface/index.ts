@@ -6,6 +6,6 @@ export interface UseStoreType {
   setActiveList: (input: boolean[]) => void;
   allIssueData: IndividualIssueType[];
   setAllIssueData: (input: IndividualIssueType[]) => void;
-  result: SearchDataType[];
-  setResult: (input: SearchDataType[]) => void;
+  searchResult: SearchDataType[];
+  setSearchResult: (input: SearchDataType[]) => void;
 }

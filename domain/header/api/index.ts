@@ -11,6 +11,7 @@ export const getSearch = async (keyword: string) => {
 
 export const handleSearch = async (keyword: string) => {
   const data = await getSearch(keyword);
+  
   console.log(data);
   return data;
 };

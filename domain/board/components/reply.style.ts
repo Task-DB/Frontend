@@ -4,6 +4,7 @@ import { LinePropsType } from "../interface";
 
 export const Content = styled.div`
   width: 75%;
+  padding: 2rem;
 `;
 
 export const ReplyContentWrapper = styled.div``;

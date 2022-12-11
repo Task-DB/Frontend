@@ -52,9 +52,20 @@ const Reply: NextPage<{
                     dangerouslySetInnerHTML={{ __html: data.content }}
                   />
                 </Content>
+                {localStorage?.getItem("userId") == data.userId.toString() ? (
+                  <AdminMenu />
+                ) : (
+                  <></>
+                )}
                 {localStorage?.getItem("userId") ==
                 boardData?.userId.toString() ? (
-                  <AdminMenu />
+                  <div
+                    onClick={() => {
+                      console.log("채택");
+                    }}
+                  >
+                    채택
+                  </div>
                 ) : (
                   <></>
                 )}

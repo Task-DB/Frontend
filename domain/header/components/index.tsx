@@ -16,8 +16,13 @@ import { onChangeAction } from "../../../util";
 import Link from "next/link";
 import { handleLogout } from "../util";
 import { getSearch, handleSearch } from "../api";
+import useStore from "../../../context/useStore";
+import { useRouter } from "next/router";
 
 const Header: NextPage = () => {
+  const { searchResult, setSearchResult } = useStore();
+  const router = useRouter();
+
   const [keyword, setKeyWord] = React.useState<string>("");
   const [isLogin, setIsLogin] = React.useState<boolean>(false);
   const [content, setContent] = React.useState([
@@ -51,7 +56,10 @@ const Header: NextPage = () => {
           />
           <SearchButton
             onClick={() => {
-              handleSearch(keyword);
+              handleSearch(keyword).then((response) => {
+                setSearchResult(response);
+                router.push("/search");
+              });
             }}
           >
             <Image

@@ -12,6 +12,7 @@ export const SelectorWrapper = styled.div`
 `;
 
 export const SelectorElement = styled.span<{ isSelect: boolean }>`
+  cursor: pointer;
   margin-top: 1rem;
   border-right: 1px solid ${theme.main};
   padding: 0.5rem;

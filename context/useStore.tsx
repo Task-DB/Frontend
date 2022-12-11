@@ -9,8 +9,8 @@ const useStore = create<UseStoreType>((set) => ({
   allIssueData: [],
   setAllIssueData: (input: IndividualIssueType[]) =>
     set({ allIssueData: input }),
-  result: [],
-  setResult: (input: SearchDataType[]) => set({ result: input }),
+  searchResult: [],
+  setSearchResult: (input: SearchDataType[]) => set({ searchResult: input }),
 }));
 
 export default useStore;

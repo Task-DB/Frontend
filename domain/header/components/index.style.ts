@@ -52,6 +52,7 @@ export const SearchButton = styled.button`
   position: absolute;
   right: 7px;
   top: 6px;
+  cursor: pointer;
   z-index: 999;
 `;
 
