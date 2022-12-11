@@ -1,9 +1,5 @@
 import instance from "../../../lib/instance";
-import {
-  CommentsDataType,
-  dynamicRouteType,
-  IndividualBoardType,
-} from "../interface";
+import { dynamicRouteType, IndividualBoardType } from "../interface";
 
 export const getBoardData = async (
   boardId: dynamicRouteType
@@ -25,6 +21,15 @@ export const postComment = async (
       `/comment/${boardId}/new`,
       commentsData
     );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAdopt = async (boardId: dynamicRouteType) => {
+  try {
+    const { data } = await instance.put(`/answer/${boardId}/adopt`);
     return data;
   } catch (error) {
     throw error;
@@ -66,5 +71,15 @@ export const handleReply = (
     })
     .catch((_) => {
       alert("답변 작성에 실패하였습니다.");
+    });
+};
+
+export const handleAdopt = async (boardId: dynamicRouteType) => {
+  putAdopt(boardId)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 };
