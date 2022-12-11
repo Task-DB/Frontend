@@ -16,6 +16,7 @@ import ReplyForm from "./replyForm";
 import { dynamicRouteType, IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
+import { handleAdopt, putAdopt } from "../api";
 
 const Reply: NextPage<{
   boardId: dynamicRouteType;
@@ -62,6 +63,7 @@ const Reply: NextPage<{
                   <div
                     onClick={() => {
                       console.log("채택");
+                      handleAdopt(data.id)
                     }}
                   >
                     채택

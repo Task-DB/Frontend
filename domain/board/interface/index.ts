@@ -45,6 +45,7 @@ export interface BoardContentType {
 }
 
 export interface AnswerDataType {
+  id: number;
   content: string;
   createdDate: string;
   likeCount: number;

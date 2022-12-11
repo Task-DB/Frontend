@@ -27,7 +27,7 @@ export const postComment = async (
   }
 };
 
-export const putAdopt = async (boardId: dynamicRouteType) => {
+export const putAdopt = async (boardId: number) => {
   try {
     const { data } = await instance.put(`/answer/${boardId}/adopt`);
     return data;
@@ -77,7 +77,7 @@ export const handleReply = (
     });
 };
 
-export const handleAdopt = async (boardId: dynamicRouteType) => {
+export const handleAdopt = async (boardId: number) => {
   putAdopt(boardId)
     .then((response) => {
       console.log(response);
