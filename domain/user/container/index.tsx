@@ -1,16 +1,17 @@
-import React, { SetStateAction } from "react";
+import React from "react";
 import type { NextPage } from "next";
-import UserInfo from "../components/userInfo";
-import { UserInfoContainer, UserRightWrapper } from "./index.style";
-import Introduce from "../components/introduce";
-import Info from "../components/myBoard";
-import Board from "../components/saveBoard";
+import { dynamicRouteType } from "../../board/interface";
 import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
-import { getMyQuestionData } from "../api";
-import { MyType } from "../interface";
+import Introduce from "../../my/components/introduce";
+import Info from "../../my/components/myBoard";
+import Board from "../../my/components/saveBoard";
+import { UserInfoContainer, UserRightWrapper } from "../../my/container/index.style";
+import { MyType } from "../../my/interface";
+import { getMyQuestionData } from "../../my/api";
+import UserInfo from "../../my/components/userInfo";
 
-const MyContainer: NextPage = () => {
+const UserContainer: NextPage<{ userId: dynamicRouteType }> = ({ userId }) => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
   const [infoY, setInfoY] = React.useState<number>(0);
   const [boardY, setBoardY] = React.useState<number>(0);
@@ -19,14 +20,14 @@ const MyContainer: NextPage = () => {
 
   const menus = {
     0: useMoveScroll("소개"),
-    1: useMoveScroll("내가 쓴 글"),
-    2: useMoveScroll("내가 저장한 글"),
+    1: useMoveScroll("쓴 글"),
+    2: useMoveScroll("저장한 글"),
     length: 3,
   };
 
   const setRef = (
     ref: HTMLDivElement,
-    setState: React.Dispatch<SetStateAction<number>>
+    setState: React.Dispatch<React.SetStateAction<number>>
   ) => {
     if (ref) {
       setState(ref.getBoundingClientRect().y);
@@ -103,4 +104,4 @@ const MyContainer: NextPage = () => {
     </UserInfoContainer>
   );
 };
-export default MyContainer;
+export default UserContainer;

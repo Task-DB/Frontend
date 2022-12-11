@@ -51,15 +51,7 @@ const Editor = ({ content, setContent }: EditorContentType) => {
         container: [
           [{ font: [] }], // font 설정
           [{ header: [1, 2, 3, 4, 5, 6, false] }], // header 설정
-          [
-            "bold",
-            "italic",
-            "underline",
-            "strike",
-            "blockquote",
-            "code-block",
-          ], // 굵기, 기울기, 밑줄 등 부가 tool 설정
-         
+          ["bold", "italic", "underline", "strike", "blockquote", "code-block"], // 굵기, 기울기, 밑줄 등 부가 tool 설정
           ["link", "image", "video"], // 링크, 이미지, 비디오 업로드 설정
           [{ align: [] }, { color: [] }, { background: [] }], // 정렬, 글씨 색깔, 글씨 배경색 설정
           ["clean"], // toolbar 설정 초기화 설정

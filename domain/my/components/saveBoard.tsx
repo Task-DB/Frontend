@@ -16,7 +16,7 @@ const Board: NextPage<UserInfoRightPropsType> = ({
           {mySavedQuestionData?.map((data, idx) => {
             return <div key={idx}>{data}</div>;
           })}
-          {!mySavedQuestionData?.length ? "내가 자주 찾는 게시글을 저장해보세요!" : ""}
+          {!mySavedQuestionData?.length ? "자주 찾는 게시글을 저장해보세요!" : ""}
         </BoardUserContent>
       </div>
     </BoardWrapper>

@@ -23,7 +23,7 @@ const Info: NextPage<UserInfoRightPropsType> = ({
               </MyQuestionWrapper>
             );
           })}
-          {!myQuestionData ? "내가 쓴 글이 없습니다." : ""}
+          {!myQuestionData ? "쓴 글이 없습니다." : ""}
         </InfoUserContent>
       </div>
     </InfoWrapper>

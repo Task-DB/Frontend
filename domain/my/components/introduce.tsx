@@ -55,7 +55,9 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({
           </IntroduceButton>
         </IntroduceEditWrapper>
       ) : (
-        <IntroduceUserContent>{myIntroduceData}</IntroduceUserContent>
+        <IntroduceUserContent>
+          {myIntroduceData ? myIntroduceData : "소개가 없습니다!"}
+        </IntroduceUserContent>
       )}
     </IntroduceWrapper>
   );
