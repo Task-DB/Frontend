@@ -6,13 +6,15 @@ import { EditorFormValue } from "../interface";
 import { CompleteButton, TitleInput } from "../components/index.style";
 import type { NextPage } from "next";
 import { handleWrite, postBoard } from "../api";
-import { dynamicRouteType } from "../../board/interface";
+import { BoardContentType, dynamicRouteType } from "../../board/interface";
 
-const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({ boardId }) => {
+const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({
+  boardId,
+}) => {
   const router = useRouter();
-  const [content, setContent] = React.useState("");
-
-  if(boardId) {
+  const [content, setContent] = React.useState<string>("");
+  const [boardData, setBoardData] = React.useState<BoardContentType>();
+  if (boardId) {
     // 게시글 정보 받아오는 코드
   }
 
@@ -23,13 +25,23 @@ const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({ boardId }) =
     formState: { isSubmitting },
   } = useForm<EditorFormValue>();
 
+  const [selectData, setSelectData] = React.useState([
+    { value: "JAVA", name: "Java" },
+    { value: "C_DOUBLE_PLUS", name: "C" },
+    { value: "DB", name: "DB" },
+    { value: "CERTIFICATE", name: "자격증" },
+  ]);
+
   return (
     <section id="editor">
       <form
         onSubmit={handleSubmit((data) => {
           data["content"] = content;
           data["category"] = category;
-          handleWrite(data);
+          handleWrite(data).then((_) => {
+            alert("작성이 완료되었습니다.");
+            router.push("/");
+          });
         })}
       >
         <select
@@ -43,10 +55,17 @@ const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({ boardId }) =
             setCategory(event.target.value);
           }}
         >
-          <option value="JAVA">Java</option>
-          <option value="C_DOUBLE_PLUS">C++</option>
-          <option value="DB">DB</option>
-          <option value="CERTIFICATE">자격증</option>
+          {selectData.map((data, idx) => {
+            return (
+              <option
+                value={data.value}
+                key={idx}
+                selected={data.value === boardData?.category ? true : false}
+              >
+                {data.name}
+              </option>
+            );
+          })}
         </select>
         <TitleInput
           type={`text`}
