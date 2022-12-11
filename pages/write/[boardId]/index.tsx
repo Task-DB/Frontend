@@ -1,24 +1,24 @@
 import React from "react";
 import Head from "next/head";
 import type { NextPage } from "next";
+import WriteContainer from "../../../domain/write/container";
 import { NextRouter, useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
-import { dynamicRouteType } from "../../domain/board/interface";
-import IndividualBoard from "../../domain/board/container/";
+import { dynamicRouteType } from "../../../domain/board/interface";
 
-const BoardId: NextPage = () => {
+const Edit: NextPage = () => {
   const router: NextRouter = useRouter();
   const route: ParsedUrlQuery = router.query; // 다이나믹 라우트 받는 부분
   const boardId: dynamicRouteType = route.boardId;
   return (
     <>
       <Head>
-        <title>BoardId</title>
+        <title>Edit</title>
       </Head>
-      <section id={`indiviual-board`}>
-        <IndividualBoard boardId={boardId} />
+      <section id={`Edit`}>
+        <WriteContainer boardId={boardId} />
       </section>
     </>
   );
 };
-export default BoardId;
+export default Edit;

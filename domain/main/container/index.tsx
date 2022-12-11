@@ -7,6 +7,7 @@ import { MainWrapper } from "./index.style";
 import firebase from "firebase";
 import { getToken } from "../util/firebase";
 import { postToken } from "../api";
+import LongMenu from "../../board/components/adminMenu";
 
 const MainContainer: NextPage = () => {
   React.useEffect(() => {
@@ -39,6 +40,7 @@ const MainContainer: NextPage = () => {
 
   return (
     <MainWrapper>
+      <LongMenu />
       <SubjectSelector />
       <IssueContainer />
       <WriteButton />

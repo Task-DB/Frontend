@@ -6,10 +6,16 @@ import { EditorFormValue } from "../interface";
 import { CompleteButton, TitleInput } from "../components/index.style";
 import type { NextPage } from "next";
 import { handleWrite, postBoard } from "../api";
+import { dynamicRouteType } from "../../board/interface";
 
-const WritePage: NextPage = () => {
+const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({ boardId }) => {
   const router = useRouter();
   const [content, setContent] = React.useState("");
+
+  if(boardId) {
+    // 게시글 정보 받아오는 코드
+  }
+
   const [category, setCategory] = React.useState<string>("JAVA");
   const {
     register,
@@ -31,7 +37,7 @@ const WritePage: NextPage = () => {
             border: "0",
             borderRadius: "3px",
             marginLeft: "15%",
-            marginTop:"10px"
+            marginTop: "10px",
           }}
           onChange={(event) => {
             setCategory(event.target.value);
@@ -58,4 +64,4 @@ const WritePage: NextPage = () => {
   );
 };
 
-export default WritePage;
+export default WriteContainer;
