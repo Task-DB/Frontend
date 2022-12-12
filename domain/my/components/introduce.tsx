@@ -53,6 +53,7 @@ const Introduce: NextPage<UserInfoRightPropsType> = ({
           <IntroduceButton
             onClick={() => {
               setIsEdit(false);
+              
             }}
           >
             저장

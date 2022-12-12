@@ -8,4 +8,6 @@ export interface UseStoreType {
   setAllIssueData: (input: IndividualIssueType[]) => void;
   searchResult: SearchDataType[];
   setSearchResult: (input: SearchDataType[]) => void;
+  searchKeyword: string;
+  setSearchKeyword: (input: string) => void;
 }

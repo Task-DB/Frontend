@@ -20,7 +20,7 @@ import useStore from "../../../context/useStore";
 import { useRouter } from "next/router";
 
 const Header: NextPage = () => {
-  const { searchResult, setSearchResult } = useStore();
+  const { setSearchKeyword, setSearchResult } = useStore();
   const router = useRouter();
 
   const [keyword, setKeyWord] = React.useState<string>("");
@@ -58,6 +58,7 @@ const Header: NextPage = () => {
             onClick={() => {
               handleSearch(keyword).then((response) => {
                 setSearchResult(response);
+                setSearchKeyword(keyword);
                 router.push("/search");
               });
             }}

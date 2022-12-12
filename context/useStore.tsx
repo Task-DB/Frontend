@@ -11,6 +11,8 @@ const useStore = create<UseStoreType>((set) => ({
     set({ allIssueData: input }),
   searchResult: [],
   setSearchResult: (input: SearchDataType[]) => set({ searchResult: input }),
+  searchKeyword: "",
+  setSearchKeyword: (input: string) => set({ searchKeyword: input }),
 }));
 
 export default useStore;
