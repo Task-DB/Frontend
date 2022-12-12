@@ -12,6 +12,8 @@ export const BoardCommentsContent = styled.div`
   }
 `;
 
+export const BoardCommentsEditContent = styled.input``;
+
 export const BoardCommentsDetail = styled.div`
   display: flex;
   align-items: center;

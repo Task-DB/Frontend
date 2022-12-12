@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const ReplyFormWrapper = styled.div<{ width: string;  }>`
+export const ReplyFormWrapper = styled.div<{ width: string }>`
   position: relative;
   width: ${(props) => props.width}%;
   margin-left: auto;
   margin-right: auto;
 `;
 
-export const ReplyFormButton = styled.button`
+export const ReplyFormButton = styled.button<{ isEdit?: boolean }>`
   position: absolute;
-  top: 11px;
+  top: ${(props) => (props.isEdit ? "31px" : "11px")};
   right: 10px;
   border: 0;
   color: ${theme.black};

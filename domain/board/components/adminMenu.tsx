@@ -4,16 +4,19 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { deleteAnswer, deleteComment, putAnswer, putComment } from "../api";
+import { useRouter } from "next/router";
 
-const options = ["수정하기", "삭제하기"];
+const options = ["삭제하기"];
 const ITEM_HEIGHT = 22;
 
 export default function AdminMenu({
   boardId,
   type,
+  setIsEdit,
 }: {
   boardId: number;
   type: "comment" | "answer";
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -23,6 +26,7 @@ export default function AdminMenu({
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const router = useRouter();
 
   return (
     <div>
@@ -56,25 +60,15 @@ export default function AdminMenu({
             key={idx}
             onClick={() => {
               if (type === "answer") {
-                if (data === "수정하기") {
-                  putAnswer(boardId).then((_) => {
-                    alert("수정이 완료되었습니다.");
-                  });
-                } else {
-                  deleteAnswer(boardId).then((_) => {
-                    alert("삭제가 완료되었습니다.");
-                  });
-                }
+                deleteAnswer(boardId).then((_) => {
+                  alert("삭제가 완료되었습니다.");
+                  router.reload();
+                });
               } else {
-                if (data === "수정하기") {
-                  putComment(boardId).then((_) => {
-                    alert("수정이 완료되었습니다..");
-                  });
-                } else {
-                  deleteComment(boardId).then((_) => {
-                    alert("삭제가 완료되었습니다..");
-                  });
-                }
+                deleteComment(boardId).then((_) => {
+                  alert("삭제가 완료되었습니다..");
+                  router.reload();
+                });
               }
 
               handleClose();

@@ -88,12 +88,7 @@ const ReplyForm = ({
         highlight: (text: string) => hljs.highlightAuto(text).value,
       },
       toolbar: {
-        container: [
-          [{ font: [] }],
-          [{ header: [1, 2, false] }], 
-          ["bold", "underline", "blockquote", "code-block"],
-          ["link", "image"], 
-        ],
+        container: [[{ font: [] }], ["bold", "underline"], ["link", "image"]],
       },
     };
     //eslint-disable-next-line
@@ -117,6 +112,7 @@ const ReplyForm = ({
         }}
       />
       <ReplyFormButton
+        isEdit={type === "edit"}
         onClick={() => {
           if (type === "comments") {
             handleComment(boardId, { content: content });

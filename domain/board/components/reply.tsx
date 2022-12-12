@@ -17,12 +17,15 @@ import { dynamicRouteType, IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
 import { handleAdopt, putAdopt } from "../api";
+import { display } from "@mui/system";
 
 const Reply: NextPage<{
   boardId: dynamicRouteType;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");
+  const [isEdit, setIsEdit] = React.useState(false);
+
   console.log();
   return (
     <section id={"reply"}>
@@ -56,16 +59,29 @@ const Reply: NextPage<{
                 </Content>
                 {localStorage?.getItem("userId") === data.userId.toString() &&
                 data.status !== "채택" ? (
-                  <AdminMenu boardId={data.id} type="answer" />
+                  <AdminMenu
+                    boardId={data.id}
+                    type="answer"
+                    setIsEdit={setIsEdit}
+                  />
                 ) : (
                   <></>
                 )}
-                {localStorage?.getItem("userId") ==
+                {localStorage?.getItem("userId") ===
                   boardData?.userId.toString() &&
                 boardData.status === "OPEN" ? (
                   <div
+                    style={{
+                      color: "white",
+                      background: "black",
+                      border: "1px solid white",
+                      width: "70px",
+                      padding: ".1rem",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                     onClick={() => {
-                      console.log("채택");
                       handleAdopt(data.id);
                     }}
                   >

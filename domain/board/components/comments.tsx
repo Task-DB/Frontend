@@ -3,11 +3,12 @@ import type { NextPage } from "next";
 import {
   BoardCommentsContent,
   BoardCommentsDetail,
+  BoardCommentsEditContent,
   BoardCommentsWrapper,
 } from "./comments.style";
 import { dynamicRouteType, IndividualBoardType } from "../interface";
 import ReplyForm from "./replyForm";
-import { getRelativeDate } from "../../../util";
+import { getRelativeDate, onChangeAction } from "../../../util";
 import AdminMenu from "./adminMenu";
 
 const Comments: NextPage<{
@@ -15,6 +16,9 @@ const Comments: NextPage<{
   boardId: dynamicRouteType;
 }> = ({ boardData, boardId }) => {
   const [content, setContent] = React.useState<string>("");
+  const [isEdit, setIsEdit] = React.useState(false);
+  const [editContent, setEditContent] = React.useState("");
+
   return (
     <section id={"comments"}>
       <BoardCommentsWrapper>
@@ -22,14 +26,38 @@ const Comments: NextPage<{
           return (
             <BoardCommentsDetail key={idx}>
               <span>{data.nickname}</span>
-              <BoardCommentsContent
-                dangerouslySetInnerHTML={{ __html: data.content }}
-              />
+
+              {!isEdit ? (
+                <BoardCommentsContent
+                  dangerouslySetInnerHTML={{ __html: data.content }}
+                />
+              ) : (
+                <ReplyForm
+                  type="edit"
+                  boardId={boardId}
+                  content={editContent}
+                  setContent={setEditContent}
+                  width={"70"}
+                  height={"100"}
+                />
+                // <BoardCommentsEditContent
+                //   type="text"
+                //   value={data.content}
+                //   onChange={(event) => {
+                //     onChangeAction(event, setContent);
+                //   }}
+                // />
+              )}
+
               <span style={{ color: "gray" }}>
                 {getRelativeDate(data.createdDate)}
               </span>
               {localStorage?.getItem("userId") === data.userId.toString() ? (
-                <AdminMenu boardId={data.id} type="comment" />
+                <AdminMenu
+                  boardId={data.id}
+                  type="comment"
+                  setIsEdit={setIsEdit}
+                />
               ) : (
                 <></>
               )}
