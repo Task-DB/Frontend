@@ -17,6 +17,7 @@ export interface AuthorPropsType {
 }
 
 export interface CommentsDataType {
+  id: number;
   content: string;
   createdDate: string;
   nickname: string;

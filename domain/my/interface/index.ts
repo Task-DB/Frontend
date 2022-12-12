@@ -19,6 +19,7 @@ export interface UserInfoRightPropsType {
 }
 
 export interface MyType {
+  id: number;
   contributionLevel: number;
   getMyQuestions: BoardContentType[];
   getSavedQuestions: string[];

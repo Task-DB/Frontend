@@ -89,10 +89,10 @@ const ReplyForm = ({
       },
       toolbar: {
         container: [
-          [{ font: [] }], // font 설정
-          [{ header: [1, 2, false] }], // header 설정
-          ["bold", "underline", "strike", "blockquote", "code-block"], // 굵기, 기울기, 밑줄 등 부가 tool 설정
-          ["link", "image"], // 링크, 이미지, 비디오 업로드 설정
+          [{ font: [] }],
+          [{ header: [1, 2, false] }], 
+          ["bold", "underline", "blockquote", "code-block"],
+          ["link", "image"], 
         ],
       },
     };

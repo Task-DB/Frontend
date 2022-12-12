@@ -29,7 +29,7 @@ const Comments: NextPage<{
                 {getRelativeDate(data.createdDate)}
               </span>
               {localStorage?.getItem("userId") === data.userId.toString() ? (
-                <AdminMenu />
+                <AdminMenu boardId={data.id} type="comment" />
               ) : (
                 <></>
               )}

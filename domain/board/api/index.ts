@@ -55,7 +55,7 @@ export const handleComment = (
   postComment(boardId, commentsData)
     .then((_) => {
       alert("댓글 작성이 완료되었습니다.");
-      // location.reload();
+      location.reload();
     })
     .catch((error) => {
       console.log(error);
@@ -86,4 +86,40 @@ export const handleAdopt = async (boardId: number) => {
     .catch((error) => {
       console.log(error);
     });
+};
+
+export const putComment = async (boardId: number) => {
+  try {
+    const { data } = await instance.put(`/comment/${boardId}/edit`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteComment = async (boardId: number) => {
+  try {
+    const { data } = await instance.delete(`/comment/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAnswer = async (boardId: number) => {
+  try {
+    const { data } = await instance.put(`/answer/${boardId}/edit`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteAnswer = async (boardId: number) => {
+  try {
+    const { data } = await instance.delete(`/answer/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };

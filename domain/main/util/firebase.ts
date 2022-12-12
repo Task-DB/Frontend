@@ -8,7 +8,7 @@ export async function getToken() {
 
   getMyQuestionData().then((response) => {
     console.log(response);
-    localStorage.setItem("userId", "1");
+    localStorage.setItem("userId", response.id.toString());
   });
 
   const messaging = firebase.messaging();

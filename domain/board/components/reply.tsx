@@ -54,8 +54,9 @@ const Reply: NextPage<{
                     dangerouslySetInnerHTML={{ __html: data.content }}
                   />
                 </Content>
-                {localStorage?.getItem("userId") == data.userId.toString() ? (
-                  <AdminMenu />
+                {localStorage?.getItem("userId") === data.userId.toString() &&
+                data.status !== "채택" ? (
+                  <AdminMenu boardId={data.id} type="answer" />
                 ) : (
                   <></>
                 )}
