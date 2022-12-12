@@ -71,6 +71,7 @@ const MyContainer: NextPage = () => {
 
     getMyQuestionData().then((response) => {
       setMyData(response);
+      console.log("response", response);
     });
   }, []);
 
@@ -80,7 +81,7 @@ const MyContainer: NextPage = () => {
     <UserInfoContainer>
       <UserInfo
         userName={myData!?.nickname}
-        userProfile={myData!?.image}
+        UserProfile={myData!?.image}
         menus={Array.from(menus)}
       />
       <UserRightWrapper>

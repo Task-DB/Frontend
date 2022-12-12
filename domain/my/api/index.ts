@@ -9,4 +9,3 @@ export const getMyQuestionData = async (): Promise<MyType> => {
     throw error;
   }
 };
-

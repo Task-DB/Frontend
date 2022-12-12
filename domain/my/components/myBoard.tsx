@@ -1,6 +1,11 @@
 import React from "react";
 import type { NextPage } from "next";
-import { InfoWrapper, InfoTitle, InfoUserContent, MyQuestionWrapper } from "./myBoard.style";
+import {
+  InfoWrapper,
+  InfoTitle,
+  InfoUserContent,
+  MyQuestionWrapper,
+} from "./myBoard.style";
 import { UserInfoRightPropsType } from "../interface";
 import Link from "next/link";
 
@@ -9,6 +14,7 @@ const Info: NextPage<UserInfoRightPropsType> = ({
   uRef,
   myQuestionData,
 }) => {
+  console.log("myQuestionData", myQuestionData);
   return (
     <InfoWrapper ref={moveRef}>
       <div ref={uRef}>

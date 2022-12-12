@@ -17,15 +17,19 @@ import Image from "next/image";
 const UserInfo: NextPage<{
   menus: UserInfoMenuType[];
   userName: string;
-  userProfile: string;
-}> = ({ menus, userName, userProfile }) => {
+  UserProfile: string;
+}> = ({ menus, userName, UserProfile }) => {
   const { activeList } = useStore();
 
   return (
     <UserInfoWrapper>
       <UserProfileMenu>
         <UserInfoId>{userName}</UserInfoId>
-        <Image src={userProfile} width={65} height={65} alt="ddd" />
+        {UserProfile ? (
+          <Image src={UserProfile} width={65} height={65} alt="ddd" />
+        ) : (
+          <></>
+        )}
       </UserProfileMenu>
 
       <UserProfileUlMenu>
