@@ -19,7 +19,7 @@ export default function AdminMenu({
   setIsEdit,
 }: {
   boardData?: EditorFormValue;
-  boardId: number;
+  boardId: DynamicRouteType | number;
   method: string;
   type: "comment" | "answer" | "board";
   setIsEdit?: React.Dispatch<React.SetStateAction<boolean>>;

@@ -2,7 +2,7 @@ import instance from "../../../lib/instance";
 import { DynamicRouteType, IndividualBoardType } from "../interface";
 
 export const getBoardData = async (
-  boardId: number
+  boardId: DynamicRouteType | number
 ): Promise<IndividualBoardType> => {
   try {
     const { data } = await instance.get(`/question/${boardId}`);
@@ -13,7 +13,7 @@ export const getBoardData = async (
 };
 
 export const postComment = async (
-  boardId: number,
+  boardId: DynamicRouteType | number,
   commentsData: { content: string }
 ) => {
   try {
@@ -27,7 +27,7 @@ export const postComment = async (
   }
 };
 
-export const putAdopt = async (boardId: number) => {
+export const putAdopt = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.put(`/answer/${boardId}/adopt`);
     return data;
@@ -37,7 +37,7 @@ export const putAdopt = async (boardId: number) => {
 };
 
 export const postReply = async (
-  boardId: number,
+  boardId: DynamicRouteType | number,
   answerData: { content: string }
 ) => {
   try {
@@ -49,7 +49,7 @@ export const postReply = async (
 };
 
 export const handleComment = (
-  boardId: number,
+  boardId: DynamicRouteType | number,
   commentsData: { content: string }
 ) => {
   postComment(boardId, commentsData)
@@ -64,7 +64,7 @@ export const handleComment = (
 };
 
 export const handleReply = (
-  boardId: number,
+  boardId: DynamicRouteType | number,
   commentsData: { content: string }
 ) => {
   postReply(boardId, commentsData)
@@ -77,7 +77,7 @@ export const handleReply = (
     });
 };
 
-export const handleAdopt = async (boardId: number) => {
+export const handleAdopt = async (boardId: DynamicRouteType | number) => {
   putAdopt(boardId)
     .then((_) => {
       alert("채택되었습니다.");
@@ -88,7 +88,7 @@ export const handleAdopt = async (boardId: number) => {
     });
 };
 
-export const putComment = async (boardId: number) => {
+export const putComment = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.put(`/comment/${boardId}/edit`);
     return data;
@@ -97,7 +97,7 @@ export const putComment = async (boardId: number) => {
   }
 };
 
-export const deleteComment = async (boardId: number) => {
+export const deleteComment = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.delete(`/comment/${boardId}`);
     return data;
@@ -106,7 +106,7 @@ export const deleteComment = async (boardId: number) => {
   }
 };
 
-export const putAnswer = async (boardId: number) => {
+export const putAnswer = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.put(`/answer/${boardId}/edit`);
     return data;
@@ -115,7 +115,7 @@ export const putAnswer = async (boardId: number) => {
   }
 };
 
-export const deleteAnswer = async (boardId: number) => {
+export const deleteAnswer = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.delete(`/answer/${boardId}`);
     return data;

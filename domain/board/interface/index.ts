@@ -27,7 +27,7 @@ export interface CommentsDataType {
 export interface ReplyEditorContentType {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
-  boardId: number;
+  boardId: DynamicRouteType;
   width: string;
   height: string;
   type: string;
@@ -59,7 +59,7 @@ export interface IndividualBoardType {
   answers: AnswerDataType[];
   comments: CommentsDataType[];
   content: string;
-  id: number;
+  id: DynamicRouteType;
   userId: number;
   createdDate: string;
   likeCount: number;

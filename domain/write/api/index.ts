@@ -28,7 +28,7 @@ export const postBoard = async (boardData: EditorFormValue) => {
   }
 };
 
-export const deleteBoard = async (boardId: number) => {
+export const deleteBoard = async (boardId: DynamicRouteType | number) => {
   try {
     const { data } = await instance.delete(`/question/${boardId}`);
     return data;
@@ -37,7 +37,10 @@ export const deleteBoard = async (boardId: number) => {
   }
 };
 
-export const putBoard = async (boardId: number, boardData: EditorFormValue) => {
+export const putBoard = async (
+  boardId: DynamicRouteType | number,
+  boardData: EditorFormValue
+) => {
   try {
     const { data } = await instance.put(`/question/${boardId}/edit`, boardData);
     return data;

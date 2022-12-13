@@ -16,7 +16,7 @@ const Edit: NextPage = () => {
         <title>Edit</title>
       </Head>
       <section id={`Edit`}>
-        <WriteContainer boardId={boardId} />
+        <WriteContainer />
       </section>
     </>
   );

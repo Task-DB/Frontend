@@ -8,9 +8,7 @@ import type { NextPage } from "next";
 import { handleWrite, postBoard } from "../api";
 import { BoardContentType, DynamicRouteType } from "../../board/interface";
 
-const WriteContainer: NextPage<{ boardId?: DynamicRouteType }> = ({
-  boardId,
-}) => {
+const WriteContainer: NextPage = ({}) => {
   const router = useRouter();
   const [content, setContent] = React.useState<string>("");
   const [boardData, setBoardData] = React.useState<BoardContentType>();

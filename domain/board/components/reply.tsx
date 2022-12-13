@@ -19,7 +19,7 @@ import AdminMenu from "./adminMenu";
 import { handleAdopt, putAdopt } from "../api";
 
 const Reply: NextPage<{
-  boardId: number;
+  boardId: DynamicRouteType;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");

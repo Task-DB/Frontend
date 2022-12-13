@@ -16,7 +16,7 @@ const BoardId: NextPage = () => {
         <title>BoardId</title>
       </Head>
       <section id={`indiviual-board`}>
-        <IndividualBoard boardId={boardId} />
+        <IndividualBoard boardId={boardId!} />
       </section>
     </>
   );
