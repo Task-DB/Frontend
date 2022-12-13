@@ -4,7 +4,7 @@ import { BoardNo, BoardTitle, BoardTitleWrapper } from "./title.style";
 import { DynamicRouteType, IndividualBoardType } from "../interface";
 
 const Title: NextPage<{
-  boardId: DynamicRouteType;
+  boardId: number;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   return (

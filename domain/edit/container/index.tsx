@@ -9,7 +9,7 @@ import { handleWrite, putBoard } from "../../write/api";
 import { CompleteButton, TitleInput } from "../../write/components/index.style";
 import Editor from "../../write/components";
 
-const EditContainer: NextPage<{ boardId: DynamicRouteType }> = ({
+const EditContainer: NextPage<{ boardId: number }> = ({
   boardId,
 }) => {
   React.useEffect(() => {}, []);

@@ -13,7 +13,7 @@ import AdminMenu from "./adminMenu";
 
 const Comments: NextPage<{
   boardData: IndividualBoardType;
-  boardId: DynamicRouteType;
+  boardId: number;
 }> = ({ boardData, boardId }) => {
   const [content, setContent] = React.useState<string>("");
   const [isEdit, setIsEdit] = React.useState(false);

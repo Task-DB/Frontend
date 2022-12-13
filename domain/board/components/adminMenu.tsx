@@ -5,19 +5,26 @@ import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { deleteAnswer, deleteComment, putAnswer, putComment } from "../api";
 import { useRouter } from "next/router";
+import { deleteBoard, putBoard } from "../../write/api";
+import { BoardContentType, DynamicRouteType } from "../interface";
+import { EditorFormValue } from "../../write/interface";
 
-const options = ["삭제하기"];
 const ITEM_HEIGHT = 22;
 
 export default function AdminMenu({
   boardId,
+  boardData,
+  method,
   type,
   setIsEdit,
 }: {
+  boardData?: EditorFormValue;
   boardId: number;
-  type: "comment" | "answer";
-  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  method: string;
+  type: "comment" | "answer" | "board";
+  setIsEdit?: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const [options, setOptions] = React.useState(["삭제하기"]);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -27,7 +34,11 @@ export default function AdminMenu({
     setAnchorEl(null);
   };
   const router = useRouter();
-
+  React.useEffect(() => {
+    if (method === "put") {
+      setOptions((prev) => [...prev, "수정하기"]);
+    }
+  }, [method]);
   return (
     <div>
       <IconButton
@@ -59,14 +70,26 @@ export default function AdminMenu({
           <MenuItem
             key={idx}
             onClick={() => {
-              if (type === "answer") {
+              if (type === "board") {
+                if (data === "삭제하기") {
+                  deleteBoard(boardId).then(() => {
+                    alert("삭제가 완료되었습니다.");
+                    location.href = "/";
+                  });
+                } else {
+                  putBoard(boardId, boardData!).then((res) => {
+                    alert("수정이 완료되었습니다");
+                    location.href = "/";
+                  });
+                }
+              } else if (type === "answer") {
                 deleteAnswer(boardId).then((_) => {
                   alert("삭제가 완료되었습니다.");
                   router.reload();
                 });
               } else {
                 deleteComment(boardId).then((_) => {
-                  alert("삭제가 완료되었습니다..");
+                  alert("삭제가 완료되었습니다.");
                   router.reload();
                 });
               }

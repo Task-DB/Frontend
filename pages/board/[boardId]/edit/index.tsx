@@ -8,7 +8,7 @@ import EditContainer from "../../../../domain/edit/container";
 const Edit: NextPage = () => {
   const router: NextRouter = useRouter();
   const route: ParsedUrlQuery = router.query; // 다이나믹 라우트 받는 부분
-  const boardId: DynamicRouteType = route.boardId;
-  return <EditContainer boardId={boardId} />;
+  const boardId = route.boardId;
+  return <EditContainer boardId={Number(boardId)} />;
 };
 export default Edit;

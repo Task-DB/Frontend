@@ -12,6 +12,7 @@ import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
 import { IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
+import AdminMenu from "./adminMenu";
 
 const Status: NextPage<{ boardData: IndividualBoardType }> = ({
   boardData,
@@ -38,6 +39,7 @@ const Status: NextPage<{ boardData: IndividualBoardType }> = ({
         <BoardViews>
           조회수<span>{boardData?.viewCount}</span>
         </BoardViews>
+        <AdminMenu boardId={boardData?.id} method="put" type={"board"} />
       </BoardStatusWrapper>
     </section>
   );

@@ -7,7 +7,6 @@ import { AuthorPropsType } from "../interface";
 const Author: NextPage<AuthorPropsType> = ({
   profilePicture,
   nickname,
-  time,
 }) => {
   return (
     <section id={"author"}>
@@ -21,7 +20,7 @@ const Author: NextPage<AuthorPropsType> = ({
           layout="fixed"
         />
         <AuthorNickname>{nickname}</AuthorNickname>
-        <AuthorNickname style={{ color: "gray" }}>{time}</AuthorNickname>
+        <AuthorNickname style={{ color: "gray" }}>{}</AuthorNickname>
       </AuthorWrapper>
     </section>
   );

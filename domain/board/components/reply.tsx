@@ -17,10 +17,9 @@ import { DynamicRouteType, IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
 import { handleAdopt, putAdopt } from "../api";
-import { display } from "@mui/system";
 
 const Reply: NextPage<{
-  boardId: DynamicRouteType;
+  boardId: number;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");
@@ -49,7 +48,6 @@ const Reply: NextPage<{
                 />
                 <Content>
                   <Author
-                    time={getRelativeDate(data.createdDate)}
                     nickname={data.nickname}
                     profilePicture={data.userImage}
                   />
@@ -60,6 +58,7 @@ const Reply: NextPage<{
                 {localStorage?.getItem("userId") === data.userId.toString() &&
                 data.status !== "채택" ? (
                   <AdminMenu
+                    method=""
                     boardId={data.id}
                     type="answer"
                     setIsEdit={setIsEdit}

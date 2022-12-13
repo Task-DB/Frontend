@@ -13,7 +13,6 @@ export interface LinePropsType {
 export interface AuthorPropsType {
   profilePicture: string | StaticImageData;
   nickname: string;
-  time: string;
 }
 
 export interface CommentsDataType {
@@ -28,7 +27,7 @@ export interface CommentsDataType {
 export interface ReplyEditorContentType {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
-  boardId: DynamicRouteType;
+  boardId: number;
   width: string;
   height: string;
   type: string;

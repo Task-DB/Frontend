@@ -19,7 +19,6 @@ export const postEditorImage = async (
   }
 };
 
-
 export const postBoard = async (boardData: EditorFormValue) => {
   try {
     const { data } = await instance.post("/question/new", boardData);
@@ -29,12 +28,18 @@ export const postBoard = async (boardData: EditorFormValue) => {
   }
 };
 
-export const putBoard = async (boardId: DynamicRouteType, boardData: EditorFormValue) => {
+export const deleteBoard = async (boardId: number) => {
   try {
-    const { data } = await instance.put(
-      `/question/${boardId}/edit`,
-      boardData
-    );
+    const { data } = await instance.delete(`/question/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putBoard = async (boardId: number, boardData: EditorFormValue) => {
+  try {
+    const { data } = await instance.put(`/question/${boardId}/edit`, boardData);
     return data;
   } catch (error) {
     throw error;
