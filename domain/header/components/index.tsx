@@ -15,7 +15,7 @@ import {
 import { onChangeAction } from "../../../util";
 import Link from "next/link";
 import { handleLogout } from "../util";
-import { getSearch, handleSearch } from "../api";
+import { handleSearch } from "../api";
 import useStore from "../../../context/useStore";
 import { useRouter } from "next/router";
 
@@ -29,7 +29,10 @@ const Header: NextPage = () => {
     {
       text: "랭킹",
       link: "/rank",
-      isActive: false,
+    },
+    {
+      text: "학년별",
+      link: "/grade",
     },
   ]);
 

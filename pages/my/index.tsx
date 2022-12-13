@@ -6,11 +6,8 @@ import MyContainer from "../../domain/my/container";
 const MyPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>MyPage</title>
-      </Head>
-      <section id={`my-page`}><MyContainer /></section>
+      <MyContainer />
     </>
-  )
+  );
 };
 export default MyPage;

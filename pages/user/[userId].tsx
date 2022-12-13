@@ -12,9 +12,6 @@ const User: NextPage = () => {
   const userId: dynamicRouteType = route.userId;
   return (
     <>
-      <Head>
-        <title>User</title>
-      </Head>
       <section id={`User`}>
         <UserContainer userId={userId} />
       </section>

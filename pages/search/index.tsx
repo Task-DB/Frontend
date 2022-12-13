@@ -7,7 +7,7 @@ const Search: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Search</title>
+        <title>검색 결과</title>
       </Head>
       <section id={`Search`}>
         <ResultPage />

@@ -9,6 +9,7 @@ import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
 import { getMyQuestionData } from "../api";
 import { MyType } from "../interface";
+import Head from "next/head";
 
 const MyContainer: NextPage = () => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
@@ -78,30 +79,35 @@ const MyContainer: NextPage = () => {
   const [myData, setMyData] = React.useState<MyType>();
 
   return (
-    <UserInfoContainer>
-      <UserInfo
-        userName={myData!?.nickname}
-        UserProfile={myData!?.image}
-        menus={Array.from(menus)}
-      />
-      <UserRightWrapper>
-        <Introduce
-          moveRef={menus[0].element}
-          uRef={introduceRef}
-          myIntroduceData={myData!?.bio}
+    <>
+      <Head>
+        <title>{myData?.nickname}님의 프로필</title>
+      </Head>
+      <UserInfoContainer>
+        <UserInfo
+          userName={myData!?.nickname}
+          UserProfile={myData!?.image}
+          menus={Array.from(menus)}
         />
-        <Info
-          moveRef={menus[1].element}
-          uRef={infoRef}
-          myQuestionData={myData!?.getMyQuestions}
-        />
-        <Board
-          moveRef={menus[2].element}
-          uRef={boardRef}
-          mySavedQuestionData={myData!?.getSavedQuestions}
-        />
-      </UserRightWrapper>
-    </UserInfoContainer>
+        <UserRightWrapper>
+          <Introduce
+            moveRef={menus[0].element}
+            uRef={introduceRef}
+            myIntroduceData={myData!?.bio}
+          />
+          <Info
+            moveRef={menus[1].element}
+            uRef={infoRef}
+            myQuestionData={myData!?.getMyQuestions}
+          />
+          <Board
+            moveRef={menus[2].element}
+            uRef={boardRef}
+            mySavedQuestionData={myData!?.getSavedQuestions}
+          />
+        </UserRightWrapper>
+      </UserInfoContainer>
+    </>
   );
 };
 export default MyContainer;

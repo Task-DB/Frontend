@@ -7,7 +7,7 @@ const SignupPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Signup</title>
+        <title>회원가입</title>
       </Head>
       <section id={`signup`}>
         <SignupContainer />

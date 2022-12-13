@@ -11,7 +11,7 @@ import {
   SignupTopBar,
   SignupFormElement,
   SignupButtonWrapper,
-} from "../../signup/components/index.style";
+} from "./index.style";
 import { NextRouter, useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { SignupRequestType } from "../interface";

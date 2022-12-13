@@ -7,7 +7,7 @@ const Rank: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rank</title>
+        <title>순위</title>
       </Head>
       <section id={`Rank`}>
         <RankContainer />
