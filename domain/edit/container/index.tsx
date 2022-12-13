@@ -5,7 +5,7 @@ import { getBoardData } from "../../board/api";
 import { useRouter } from "next/router";
 import { EditorFormValue } from "../../write/interface";
 import { useForm } from "react-hook-form";
-import { handleWrite, putBoard } from "../../write/api";
+import { putBoard } from "../../write/api";
 import { CompleteButton, TitleInput } from "../../write/components/index.style";
 import Editor from "../../write/components";
 

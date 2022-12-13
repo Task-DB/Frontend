@@ -9,7 +9,6 @@ import {
 import Image from "next/image";
 import { CloseBadge, OpenBadge } from "../assets";
 import Author from "./author";
-import { ProfilePicture } from "../../my/assets";
 import { IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
@@ -17,6 +16,8 @@ import AdminMenu from "./adminMenu";
 const Status: NextPage<{ boardData: IndividualBoardType }> = ({
   boardData,
 }) => {
+  console.log(boardData);
+
   return (
     <section id={"status"}>
       <BoardStatusWrapper>
@@ -39,7 +40,11 @@ const Status: NextPage<{ boardData: IndividualBoardType }> = ({
         <BoardViews>
           조회수<span>{boardData?.viewCount}</span>
         </BoardViews>
-        <AdminMenu boardId={boardData?.id} method="put" type={"board"} />
+        {boardData.status !== "CLOSE" ? (
+          <AdminMenu boardId={boardData?.id} method="put" type={"board"} />
+        ) : (
+          <></>
+        )}
       </BoardStatusWrapper>
     </section>
   );
