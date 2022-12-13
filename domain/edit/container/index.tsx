@@ -9,9 +9,7 @@ import { handleWrite, putBoard } from "../../write/api";
 import { CompleteButton, TitleInput } from "../../write/components/index.style";
 import Editor from "../../write/components";
 
-const EditContainer: NextPage<{ boardId: number }> = ({
-  boardId,
-}) => {
+const EditContainer: NextPage<{ boardId: number }> = ({ boardId }) => {
   React.useEffect(() => {}, []);
 
   const router = useRouter();
@@ -48,6 +46,7 @@ const EditContainer: NextPage<{ boardId: number }> = ({
           onSubmit={handleSubmit((data) => {
             data["content"] = content;
             data["category"] = category;
+            data["title"] = title;
             putBoard(boardId, data).then((_) => {
               alert("수정이 완료되었습니다.");
               router.push("/");

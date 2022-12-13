@@ -77,10 +77,7 @@ export default function AdminMenu({
                     location.href = "/";
                   });
                 } else {
-                  putBoard(boardId, boardData!).then((res) => {
-                    alert("수정이 완료되었습니다");
-                    location.href = "/";
-                  });
+                  router.push(`/board/${boardId}/edit`);
                 }
               } else if (type === "answer") {
                 deleteAnswer(boardId).then((_) => {
