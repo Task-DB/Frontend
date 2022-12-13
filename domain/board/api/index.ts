@@ -1,8 +1,8 @@
 import instance from "../../../lib/instance";
-import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { DynamicRouteType, IndividualBoardType } from "../interface";
 
 export const getBoardData = async (
-  boardId: dynamicRouteType
+  boardId: DynamicRouteType
 ): Promise<IndividualBoardType> => {
   try {
     const { data } = await instance.get(`/question/${boardId}`);
@@ -13,7 +13,7 @@ export const getBoardData = async (
 };
 
 export const postComment = async (
-  boardId: dynamicRouteType,
+  boardId: DynamicRouteType,
   commentsData: { content: string }
 ) => {
   try {
@@ -37,7 +37,7 @@ export const putAdopt = async (boardId: number) => {
 };
 
 export const postReply = async (
-  boardId: dynamicRouteType,
+  boardId: DynamicRouteType,
   answerData: { content: string }
 ) => {
   try {
@@ -49,7 +49,7 @@ export const postReply = async (
 };
 
 export const handleComment = (
-  boardId: dynamicRouteType,
+  boardId: DynamicRouteType,
   commentsData: { content: string }
 ) => {
   postComment(boardId, commentsData)
@@ -64,7 +64,7 @@ export const handleComment = (
 };
 
 export const handleReply = (
-  boardId: dynamicRouteType,
+  boardId: DynamicRouteType,
   commentsData: { content: string }
 ) => {
   postReply(boardId, commentsData)

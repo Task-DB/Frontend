@@ -1,10 +1,10 @@
 import React from "react";
 import type { NextPage } from "next";
 import { BoardNo, BoardTitle, BoardTitleWrapper } from "./title.style";
-import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { DynamicRouteType, IndividualBoardType } from "../interface";
 
 const Title: NextPage<{
-  boardId: dynamicRouteType;
+  boardId: DynamicRouteType;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   return (

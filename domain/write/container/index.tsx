@@ -6,18 +6,14 @@ import { EditorFormValue } from "../interface";
 import { CompleteButton, TitleInput } from "../components/index.style";
 import type { NextPage } from "next";
 import { handleWrite, postBoard } from "../api";
-import { BoardContentType, dynamicRouteType } from "../../board/interface";
+import { BoardContentType, DynamicRouteType } from "../../board/interface";
 
-const WriteContainer: NextPage<{ boardId?: dynamicRouteType }> = ({
+const WriteContainer: NextPage<{ boardId?: DynamicRouteType }> = ({
   boardId,
 }) => {
   const router = useRouter();
   const [content, setContent] = React.useState<string>("");
   const [boardData, setBoardData] = React.useState<BoardContentType>();
-  if (boardId) {
-    // 게시글 정보 받아오는 코드
-  }
-
   const [category, setCategory] = React.useState<string>("JAVA");
   const {
     register,

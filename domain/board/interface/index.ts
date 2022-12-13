@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
 
-export type dynamicRouteType = string | string[] | undefined;
+export type DynamicRouteType = string | string[] | undefined;
 
 export interface IndividualBoardPropsType {
-  boardId: dynamicRouteType;
+  boardId: DynamicRouteType;
 }
 
 export interface LinePropsType {
@@ -28,7 +28,7 @@ export interface CommentsDataType {
 export interface ReplyEditorContentType {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
-  boardId: dynamicRouteType;
+  boardId: DynamicRouteType;
   width: string;
   height: string;
   type: string;

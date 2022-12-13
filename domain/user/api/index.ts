@@ -1,9 +1,9 @@
 import React from "react";
 import instance from "../../../lib/instance";
-import { dynamicRouteType } from "../../board/interface";
+import { DynamicRouteType } from "../../board/interface";
 import { MyType } from "../../my/interface";
 
-export const getAnotherUserData = async (userId: dynamicRouteType) => {
+export const getAnotherUserData = async (userId: DynamicRouteType) => {
   try {
     const { data } = await instance.get(`/user/${userId}`);
     return data;
@@ -13,7 +13,7 @@ export const getAnotherUserData = async (userId: dynamicRouteType) => {
 };
 
 export const handleAnotherUserData = (
-  userId: dynamicRouteType,
+  userId: DynamicRouteType,
   setMyData: React.Dispatch<React.SetStateAction<MyType | undefined>>
 ) => {
   getAnotherUserData(userId)

@@ -13,14 +13,14 @@ import BoardLikes from "./boardLikes";
 import Author from "./author";
 import { ProfilePicture } from "../../my/assets";
 import ReplyForm from "./replyForm";
-import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { DynamicRouteType, IndividualBoardType } from "../interface";
 import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
 import { handleAdopt, putAdopt } from "../api";
 import { display } from "@mui/system";
 
 const Reply: NextPage<{
-  boardId: dynamicRouteType;
+  boardId: DynamicRouteType;
   boardData: IndividualBoardType;
 }> = ({ boardId, boardData }) => {
   const [content, setContent] = React.useState("");

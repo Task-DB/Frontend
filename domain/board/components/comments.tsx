@@ -6,14 +6,14 @@ import {
   BoardCommentsEditContent,
   BoardCommentsWrapper,
 } from "./comments.style";
-import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { DynamicRouteType, IndividualBoardType } from "../interface";
 import ReplyForm from "./replyForm";
 import { getRelativeDate, onChangeAction } from "../../../util";
 import AdminMenu from "./adminMenu";
 
 const Comments: NextPage<{
   boardData: IndividualBoardType;
-  boardId: dynamicRouteType;
+  boardId: DynamicRouteType;
 }> = ({ boardData, boardId }) => {
   const [content, setContent] = React.useState<string>("");
   const [isEdit, setIsEdit] = React.useState(false);

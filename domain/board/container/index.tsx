@@ -4,24 +4,23 @@ import Reply from "../components/reply";
 import Comments from "../components/comments";
 import Status from "../components/status";
 import Title from "../components/title";
-import { dynamicRouteType, IndividualBoardType } from "../interface";
+import { DynamicRouteType, IndividualBoardType } from "../interface";
 import Content from "../components/content";
 import { BoardWrapper } from "./index.style";
 import { getBoardData } from "../api";
 import Head from "next/head";
 
-const BoardContainer: NextPage<{ boardId: dynamicRouteType }> = ({
+const BoardContainer: NextPage<{ boardId: DynamicRouteType }> = ({
   boardId,
 }) => {
   const [boardData, setBoardData] = React.useState<IndividualBoardType>();
 
   React.useEffect(() => {
     if (boardId) {
-      getBoardData(boardId)
-        .then((response) => {
-          console.log(response)
-          setBoardData(response);
-        })
+      getBoardData(boardId).then((response) => {
+        console.log(response);
+        setBoardData(response);
+      });
     }
   }, [boardId]);
 

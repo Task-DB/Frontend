@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { dynamicRouteType } from "../../board/interface";
+import { DynamicRouteType } from "../../board/interface";
 import useMoveScroll from "../../../hooks/useMoveScroll";
 import useStore from "../../../context/useStore";
 import Introduce from "../../my/components/introduce";
@@ -15,7 +15,7 @@ import { getAnotherUserData, handleAnotherUserData } from "../api";
 import UserInfo from "../../my/components/userInfo";
 import Head from "next/head";
 
-const UserContainer: NextPage<{ userId: dynamicRouteType }> = ({ userId }) => {
+const UserContainer: NextPage<{ userId: DynamicRouteType }> = ({ userId }) => {
   const [introduceY, setIntroduceY] = React.useState<number>(0);
   const [infoY, setInfoY] = React.useState<number>(0);
   const [boardY, setBoardY] = React.useState<number>(0);
