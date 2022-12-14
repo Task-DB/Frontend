@@ -59,7 +59,7 @@ const BoardLikes: NextPage<{
           alt="올리기"
           onClick={() => {
             {
-              method === "answer"
+              method === ""
                 ? putUnLike(boardId)
                     .then((response) => {
                       console.log(response);
