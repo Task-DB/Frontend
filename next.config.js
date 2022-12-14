@@ -11,8 +11,8 @@ module.exports = {
   rewrites() {
     return [
       {
-        source: "/get", //api request path
-        destination: "https://random-d.uk/api/random", //목적 path
+        source: "/:path*", //api request path
+        destination: "http://192.168.10.103:8092", //목적 path
       },
     ];
   },
