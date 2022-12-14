@@ -8,4 +8,12 @@ module.exports = {
     ],
     imageSizes: [256, 256, 256, 256, 256, 256, 256, 384],
   },
+  rewrites() {
+    return [
+      {
+        source: "/get", //api request path
+        destination: "https://random-d.uk/api/random", //목적 path
+      },
+    ];
+  },
 };
