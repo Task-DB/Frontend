@@ -1,8 +1,6 @@
 const nextConfig = {
   images: {
-    domains: [
-      "taskdb.s3.ap-northeast-2.amazonaws.com",
-    ],
+    domains: ["taskdb.s3.ap-northeast-2.amazonaws.com"],
     imageSizes: [256, 256, 256, 256, 256, 256, 256, 384],
   },
   reactStrictMode: true,
@@ -16,3 +14,5 @@ const nextConfig = {
     ];
   },
 };
+
+module.exports = nextConfig
