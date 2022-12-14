@@ -37,7 +37,9 @@ export const LoginLabel = styled.label`
   top: -15px;
   left: 20px;
   display: block;
-  background-color: blue;
+  background-color: white;
+  border-radius: 6px;
+  padding: 0.1rem;
 `;
 
 export const LoginButtonWrapper = styled.div`
