@@ -12,7 +12,7 @@ module.exports = {
     return [
       {
         source: "/:path*", //api request path
-        destination: "http://192.168.10.103:8092", //목적 path
+        destination: "http://192.168.10.103:8092/:path*", //목적 path
       },
     ];
   },
