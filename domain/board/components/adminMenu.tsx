@@ -3,10 +3,10 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { deleteAnswer, deleteComment, putAnswer, putComment } from "../api";
+import { deleteAnswer, deleteComment } from "../api";
 import { useRouter } from "next/router";
-import { deleteBoard, putBoard } from "../../write/api";
-import { BoardContentType, DynamicRouteType } from "../interface";
+import { deleteBoard } from "../../write/api";
+import { DynamicRouteType } from "../interface";
 import { EditorFormValue } from "../../write/interface";
 
 const ITEM_HEIGHT = 22;

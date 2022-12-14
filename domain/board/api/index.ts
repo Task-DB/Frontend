@@ -123,3 +123,39 @@ export const deleteAnswer = async (boardId: DynamicRouteType | number) => {
     throw error;
   }
 };
+
+export const putLike = async (boardId: DynamicRouteType) => {
+  try {
+    const { data } = await instance.put(`/questionLike/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putUnLike = async (boardId: DynamicRouteType) => {
+  try {
+    const { data } = await instance.put(`/questionUnlike/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAnswerLike = async (boardId: DynamicRouteType) => {
+  try {
+    const { data } = await instance.put(`/answerLike/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAnswerUnLike = async (boardId: DynamicRouteType) => {
+  try {
+    const { data } = await instance.put(`/answerUnlike/${boardId}`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

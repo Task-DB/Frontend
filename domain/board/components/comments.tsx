@@ -40,13 +40,6 @@ const Comments: NextPage<{
                   width={"70"}
                   height={"100"}
                 />
-                // <BoardCommentsEditContent
-                //   type="text"
-                //   value={data.content}
-                //   onChange={(event) => {
-                //     onChangeAction(event, setContent);
-                //   }}
-                // />
               )}
 
               <span style={{ color: "gray" }}>

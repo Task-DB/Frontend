@@ -11,12 +11,10 @@ import {
 } from "./reply.style";
 import BoardLikes from "./boardLikes";
 import Author from "./author";
-import { ProfilePicture } from "../../my/assets";
 import ReplyForm from "./replyForm";
 import { DynamicRouteType, IndividualBoardType } from "../interface";
-import { getRelativeDate } from "../../../util";
 import AdminMenu from "./adminMenu";
-import { handleAdopt, putAdopt } from "../api";
+import { handleAdopt } from "../api";
 
 const Reply: NextPage<{
   boardId: DynamicRouteType;
@@ -43,6 +41,10 @@ const Reply: NextPage<{
             <ReplyContentWrapper key={idx}>
               <ContentWrapper>
                 <BoardLikes
+                  method={"reply"}
+                  boardId={data.id}
+                  hasLike={data.hasLike}
+                  hasUnLike={data.hasUnLike}
                   isReply={data.status === "채택"}
                   likes={data.likeCount}
                 />

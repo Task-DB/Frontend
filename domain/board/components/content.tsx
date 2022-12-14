@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { BoardContent, BoardContentWrapper, BoardLine } from "./content.style";
+import { BoardContent, BoardContentWrapper } from "./content.style";
 import BoardLikes from "./boardLikes";
 import { IndividualBoardType } from "../interface";
 
@@ -10,8 +10,16 @@ const Content: NextPage<{ boardData: IndividualBoardType }> = ({
   return (
     <section id={"content"}>
       <BoardContentWrapper>
-        <BoardLikes isReply={false} likes={boardData?.likeCount} />
-        <BoardContent dangerouslySetInnerHTML={{ __html: boardData?.content }} />
+        <BoardLikes
+          method={""}
+          hasLike={boardData?.hasLike}
+          hasUnLike={boardData?.hasUnLike}
+          likes={boardData?.likeCount}
+          boardId={boardData?.id}
+        />
+        <BoardContent
+          dangerouslySetInnerHTML={{ __html: boardData?.content }}
+        />
       </BoardContentWrapper>
     </section>
   );

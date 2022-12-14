@@ -45,7 +45,7 @@ export interface BoardContentType {
 }
 
 export interface AnswerDataType {
-  id: number;
+  id: DynamicRouteType;
   content: string;
   createdDate: string;
   likeCount: number;
@@ -53,6 +53,8 @@ export interface AnswerDataType {
   userImage: string;
   status: string;
   userId: number;
+  hasLike: boolean;
+  hasUnLike: boolean;
 }
 
 export interface IndividualBoardType {
@@ -61,6 +63,8 @@ export interface IndividualBoardType {
   content: string;
   id: DynamicRouteType;
   userId: number;
+  hasLike: boolean;
+  hasUnLike: boolean;
   createdDate: string;
   likeCount: number;
   modifiedDate: string;

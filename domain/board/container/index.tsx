@@ -10,7 +10,9 @@ import { BoardWrapper } from "./index.style";
 import { getBoardData } from "../api";
 import Head from "next/head";
 
-const BoardContainer: NextPage<{ boardId: DynamicRouteType  }> = ({ boardId }) => {
+const BoardContainer: NextPage<{ boardId: DynamicRouteType }> = ({
+  boardId,
+}) => {
   const [boardData, setBoardData] = React.useState<IndividualBoardType>();
 
   React.useEffect(() => {
