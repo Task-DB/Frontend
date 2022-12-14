@@ -1,5 +1,13 @@
-module.exports = {
-  async rewrites() {
+const nextConfig = {
+  images: {
+    domains: [
+      "taskdb.s3.ap-northeast-2.amazonaws.com",
+    ],
+    imageSizes: [256, 256, 256, 256, 256, 256, 256, 384],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  rewrites() {
     return [
       {
         source: "/:path*",
