@@ -16,9 +16,11 @@ const Board: NextPage<UserInfoRightPropsType> = ({
         <BoardUserContent>
           {mySavedQuestionData?.map((data, idx) => {
             return (
-              <Link href={`/board/${data.id}`} key={idx}>
-                <a>{data.title}</a>
-              </Link>
+              <div key={idx}>
+                <Link href={`/board/${data.id}`}>
+                  <a>{data.title}</a>
+                </Link>
+              </div>
             );
           })}
           {!mySavedQuestionData?.length
