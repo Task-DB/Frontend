@@ -9,6 +9,7 @@ const Main: NextPage = () => {
     <>
       <Head>
         <title>TaskDB</title>
+        
       </Head>
       <section id={`main`}>
         <MainContainer />

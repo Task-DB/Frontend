@@ -36,6 +36,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
         <Head />
         <body>
           <Main />
